@@ -1,0 +1,24 @@
+*{
+    display: inline-block;
+}
+button.btn {
+  width: 170px;
+  height: 64px;
+  
+}
+.dark {
+  border: 1px solid white;
+  background-color: var(--cod-gray);
+  color: white;
+  &:hover {
+  }
+  .inactive {
+  }
+}
+
+.light {
+  &:hover {
+  }
+  .inactive {
+  }
+}

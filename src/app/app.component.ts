@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-dine-restaurant-website';
+  title = 'Frontend Mentor | Angular Dine Restaurant Website Challenge';
 }

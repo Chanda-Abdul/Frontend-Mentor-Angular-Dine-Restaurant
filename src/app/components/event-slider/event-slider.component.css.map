@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "event-slider.component.scss"
+    ],
+    "names": [],
+    "file": "event-slider.component.css"
+}
