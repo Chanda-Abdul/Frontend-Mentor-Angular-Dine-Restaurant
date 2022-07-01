@@ -1,0 +1,20 @@
+<div class="menu">
+    <section class="">
+    <h3>A few highlights from our menu</h3>
+    <p class="second">
+        We cater for all dietary requirements, but here’s a glimpse at some of our diner’s favourites.
+        Our menu is revamped every season.
+    </p>
+</section>
+<section class="preview">
+    <div class="menu-item"
+    *ngFor="let item of menu"
+    >
+    <!-- <img [src]="{{item.mobileImage}}" alt=""> -->
+    <h3>{{ item.title }}</h3>
+    <p class="second">{{ item.description }}</p>
+</div>
+</section>
+</div>
+
+

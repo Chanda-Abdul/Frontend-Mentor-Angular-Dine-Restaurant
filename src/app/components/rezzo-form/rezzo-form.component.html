@@ -1,6 +1,64 @@
-Name
-Email
-Pick a date
-Pick a time
+<div class="content">
+    <form [formGroup]="rezzoForm">
 
-Make Reservation
+        <label for="name">Name: </label>
+        <input id="name"
+               type="text"
+               formControlName="name">
+
+        <label for="email">Email: </label>
+        <input id="email"
+               type="text"
+               formControlName="email">
+        <div formGroupName="date">
+            <h4>Pick a date</h4>
+
+            <label for="month">MM</label>
+            <input id="month"
+                   type="text"
+                   formControlName="month">
+
+            <label for="day">DD</label>
+            <input id="day"
+                   type="text"
+                   formControlName="day">
+
+            <label for="year">YYYY</label>
+            <input id="year"
+                   type="text"
+                   formControlName="year">
+
+
+        </div>
+        <div formGroupName="time">
+            <h4>Pick a time</h4>
+
+            <label for="hour">09</label>
+            <input id="hour"
+                   type="text"
+                   formControlName="hour">
+
+            <label for="minute">00</label>
+            <input id="minute"
+                   type="text"
+                   formControlName="minute">
+
+            <label for="amOrPm">AM</label>
+            <input id="amOrPm"
+                   type="text"
+                   formControlName="amOrPm">
+
+
+        </div>
+        <label for="guests">Guests: </label>
+        <input id="guests"
+               type="text"
+               formControlName="guests">
+        <app-button text="Make Reservation"
+                    (click)="onMakeReservationClick()"
+                    buttonClass="dark">
+        </app-button>
+
+    </form>
+
+</div>

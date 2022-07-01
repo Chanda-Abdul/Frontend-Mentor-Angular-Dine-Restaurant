@@ -1,0 +1,51 @@
+import { EventItem } from "./components/event-slider/event-slider.component"
+
+export const EVENTS: EventItem[] = [
+    {
+        id: 1,
+        title: "Family Gathering",
+        description: "We love catering for entire families. So please bring everyone along for a special meal with your loved ones. We’ll provide a memorable experience for all.",
+        mobileImage: "",
+        tabletDesktopImage: ""
+    },
+    {
+        id: 2,
+        title: "Special Events",
+        description: "Whether it’s a romantic dinner or special date you’re celebrating with others we’ll look after you. We’ll be sure to mark your special date with an unforgettable meal.",
+        mobileImage: "",
+        tabletDesktopImage: ""
+
+    },
+    {
+        id: 3,
+        title: "Social Events",
+        description: "Are you looking to have a larger social event? No problem! We’re more than happy to cater for big parties. We’ll work with you to make your event a hit with everyone.",
+        mobileImage: "",
+        tabletDesktopImage: ""
+
+    }
+]
+
+// for db.json and json-server
+// {
+//   "tasks": [
+//     {
+//       "id": 1,
+//       "text": "Doctors Appointment",
+//       "day": "May 5th at 2:30pm",
+//       "reminder": true
+//     },
+//     {
+//       "id": 2,
+//       "text": "Meeting at School",
+//       "day": "May 6th at 2:30pm",
+//       "reminder": true
+//     },
+//     {
+//       "id": 3,
+//       "text": "Food Shopping",
+//       "day": "May 7th at 12:30pm",
+//       "reminder": false
+//     }
+//   ]
+// }

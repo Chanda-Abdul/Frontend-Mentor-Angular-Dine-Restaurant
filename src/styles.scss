@@ -1,88 +1,107 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
 img {
-  size: 100%;
+    size: 100%;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&display=swap");
+
 :root {
-  /* Primary Colors */
-  --beaver: hsl(27, 22%, 51%);
-  --cod-gray: hsl(0, 0%, 7%);
-  /* Primary Colors */
-  --mirage: hsl(234, 30%, 13%);
-  --ebony-clay: hsl(218, 21%, 18%);
-  --shuttle-gray: hsl(217, 14%, 42%);
+    /* Primary Colors */
+    --beaver: hsl(27, 22%, 51%);
+    --cod-gray: hsl(0, 0%, 7%);
+    /* Primary Colors */
+    --mirage: hsl(234, 30%, 13%);
+    --ebony-clay: hsl(218, 21%, 18%);
+    --shuttle-gray: hsl(217, 14%, 42%);
 }
 
 /* Typography */
 @mixin heading-xl {
-  font-family: "League Spartan", sans-serif;
-  font-size: 80px;
-  line-height: 80px;
-  font-weight: 300;
-  letter-spacing: -1;
+    font-family: "League Spartan", sans-serif;
+    font-size: 80px;
+    line-height: 80px;
+    font-weight: 300;
+    letter-spacing: -1;
 }
+
 @mixin heading-l {
-  font-family: "League Spartan", sans-serif;
-  font-size: 48px;
-  line-height: 48px;
-  font-weight: 700;
-  letter-spacing: -0.5;
+    font-family: "League Spartan", sans-serif;
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 700;
+    letter-spacing: -0.5;
 }
 
 @mixin heading-m {
-  font-family: "League Spartan", sans-serif;
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 700;
-  letter-spacing: -0.25;
+    font-family: "League Spartan", sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    letter-spacing: -0.25;
 }
+
 @mixin heading-s {
-  font-family: "League Spartan", sans-serif;
-  font-size: 17px;
-  line-height: 28px;
-  font-weight: 600;
-  letter-spacing: 2.5;
-  text-transform: uppercase;
+    font-family: "League Spartan", sans-serif;
+    font-size: 17px;
+    line-height: 28px;
+    font-weight: 600;
+    letter-spacing: 2.5;
+    text-transform: uppercase;
 }
+
 @mixin body-primary {
-  font-family: "League Spartan", sans-serif;
-  font-size: 20px;
-  line-height: 30px;
-  font-weight: 400;
+    font-family: "League Spartan", sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
 }
+
 @mixin body-secondary {
-  font-family: "League Spartan", sans-serif;
-  font-size: 16px;
-  line-height: 26px;
-  font-weight: 400;
+    font-family: "League Spartan", sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
 }
+
 h2 {
-  @include heading-xl();
+    @include heading-xl();
 }
+
 h1 {
-  @include heading-l();
+    @include heading-l();
 }
+
 h3 {
-  @include heading-m();
+    @include heading-m();
 }
+
 h4,
 h5,
 h6 {
-  @include heading-s();
+    @include heading-s();
 }
-p {
-  @include body-secondary();
+
+
+.prime {
+    @include body-primary();
 }
+
+.second {
+    @include body-secondary();
+}
+
+
+
 button {
-  @include heading-s();
+    @include heading-s();
 }
 
 .attribution {
-  @include body-secondary();
-  text-align: center;
+    @include body-secondary();
+    text-align: center;
 }

@@ -1,24 +1,25 @@
-*{
+* {
     display: inline-block;
 }
+
 button.btn {
-  width: 170px;
-  height: 64px;
-  
+    width: 245px;
+    height: 64px;
+    margin: 20px;
 }
+
 .dark {
-  border: 1px solid white;
-  background-color: var(--cod-gray);
-  color: white;
-  &:hover {
-  }
-  .inactive {
-  }
+    border: 1px solid white;
+    background-color: var(--cod-gray);
+    color: white;
+
+    &:hover {}
+
+    .inactive {}
 }
 
 .light {
-  &:hover {
-  }
-  .inactive {
-  }
+    &:hover {}
+
+    .inactive {}
 }

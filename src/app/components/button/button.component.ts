@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-button',
@@ -10,15 +11,18 @@ export class ButtonComponent implements OnInit {
   @Input() bgcolor!: string;
   @Input() textcolor!: string;
   @Input() buttonClass!: string;
-  @Output() btnClick = new EventEmitter();
+  @Output() bookTableClick = new EventEmitter();
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
-  onClick() {
-    this.btnClick.emit()
+  onBookTableClick() {
+    this.bookTableClick.emit()
+    this.router.navigateByUrl('/booking')
   }
+
+
 
 }

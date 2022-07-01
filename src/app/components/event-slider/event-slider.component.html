@@ -1,17 +1,16 @@
-Family Gathering
-Special Events
-Social Events
+<div class="event-list">
+    <section class="events">
+        <ul class="event-select">
+            <li class="event-item"
+            *ngFor="let event of events">{{event.title}}</li>
+        </ul>
+    </section>
+    <section class="event-highlight">
+        <h3>selected event</h3>
+        <p class="second">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod sint expedita nostrum consequuntur ipsam voluptates. Delectus dolor pariatur perferendis temporibus tempora ipsum ea optio nihil, officiis sit alias velit ducimus!</p>
+    </section>
+<app-button text="Book a table"
+buttonClass="dark" (click)="onBookTableClick()"></app-button>
+</div>
 
-Family Gathering
-We love catering for entire families. So please bring everyone along for a special meal with your 
-loved ones. We’ll provide a memorable experience for all.
 
-Special Events
-Whether it’s a romantic dinner or special date you’re celebrating with others we’ll look after you. 
-We’ll be sure to mark your special date with an unforgettable meal.
-
-Social Events
-Are you looking to have a larger social event? No problem! We’re more than happy to cater for big 
-parties. We’ll work with you to make your event a hit with everyone.
-
-Book a table

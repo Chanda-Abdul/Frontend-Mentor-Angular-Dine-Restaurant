@@ -56,7 +56,14 @@ h6 {
   text-transform: uppercase;
 }
 
-p {
+.prime {
+  font-family: "League Spartan", sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+.second {
   font-family: "League Spartan", sans-serif;
   font-size: 16px;
   line-height: 26px;

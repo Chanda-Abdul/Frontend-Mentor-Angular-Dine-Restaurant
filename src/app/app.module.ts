@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -15,6 +17,7 @@ import { EventSliderComponent } from './components/event-slider/event-slider.com
 import { ButtonComponent } from './components/button/button.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RezzoFormComponent } from './components/rezzo-form/rezzo-form.component';
+import { MenuPreviewComponent } from './components/menu-preview/menu-preview.component';
 
 
 const appRoutes: Routes = [
@@ -23,18 +26,19 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    HeroComponent, 
-    ButtonComponent, 
-    BookingComponent, 
-    EventSliderComponent, 
-    HomeComponent, 
-    FooterComponent, HeaderComponent, RezzoFormComponent],
+    AppComponent,
+    HeroComponent,
+    ButtonComponent,
+    BookingComponent,
+    EventSliderComponent,
+    HomeComponent,
+    FooterComponent, HeaderComponent, RezzoFormComponent, MenuPreviewComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }), 
-    FontAwesomeModule, 
-    HttpClientModule, 
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    HttpClientModule,
     FormsModule],
   providers: [],
   bootstrap: [AppComponent]
