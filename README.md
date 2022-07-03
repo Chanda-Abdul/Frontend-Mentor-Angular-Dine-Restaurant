@@ -102,6 +102,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 - [Managing Image Breakpoints With Angular](https://www.smashingmagazine.com/2019/02/image-breakpoints-angular/) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Reactive forms in Angular](https://angular.io/guide/reactive-forms) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Display a selection list](https://angular.io/tutorial/toh-pt2#display-a-selection-list) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Angular 13 Select Dropdown with Reactive Forms Examples](https://www.positronx.io/angular-select-dropdown-with-reactive-forms-examples/) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 

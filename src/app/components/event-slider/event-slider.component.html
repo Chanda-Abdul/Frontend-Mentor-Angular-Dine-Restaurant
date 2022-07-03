@@ -1,16 +1,29 @@
 <div class="event-list">
     <section class="events">
+        <picture  *ngIf="selectedEvent">
+            <source media="(min-width: 1440px)"
+                    srcset="{{selectedEvent.desktopImage}}">
+            <source media="(min-width: 900px)"
+                    srcset="{{selectedEvent.tabletImage}}">
+            <source media="(min-width: 600px)"
+                    srcset="{{selectedEvent.mobileImage}}">
+            <img src="{{selectedEvent.mobileImage}}" />
+        </picture>
         <ul class="event-select">
             <li class="event-item"
-            *ngFor="let event of events">{{event.title}}</li>
+                *ngFor="let event of events"><a (mouseover)="event === selectedEvent"  (mouseout)="event !== selectedEvent"
+                        type="button"
+                        [ngClass]="{'selected' : event === selectedEvent}"
+                        (click)="onSelect(event)">{{event.title}}</a></li>
+                        
         </ul>
     </section>
-    <section class="event-highlight">
-        <h3>selected event</h3>
-        <p class="second">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod sint expedita nostrum consequuntur ipsam voluptates. Delectus dolor pariatur perferendis temporibus tempora ipsum ea optio nihil, officiis sit alias velit ducimus!</p>
+    <section class="event-highlight"
+             *ngIf="selectedEvent">
+        <h3>{{selectedEvent.title}}</h3>
+        <p class="secondary">{{selectedEvent.description}}</p>
     </section>
-<app-button text="Book a table"
-buttonClass="dark" (click)="onBookTableClick()"></app-button>
+    <app-button text="Book a table"
+                buttonClass="light"
+                (click)="onBookTableClick()"></app-button>
 </div>
-
-

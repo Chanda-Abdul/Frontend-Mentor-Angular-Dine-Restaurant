@@ -10,16 +10,32 @@ button.btn {
 
 .dark {
     border: 1px solid white;
-    background-color: var(--cod-gray);
+    background: transparent;
     color: white;
 
-    &:hover {}
+    &:hover {
+        border: none;
+        background-color: white;
+        color: var(--cod-gray);
+    }
 
-    .inactive {}
+    .inactive {
+        opacity: 25%;
+    }
 }
 
 .light {
-    &:hover {}
+    border: none;
+        background-color: var(--cod-gray);
+        color: white;
 
-    .inactive {}
+    &:hover {
+      border: 1px solid var(--cod-gray);
+    background: transparent;
+    color: var(--cod-gray);  
+    }
+
+    .inactive {
+        opacity: 25%;
+    }
 }

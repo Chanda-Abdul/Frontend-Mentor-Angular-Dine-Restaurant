@@ -10,7 +10,33 @@ button.btn {
 
 .dark {
   border: 1px solid white;
+  background: transparent;
+  color: white;
+}
+
+.dark:hover {
+  border: none;
+  background-color: white;
+  color: var(--cod-gray);
+}
+
+.dark .inactive {
+  opacity: 25%;
+}
+
+.light {
+  border: none;
   background-color: var(--cod-gray);
   color: white;
+}
+
+.light:hover {
+  border: 1px solid var(--cod-gray);
+  background: transparent;
+  color: var(--cod-gray);
+}
+
+.light .inactive {
+  opacity: 25%;
 }
 /*# sourceMappingURL=button.component.css.map */

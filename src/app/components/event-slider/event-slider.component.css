@@ -1,1 +1,68 @@
-/* No CSS *//*# sourceMappingURL=event-slider.component.css.map */
+.event-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 25px;
+  text-align: center;
+}
+
+ul {
+  padding-top: 25px;
+  list-style: none;
+}
+
+li {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 2.5px;
+  padding: 10px;
+  letter-spacing: 2.5px;
+  color: var(--shuttle-gray);
+  opacity: .75;
+}
+
+.selected {
+  color: var(--ebony-clay);
+  padding: 5px;
+  border-bottom: 2px solid var(--beaver);
+  position: relative;
+  background: transparent;
+}
+
+h3 {
+  width: 250px;
+  margin: 15px auto;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.4px;
+  color: var(--ebony-clay);
+}
+
+p {
+  width: 327px;
+  margin: 15px auto;
+  color: var(--cod-gray);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0px;
+}
+
+img {
+  margin: 25px;
+  -webkit-box-shadow: 0px 75px 100px -50px var(--ebony-clay);
+          box-shadow: 0px 75px 100px -50px var(--ebony-clay);
+}
+/*# sourceMappingURL=event-slider.component.css.map */

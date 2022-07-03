@@ -1,0 +1,45 @@
+.content {
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+  height: 525px;
+}
+
+form {
+  position: absolute;
+  top: -150px;
+  background-color: white;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 90vw;
+  height: 585px;
+  padding: 30px;
+  -webkit-box-shadow: 0px 75px 100px -50px var(--ebony-clay);
+          box-shadow: 0px 75px 100px -50px var(--ebony-clay);
+}
+
+form input {
+  margin: 5px 10px;
+  padding: 10px;
+}
+
+form .prime-input {
+  width: 100%;
+}
+
+form .sub-input {
+  max-width: 25%;
+}
+/*# sourceMappingURL=rezzo-form.component.css.map */

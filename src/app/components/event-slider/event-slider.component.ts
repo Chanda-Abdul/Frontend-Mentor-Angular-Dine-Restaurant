@@ -10,7 +10,8 @@ export interface EventItem {
   title: string;
   description: string;
   mobileImage: string;
-  tabletDesktopImage: string;
+  tabletImage: string;
+  desktopImage: string;
 }
 @Component({
   selector: 'app-event-slider',
@@ -19,6 +20,7 @@ export interface EventItem {
 })
 export class EventSliderComponent implements OnInit {
   events: EventItem[] = EVENTS;
+  selectedEvent?: EventItem = this.events[0];
   @Output() bookTableClick = new EventEmitter();
 
 
@@ -27,6 +29,9 @@ export class EventSliderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSelect(events: EventItem): void {
+    this.selectedEvent = events;
+  }
 
   onBookTableClick() {
     this.bookTableClick.emit()

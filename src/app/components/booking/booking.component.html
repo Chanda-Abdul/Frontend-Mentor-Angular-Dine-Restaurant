@@ -1,12 +1,22 @@
 <div class="content">
-    <h1>dine</h1>
+    <picture>
+        <source media="(min-width: 1440px)"
+                srcset="../../../assets/images/booking/hero-bg-desktop.jpg">
+        <source media="(min-width: 900px)"
+                srcset="../../../assets/images/booking/hero-bg-tablet.jpg">
+        <source media="(min-width: 600px)"
+                srcset="../../../assets/images/booking/hero-bg-mobile.jpg">
+        <img src="../../../assets/images/booking/hero-bg-mobile.jpg" />
+    </picture>
     <section>
-        <h3>Reservations</h3>
-        <p class="second">We can’t wait to host you. If you have any special requirements please feel free to
+        <h1>dine</h1>
+        <h2>Reservations</h2>
+        <p>We can’t wait to host you. If you have any special requirements please feel free to
             call on the phone number below. We’ll be happy to accommodate you.</p>
         <app-button text="Reserve Place"
-                    buttonClass="light"
+                    buttonClass="dark"
                     (click)="onReserveClick()"></app-button>
     </section>
-    <app-rezzo-form></app-rezzo-form>
+    
 </div>
+<app-rezzo-form></app-rezzo-form>

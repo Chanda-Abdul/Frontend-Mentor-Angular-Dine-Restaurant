@@ -8,7 +8,7 @@ img {
     size: 100%;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400;600;700&display=swap");
 
 :root {
     /* Primary Colors */
@@ -26,7 +26,7 @@ img {
     font-size: 80px;
     line-height: 80px;
     font-weight: 300;
-    letter-spacing: -1;
+    letter-spacing: -1px;
 }
 
 @mixin heading-l {
@@ -34,7 +34,7 @@ img {
     font-size: 48px;
     line-height: 48px;
     font-weight: 700;
-    letter-spacing: -0.5;
+    letter-spacing: -0.5px;
 }
 
 @mixin heading-m {
@@ -42,7 +42,7 @@ img {
     font-size: 20px;
     line-height: 24px;
     font-weight: 700;
-    letter-spacing: -0.25;
+    letter-spacing: -0.25px;
 }
 
 @mixin heading-s {
@@ -50,7 +50,7 @@ img {
     font-size: 17px;
     line-height: 28px;
     font-weight: 600;
-    letter-spacing: 2.5;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
 }
 
@@ -78,6 +78,7 @@ h1 {
 
 h3 {
     @include heading-m();
+    color: var(--ebony-clay)
 }
 
 h4,
@@ -87,15 +88,22 @@ h6 {
 }
 
 
-.prime {
+.primary {
     @include body-primary();
+    text-align: center;
 }
 
-.second {
+p {
     @include body-secondary();
+    text-align: center;
+    color: var(--shuttle-gray)
 }
 
-
+li{
+    @include body-secondary();
+    text-transform: uppercase;
+    font-weight: 300;
+}
 
 button {
     @include heading-s();

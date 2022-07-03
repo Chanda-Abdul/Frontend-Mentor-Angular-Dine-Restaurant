@@ -1,7 +1,9 @@
 <div class="menu">
-    <section class="">
+    <img src="../../../assets/images/patterns/pattern-divide.svg" alt="divide" class="divide">
+       
+    <section>
     <h3>A few highlights from our menu</h3>
-    <p class="second">
+    <p>
         We cater for all dietary requirements, but here’s a glimpse at some of our diner’s favourites.
         Our menu is revamped every season.
     </p>
@@ -10,10 +12,16 @@
     <div class="menu-item"
     *ngFor="let item of menu"
     >
-    <!-- <img [src]="{{item.mobileImage}}" alt=""> -->
-    <h3>{{ item.title }}</h3>
-    <p class="second">{{ item.description }}</p>
-</div>
+    <picture class="menu-photo">
+        <source media="(min-width: 900px)"
+                srcset="{{item.tabletDesktopImage}}">
+        <source media="(min-width: 600px)"
+                srcset="{{item.mobileImage}}">
+        <img src="{{item.mobileImage}}" />
+    </picture>
+    <h3 class="menu-title">{{ item.title }}</h3>
+    <p>{{ item.description }}</p>
+   <div class="divider"></div> </div>
 </section>
 </div>
 

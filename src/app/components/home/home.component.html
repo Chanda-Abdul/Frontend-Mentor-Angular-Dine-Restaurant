@@ -1,35 +1,65 @@
+<app-header></app-header>
 <div class="content">
-    <app-header></app-header>
-    <section class="">
-        <h3>Enjoyable place for all the family</h3>
-        <p class="second">
-            Our relaxed surroundings make dining with us a great experience for everyone. We can even
-            arrange
-            a tour of the farm before your meal.
-        </p>
-    </section>
-    <section class="">
-        <h3>The most locally sourced food</h3>
-        <p class="second">
-            All our ingredients come directly from our farm or local fishery. So you can be sure that you’re
-            eating the freshest, most sustainable food.
-        </p>
-    </section>
-    <section class="">
-        <h3></h3>
-        <p class="second">
+    <div class="enjoy">
+        <section class="">
+            <picture class="hero-image">
+                <source media="(min-width: 1440px)"
+                        srcset="../../../assets/images/homepage/enjoyable-place-desktop.jpg">
+                <source media="(min-width: 900px)"
+                        srcset="../../../assets/images/homepage/enjoyable-place-tablet.jpg">
+                <source media="(min-width: 600px)"
+                        srcset="../../../assets/images/homepage/enjoyable-place-mobile.jpg">
+                <img src="../../../assets/images/homepage/enjoyable-place-mobile.jpg" />
+            </picture>
+            <img src="../../../assets/images/patterns/pattern-divide.svg"
+                 alt="">
+            <h3>Enjoyable place for all the family</h3>
+            <p class="secondary">
+                Our relaxed surroundings make dining with us a great experience for everyone. We can even
+                arrange
+                a tour of the farm before your meal.
+            </p>
+        </section>
+        </div>
+        <section class="local">
+            <picture>
+                <source media="(min-width: 1440px)"
+                        srcset="../../../assets/images/homepage/locally-sourced-mobile.jpg">
+                <source media="(min-width: 900px)"
+                        srcset="../../../assets/images/homepage/locally-sourced-tablet.jpg">
+                <source media="(min-width: 600px)"
+                        srcset="../../../assets/images/homepage/locally-sourced-mobile.jpg">
+                <img src="../../../assets/images/homepage/locally-sourced-mobile.jpg" />
+            </picture>
+            <img src="../../../assets/images/patterns/pattern-divide.svg"
+                 alt="">
 
-        </p>
-    </section>
-    <app-menu-preview></app-menu-preview>
+            <h3>The most locally sourced food</h3>
+            <p class="secondary">
+                All our ingredients come directly from our farm or local fishery. So you can be sure that you’re
+                eating the freshest, most sustainable food.
+            </p>
+        </section>
+        <app-menu-preview></app-menu-preview>
 
-    <app-event-slider></app-event-slider>
-    <section class="cta">
-        <h3>Ready to make a reservation?</h3>
-        <app-button text="Book a table"
-                    (click)="onBookTableClick()"
-                    buttonClass="light"></app-button>
-    </section>
+        <app-event-slider></app-event-slider>
+        <section class="cta">
+            <picture>
+                <source media="(min-width: 1440px)"
+                        srcset="../../../assets/images/homepage/ready-bg-desktop.jpg">
+                <source media="(min-width: 900px)"
+                        srcset="../../../assets/images/homepage/ready-bg-tablet.jpg">
+                <source media="(min-width: 600px)"
+                        srcset="../../../assets/images/homepage/ready-bg-mobile.jpg">
+                <img src="../../../assets/images/homepage/ready-bg-mobile.jpg" />
+            </picture>
+            <div class="action">
+                <h3>Ready to make a reservation?</h3>
+                <app-button text="Book a table"
+                            (click)="onBookTableClick()"
+                            buttonClass="dark"></app-button>
 
-
-</div>
+            </div>
+        </section>
+  
+</div>    
