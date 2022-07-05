@@ -39,6 +39,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FontAwesomeModule,
     HttpClientModule,
+    
     FormsModule],
   providers: [],
   bootstrap: [AppComponent]

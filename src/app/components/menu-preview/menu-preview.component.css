@@ -1,26 +1,25 @@
 * {
-  background-color: var(--cod-gray);
   color: white;
   text-align: center;
 }
 
 .menu {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  text-align: center;
   margin: 50px 0;
   padding: 50px 25px;
+  background-color: var(--cod-gray);
+  width: 100vw;
+}
+
+.highlights {
+  width: 327px;
+}
+
+.highlights h3 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.4px;
 }
 
 .divide {
@@ -68,5 +67,68 @@ p {
   font-weight: 400;
   line-height: 26px;
   letter-spacing: 0px;
+}
+
+@media (max-width: 600px) {
+  * {
+    width: 100vw;
+  }
+  .divide {
+    width: 75px;
+  }
+  h3 {
+    font-size: 48px;
+    line-height: 48px;
+    letter-spacing: -0.5px;
+  }
+  .preview {
+    width: 200vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .menu-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100vw;
+  }
+  .menu-photo {
+    height: 96px;
+    width: 160px;
+  }
+  .menu-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 383px;
+  }
 }
 /*# sourceMappingURL=menu-preview.component.css.map */

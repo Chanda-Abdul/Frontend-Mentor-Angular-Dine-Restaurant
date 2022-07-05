@@ -38,6 +38,11 @@
   top: -100px;
 }
 
+.pattern {
+  position: absolute;
+  visibility: hidden;
+}
+
 .local {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -127,5 +132,56 @@ p {
   font-size: 2em;
   color: white;
   width: 250px;
+}
+
+@media (min-width: 600px) {
+  h3 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -0.5px;
+    width: 350px;
+  }
+  p {
+    width: 450px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+  .curve-right, .lines, .curve-left {
+    position: absolute;
+    visibility: visible;
+    z-index: -1;
+  }
+  .curve-right picture,
+  .curve-right img, .lines picture,
+  .lines img, .curve-left picture,
+  .curve-left img {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .curve-right {
+    height: 320px;
+    width: 895px;
+    right: 50vw;
+    top: 195px;
+  }
+  .lines {
+    height: 76px;
+    width: 160px;
+    right: 25px;
+    top: 1850px;
+    z-index: 1;
+  }
+  .curve-left {
+    height: 320px;
+    width: 895px;
+    left: 384px;
+    top: 2100px;
+    left: 50vw;
+  }
+  .divide {
+    width: 75px;
+  }
 }
 /*# sourceMappingURL=home.component.css.map */

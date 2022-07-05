@@ -23,3 +23,19 @@ header {
 .logo{
     font-weight: 600;
 }
+
+@media (min-width: 600px){
+    header {
+        
+        height: 992px;
+      
+    }
+    .intro {
+   
+        top: 372px;
+    }
+
+    .logo{
+        font-size: 56px;
+    }
+}

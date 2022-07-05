@@ -23,6 +23,11 @@
     }
 }
 
+.pattern {
+    position: absolute;
+    visibility: hidden;
+}
+
 .local {
     display: flex;
     flex-direction: column;
@@ -62,9 +67,10 @@ p {
     align-items: center;
     text-align: center;
     position: relative;
-    
+
     margin: 0;
     padding: 0;
+
     picture,
     img {
         box-shadow: none;
@@ -95,5 +101,65 @@ p {
         font-size: 2em;
         color: white;
         width: 250px;
+    }
+}
+
+@media (min-width: 600px) {
+    h3 {
+
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 48px;
+        letter-spacing: -0.5px;
+
+        width: 350px;
+    }
+
+    p {
+        width: 450px;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+
+    }
+    .curve-right, .lines, .curve-left {
+        position: absolute;
+        visibility: visible;
+        z-index: -1;
+
+        picture,
+        img {
+            box-shadow: none;
+        }
+    }
+    .curve-right {
+        height: 320px;
+        width: 895px;
+        right: 50vw;
+        top: 195px;
+    }
+
+    .lines {
+        height: 76px;
+        width: 160px;
+        right: 25px;
+        top: 1850px; 
+        z-index: 1;      
+    }
+
+    .curve-left {
+        height: 320px;
+        width: 895px;
+        left: 384px;
+        top: 2100px;
+        left: 50vw;
+  
+ 
+
+       
+    }
+
+    .divide {
+        width: 75px;
     }
 }

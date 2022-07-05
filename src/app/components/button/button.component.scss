@@ -39,3 +39,11 @@ button.btn {
         opacity: 25%;
     }
 }
+
+@media (min-width: 600px) {
+    button.btn {
+        width: 245px;
+        height: 64px;
+        margin: 50px;
+    }
+}

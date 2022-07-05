@@ -1,82 +1,113 @@
 <div class="content">
-    <form [formGroup]="rezzoForm">
-        <input id="name"
-               type="text"
-               formControlName="name"
-               placeholder="Name"
-               class="prime-input">
+       <div>
+       <form [formGroup]="rezzoForm">
+              <input id="name"
+                     type="text"
+                     formControlName="name"
+                     placeholder="Name"
+                     class="prime-input">
 
-        <input id="email"
-               type="text"
-               formControlName="email"
-               placeholder="Email"
-               class="prime-input">
-        <div formGroupName="date">
-            <h4>Pick a date</h4>
-            <input id="month"
-                   class="sub-input"
-                   type="text"
-                   formControlName="month"
-                   placeholder="MM">
-            <input id="day"
-                   class="sub-input"
-                   type="text"
-                   formControlName="day"
-                   placeholder="DD">
+              <input id="email"
+                     type="text"
+                     formControlName="email"
+                     placeholder="Email"
+                     class="prime-input">
+              <div formGroupName="date">
+                     <h4>Pick a date</h4>
+                     <input id="month"
+                            class="sub-input"
+                            type="text"
+                            formControlName="month"
+                            placeholder="MM">
+                     <input id="day"
+                            class="sub-input"
+                            type="text"
+                            formControlName="day"
+                            placeholder="DD">
 
-            <input id="year"
-                   class="sub-input"
-                   type="text"
-                   formControlName="year"
-                   placeholder="YYYY">
-
-
-        </div>
-        <div formGroupName="time">
-            <h4>Pick a time</h4>
+                     <input id="year"
+                            class="sub-input"
+                            type="text"
+                            formControlName="year"
+                            placeholder="YYYY">
 
 
-            <input id="hour"
-                   class="sub-input"
-                   type="text"
-                   formControlName="hour"
-                   placeholder="09">
+              </div>
+              <div formGroupName="time">
+                     <h4>Pick a time</h4>
 
-            <input id="minute"
-                   class="sub-input"
-                   type="text"
-                   formControlName="minute"
-                   placeholder="00">
 
-            
+                     <input id="hour"
+                            class="sub-input"
+                            type="text"
+                            formControlName="hour"
+                            placeholder="09">
 
-                   <select
-                   class="sub-input"
-                   formControlName="amOrPm"
-                   (change)="AmPm($event)"
-                 >
-                 <!--  -->
-                   <option value="" class="sub-input">AM</option>
-                   <option *ngFor="let ampm of AmPm" [ngValue]="ampm" class="sub-input">
-                     {{ ampm }}
-                   </option>
-                 </select>
-                 <!-- error block -->
-                 <div class="invalid-feedback" *ngIf="isSubmitted && amOrPm?.invalid">
-                   <sup>*</sup>Please choose AM or PM
-                 </div>
+                     <input id="minute"
+                            class="sub-input"
+                            type="text"
+                            formControlName="minute"
+                            placeholder="00">
 
-        </div>
-        <label for="guests">Guests: </label>
-        <input id="guests"
-               type="text"
-               formControlName="guests"
-               class="prime-input">
-        <app-button text="Make Reservation"
-                    (click)="onMakeReservationClick()"
-                    buttonClass="light">
-        </app-button>
 
-    </form>
 
+                     <select class="sub-input"
+                             formControlName="amOrPm"
+                             (change)="changeAmPm($event)">
+                            <!--  -->
+                            <option value="AM"
+                                    class="sub-input">AM</option>
+                            <option *ngFor="let ampm of AmPm"
+                                    [ngValue]="ampm"
+                                    class="sub-input">
+                                   {{ ampm }}
+                            </option>
+                     </select>
+                     <!-- error block -->
+                     <div class="invalid-feedback"
+                          *ngIf="isSubmitted && amOrPm?.invalid">
+                            <sup>*</sup>Please choose AM or PM
+                     </div>
+
+
+              </div>
+                     <div class="input-group">
+                            <span class="input-group-btn"
+                                  class="btn btn-danger btn-number"
+                                  (click)="guest = guest - 1"
+                                  data-type="minus"
+                                  data-field="quant[2]">
+                                   <img src="../../../assets/images/icons/icon-minus.svg">
+
+                            </span>
+
+                            <input formControlName="guests"
+                                   type="text"
+                                   name="quant[2]"
+                                   class="form-control input-number"
+                                   [(ngModel)]="guest"
+                                   (keydown)="decrementguest()"
+                                   (keyup)="incrementguest()"
+       
+                                   value="{{guest}}">Guests
+
+                            <span class="input-group-btn"
+                                  (click)="guest = guest + 1"
+                                  data-type="plus"
+                                  data-field="quant[2]">
+                                   <img src="../../../assets/images/icons/icon-plus.svg">
+                            </span>
+                     </div>
+           
+ <app-button text="Make Reservation"
+                   (click)="onMakeReservationClick()"
+                   buttonClass="light">
+       </app-button>
+
+
+
+
+       </form>
+</div>
+      
 </div>

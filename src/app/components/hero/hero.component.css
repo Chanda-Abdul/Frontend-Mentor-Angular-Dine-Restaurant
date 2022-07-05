@@ -32,4 +32,23 @@ p {
   text-align: center;
   color: white;
 }
+
+@media (min-width: 600px) {
+  h2 {
+    height: 128px;
+    width: 400px;
+    font-size: 48px;
+    line-height: 64px;
+    letter-spacing: -0.6px;
+  }
+  p {
+    margin: 50px;
+    padding: 25px;
+    height: 60px;
+    width: 473px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+}
 /*# sourceMappingURL=hero.component.css.map */
