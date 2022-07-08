@@ -26,11 +26,11 @@ This is a solution to the [Dine Website Challenge challenge on Frontend Mentor](
 Users should be able to:
 
 - [ ] View the optimal layout for each page depending on their device's screen size
-    - [ ] Mobile
-    - [ ] Tablet
-    - [ ] Desktop
+    - [x] Mobile, < 600px
+    - [x] Tablet, 600px+
+    - [ ] Desktop, 800px+
 - [ ] See hover states for all interactive elements throughout the site
-- [ ] See the correct content for the Family Gatherings, Special Events, and Social Events section when the user clicks each tab
+- [x] See the correct content for the Family Gatherings, Special Events, and Social Events section when the user clicks each tab
 - [ ] Receive an error message when the booking form is submitted if:
   - [ ] The `Name` or `Email Address` fields are empty should show "This field is required"
   - [ ] The `Email Address` is not formatted correctly should show "Please use a valid email address"
@@ -50,27 +50,25 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Github Solution](https://github.com/Chanda-Abdul/Frontend-Mentor-Angular-Dine-Restaurant-Website-Challenge)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- <b>[Angular](https://angular.io/)</b> - <b>JavaScripot</b> framework
+- Semantic <b>HTML5</b> markup
+- <b>Sass/CSS</b> custom properties
+  - <b>Flexbox</b>
+- <b>Mobile-first</b> workflow
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+<!-- Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge. -->
+- While building this project I learned more about <b>Figma</b>, apparently most of the <b>CSS</b> variables and styles may be available in your <b>Figma</b> file, which saves SO much time. Who knew?
+- This is also one of my first "real" projects using <b>Angular</b>, overall everything went very smoothly, and <b>Angular</b> is easy to work with.  I think I prefer <b>Angular</b>over <b>React</b>, because it seems much more intuitive and organized to me.
 
 To see how you can add code snippets, see below:
 
@@ -94,7 +92,15 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+- [ ] Add animations
+- [ ] Add an authentication option, where a manager/admin can login with a password and
+  - [ ] view/edit menu options
+  - [ ] view/edit menu event options
+  - [ ] view/edit menu reservations
+- [ ] add about chef/restaraunt section/page
+- [ ] add menu component
+- [ ] add event booking component
+
 
 **Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
@@ -105,15 +111,12 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Display a selection list](https://angular.io/tutorial/toh-pt2#display-a-selection-list) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Angular 13 Select Dropdown with Reactive Forms Examples](https://www.positronx.io/angular-select-dropdown-with-reactive-forms-examples/) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@Chanda-Abdul](https://www.frontendmentor.io/profile/Chanda-Abdul)
+- Website - [Chanda Codes](https://chandacodes.com/)
+- GitHub - [github.com/Chanda-Abdul](https://github.com/Chanda-Abdul)
 
 ## Acknowledgments
 
