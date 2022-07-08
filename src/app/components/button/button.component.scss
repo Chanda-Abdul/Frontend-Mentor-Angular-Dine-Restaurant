@@ -26,13 +26,13 @@ button.btn {
 
 .light {
     border: none;
-        background-color: var(--cod-gray);
-        color: white;
+    background-color: var(--cod-gray);
+    color: white;
 
     &:hover {
-      border: 1px solid var(--cod-gray);
-    background: transparent;
-    color: var(--cod-gray);  
+        border: 1px solid var(--cod-gray);
+        background: transparent;
+        color: var(--cod-gray);
     }
 
     .inactive {
@@ -46,4 +46,19 @@ button.btn {
         height: 64px;
         margin: 50px;
     }
+
+    // .booking-btn {
+    //     width: 444px;
+    //     height: 64px;
+    //     margin: 50px;
+
+    // }
+
+    //     .booking-btn  {
+    // button{
+    //      width: 444px;
+    // }
+
+
+    //     }
 }

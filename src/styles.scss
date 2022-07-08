@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+   
 }
 
 img {
@@ -96,7 +97,8 @@ h6 {
 p {
     @include body-secondary();
     text-align: center;
-    color: var(--shuttle-gray)
+    color: var(--shuttle-gray);
+    // max-width: 90%;
 }
 
 li{

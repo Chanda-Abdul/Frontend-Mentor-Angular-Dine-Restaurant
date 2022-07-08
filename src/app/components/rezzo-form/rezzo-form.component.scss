@@ -1,9 +1,11 @@
 .content {
-    margin: 10px;
+    display: flex;
+    // margin: auto 10px ;
     padding: 10px;
     position: relative;
     height: 525px;
-    text-align: left;
+    align-items: center;
+    justify-content: center;
 }
 
 form {
@@ -28,7 +30,8 @@ form {
     box-shadow: 0px 75px 100px -50px var(--ebony-clay);
 
 
-    input, select {
+    input,
+    select {
 
         margin: 5px 10px;
         padding: 10px;
@@ -44,21 +47,102 @@ form {
         border-radius: 0px;
     }
 
-    .sub-input, select {
+    .sub-input,
+    select {
         height: 43px;
         width: 75px;
     }
 
-    h4{
+    h4 {
         margin: 0 15px;
-        padding:  15px 0;
+        padding: 15px 0;
         width: 263px;
     }
-    .time, .date{
+
+    .time,
+    .date {
         width: 300px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
+}
+
+@media (min-width: 600px) {
+    .content {
+
+        height: 435px;
+
+    }
+
+    form {
+        height: 545px;
+        width: 540px;
+        left: 114px;
+        top: 370px;
+
+
+
+        top: -150px;
+
+        text-align: left;
+
+
+
+        input,
+        select {
+
+            margin: 5px 10px;
+            padding: 10px;
+            border: 1px solid var(--ebony-clay);
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        .prime-input {
+            height: 43px;
+            width: 444px;
+
+
+        }
+
+        .sub-input,
+        select {
+            height: 43px;
+            width: 75px;
+            height: 43px;
+            width: 80px;
+
+        }
+
+        h4 {
+
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+            letter-spacing: 0px;
+            text-align: left;
+            height: 28px;
+            width: 90px;
+            left: 0px;
+            top: 9px;
+            text-transform: none;
+
+
+
+        }
+
+        .group {
+            display: flex;
+            flex-direction: row;
+            width: 444px;
+            margin: 0;
+            padding: 0;
+        }
+
+
+    }
+
 }

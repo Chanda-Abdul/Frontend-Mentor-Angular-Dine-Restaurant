@@ -12,59 +12,55 @@
                 <img src="../../../assets/images/homepage/enjoyable-place-mobile.jpg" />
             </picture>
             <picture class="curve-right pattern">
-                <source media="(min-width: 600px)"
-                        srcset="../../../assets/images/patterns/pattern-curve-top-right.svg">
-                        <img src="../../../assets/images/patterns/pattern-curve-top-right.svg" />
-          
-                    </picture>
-            
-               
+                <!-- <source srcset="../../../assets/images/patterns/pattern-curve-top-right.svg"> -->
+                <img src="../../../assets/images/patterns/pattern-curve-top-right.svg" />
+
+            </picture>
             <img src="../../../assets/images/patterns/pattern-divide.svg"
-            class="divide">
+                 class="divide">
             <h3>Enjoyable place for all the family</h3>
-            <p >
+            <p>
                 Our relaxed surroundings make dining with us a great experience for everyone. We can even
                 arrange
                 a tour of the farm before your meal.
             </p>
         </section>
-        </div>
-        <section class="local">
-            <picture>
-                <!-- <source media="(min-width: 1440px)"
-                        srcset="../../../assets/images/homepage/locally-sourced-mobile.jpg"> -->
-                <source media="(min-width: 900px)"
-                        srcset="../../../assets/images/homepage/locally-sourced-desktop.jpg">
-                <source media="(min-width: 600px)"
-                        srcset="../../../assets/images/homepage/locally-sourced-tablet.jpg">
-                <img src="../../../assets/images/homepage/locally-sourced-mobile.jpg" />
-            </picture>
-            <picture class="lines pattern">
-                <source media="(min-width: 600px)"
-                        srcset="../../../assets/images/patterns/pattern-lines.svg">
-                        <img src="../../../assets/images/patterns/pattern-lines.svg" />
-          
-                    </picture>
-            <img src="../../../assets/images/patterns/pattern-divide.svg"
-            class="divide" >
-            <picture class="curve-left pattern">
-                <source media="(min-width: 600px)"
-                        srcset="../../../assets/images/patterns/pattern-curve-top-left.svg">
-                        <img src="../../../assets/images/patterns/pattern-curve-top-left.svg" />
-          
-                    </picture>
+    </div>
+    <section class="local">
+        <picture>
 
-            <h3>The most locally sourced food</h3>
-            <p>
-                All our ingredients come directly from our farm or local fishery. So you can be sure that you’re
-                eating the freshest, most sustainable food.
-            </p>
-        </section>
-        <app-menu-preview></app-menu-preview>
+            <source media="(min-width: 900px)"
+                    srcset="../../../assets/images/homepage/locally-sourced-desktop.jpg">
+            <source media="(min-width: 600px)"
+                    srcset="../../../assets/images/homepage/locally-sourced-tablet.jpg">
+            <img src="../../../assets/images/homepage/locally-sourced-mobile.jpg" />
+        </picture>
+        <picture class="lines pattern">
+            <!-- <source media="(min-width: 600px)"
+                    srcset="../../../assets/images/patterns/pattern-lines.svg"> -->
+            <img src="../../../assets/images/patterns/pattern-lines.svg" />
 
-        <app-event-slider></app-event-slider>
-        <section class="cta">
-            <picture>
+        </picture>
+        <img src="../../../assets/images/patterns/pattern-divide.svg"
+             class="divide">
+        <picture class="curve-left pattern">
+            <!-- <source
+                    srcset="../../../assets/images/patterns/pattern-curve-top-left.svg"> -->
+            <img src="../../../assets/images/patterns/pattern-curve-top-left.svg" />
+
+        </picture>
+
+        <h3>The most locally sourced food</h3>
+        <p>
+            All our ingredients come directly from our farm or local fishery. So you can be sure that you’re
+            eating the freshest, most sustainable food.
+        </p>
+    </section>
+    <app-menu-preview></app-menu-preview>
+
+    <app-event-slider></app-event-slider>
+    <section class="cta">
+ <picture>
                 <!-- <source media="(min-width: 1440px)"
                         srcset="../../../assets/images/homepage/ready-bg-desktop.jpg"> -->
                 <source media="(min-width: 900px)"
@@ -73,13 +69,14 @@
                         srcset="../../../assets/images/homepage/ready-bg-tablet.jpg">
                 <img src="../../../assets/images/homepage/ready-bg-mobile.jpg" />
             </picture>
-            <div class="action">
-                <h3>Ready to make a reservation?</h3>
-                <app-button text="Book a table"
-                            (click)="onBookTableClick()"
-                            buttonClass="dark"></app-button>
+        <div class="action">
+           
+            <h3>Ready to make a reservation?</h3>
+            <app-button text="Book a table"
+                        (click)="onBookTableClick()"
+                        buttonClass="dark"></app-button>
 
-            </div>
-        </section>
-  
-</div>    
+        </div>
+    </section>
+
+</div>

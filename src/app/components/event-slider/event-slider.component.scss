@@ -5,16 +5,20 @@
     justify-content: space-between;
     padding: 25px;
     text-align: center;
+    position: relative;
+}
+
+.pattern {
+    position: absolute;
+    visibility: hidden;
 }
 
 ul {
     padding-top: 25px;
     list-style: none;
-
 }
 
 li {
-
     font-size: 17px;
     font-weight: 600;
     line-height: 28px;
@@ -30,7 +34,6 @@ li {
     padding: 5px;
     border-bottom: 2px solid var(--beaver);
     position: relative;
-
     background: transparent;
 }
 
@@ -42,13 +45,12 @@ h3 {
     line-height: 40px;
     letter-spacing: -0.4px;
     color: var(--ebony-clay);
-
 }
 
 p {
     width: 327px;
     margin: 15px auto;
-    color: var(--cod-gray);
+    color: var(--ebony-clay);
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
@@ -59,4 +61,55 @@ img {
     margin: 25px;
     box-shadow: 0px 75px 100px -50px var(--ebony-clay);
 
+}
+
+@media (min-width: 600px) {
+    .lines,
+    .curve-right {
+        position: absolute;
+        visibility: visible;
+        z-index: -1;
+
+
+        picture,
+        img {
+            box-shadow: none;
+        }
+    }
+
+    .lines {
+        height: 76px;
+        width: 160px;
+        left: 2vw;
+        top: -1.75vh;
+        z-index: 1;
+    }
+
+    .curve-right {
+        height: 320px;
+        width: 895px;
+        right: 378px;
+        top: -11vh;
+        opacity: 0.8;
+        overflow: hidden;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 689px;
+        padding: 25px;
+    }
+
+    p {
+        height: 90px;
+        width: 457px;
+        margin: 15px auto;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .event-list{
+        padding-bottom: 50px;
+    }
 }

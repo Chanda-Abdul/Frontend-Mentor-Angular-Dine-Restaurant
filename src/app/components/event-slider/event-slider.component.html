@@ -1,21 +1,35 @@
 <div class="event-list">
     <section class="events">
-        <picture  *ngIf="selectedEvent">
+        <picture class="lines pattern">
+            <source
+                    srcset="../../../assets/images/patterns/pattern-lines.svg">
+            <img src="../../../assets/images/patterns/pattern-lines.svg" />
+
+        </picture>
+
+        <picture class="curve-right pattern">
+            <source 
+                    srcset="../../../assets/images/patterns/pattern-curve-top-right.svg">
+                    <img src="../../../assets/images/patterns/pattern-curve-top-right.svg" />
+      
+                </picture>
+        <picture *ngIf="selectedEvent">
             <source media="(min-width: 1440px)"
                     srcset="{{selectedEvent.desktopImage}}">
             <source media="(min-width: 900px)"
-                    srcset="{{selectedEvent.tabletImage}}">
+                    srcset="{{selectedEvent.desktopImage}}">
             <source media="(min-width: 600px)"
-                    srcset="{{selectedEvent.mobileImage}}">
+                    srcset="{{selectedEvent.tabletImage}}">
             <img src="{{selectedEvent.mobileImage}}" />
         </picture>
         <ul class="event-select">
             <li class="event-item"
-                *ngFor="let event of events"><a (mouseover)="event === selectedEvent"  (mouseout)="event !== selectedEvent"
-                        type="button"
-                        [ngClass]="{'selected' : event === selectedEvent}"
-                        (click)="onSelect(event)">{{event.title}}</a></li>
-                        
+                *ngFor="let event of events"><a (mouseover)="event === selectedEvent"
+                   (mouseout)="event !== selectedEvent"
+                   type="button"
+                   [ngClass]="{'selected' : event === selectedEvent}"
+                   (click)="onSelect(event)">{{event.title}}</a></li>
+
         </ul>
     </section>
     <section class="event-highlight"

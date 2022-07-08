@@ -1,9 +1,9 @@
 <div class="menu">
-   
 
-    <section class="highlights"> 
+
+    <section class="highlights">
         <img src="../../../assets/images/patterns/pattern-divide.svg"
-         class="divide">
+             class="divide">
         <h3>A few highlights from our menu</h3>
         <p>
             We cater for all dietary requirements, but here’s a glimpse at some of our diner’s favourites.
@@ -11,21 +11,30 @@
         </p>
     </section>
     <section class="preview">
+        <!-- -->
         <div class="menu-item"
              *ngFor="let item of menu">
-            <picture class="menu-photo">
-                <source media="(min-width: 900px)"
-                        srcset="{{item.tabletDesktopImage}}">
-                <source media="(min-width: 600px)"
-                        srcset="{{item.tabletDesktopImage}}">
-                <img src="{{item.mobileImage}}" />
-            </picture>
-            <div class="menu-text">
-                <h3 class="menu-title">{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
-            </div>
+            <div class="content">
+                <div class="menu-photo">
+                    <picture>
+                        <source media="(min-width: 900px)"
+                                srcset="{{item.tabletDesktopImage}}">
+                        <source media="(min-width: 600px)"
+                                srcset="{{item.tabletDesktopImage}}">
+                        <img src="{{item.mobileImage}}" />
+                    </picture>
+                    <img src="../../../assets/images/patterns/pattern-divide.svg"
+                         class="item-divide">
+                </div>
 
+                <div class="menu-text">
+                    <h3 class="menu-title">{{ item.title }}</h3>
+                    <p>{{ item.description }}</p>
+                </div>
+            </div>
             <div class="divider"></div>
         </div>
+        <!-- -->
+
     </section>
 </div>

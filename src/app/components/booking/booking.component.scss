@@ -2,8 +2,8 @@ section {
     position: absolute;
     top: 75px;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    // height: 640px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,6 +15,7 @@ section {
     position: relative;
     text-align: center;
     height: 600px;
+    width: 100vw;
 }
 
 h2 {
@@ -38,4 +39,41 @@ p {
     letter-spacing: 0px;
     text-align: center;
 
+}
+
+@media (min-width: 600px) {
+    .content {
+        height: 1035px;
+    }
+
+    h1 {
+        text-align: left;
+        height: 40px;
+        width: 100vw;
+        margin: 0 auto 0 10vw;
+    }
+
+    h2 {
+        // text-align: center;
+        width: 689px;
+        // margin: 0 auto 0 10vw;
+
+        font-size: 48px;
+
+        line-height: 64px;
+        letter-spacing: -0.6px;
+
+
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .btn {
+        display: none;
+    }
+
+   
 }

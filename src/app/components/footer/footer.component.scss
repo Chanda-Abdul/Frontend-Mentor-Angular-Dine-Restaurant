@@ -3,7 +3,7 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 75px 25px 0px 25px;
+    padding: 50px 25px 0px 25px;
     height: 440px;
     background-color: var(--cod-gray);
     color: white;
@@ -15,7 +15,7 @@ h1 {
 }
 
 ul {
-    margin: 30px 5px;
+    margin: 20px 5px;
 }
 
 li {
@@ -31,4 +31,32 @@ li {
 .attribution {
     font-size: 0.75em;
     margin-bottom: 10px;
+}
+
+@media (min-width: 600px) {
+    .info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 328px;
+        width: 100vw;
+    }
+
+    h1 {
+        margin: 25px;
+        ;
+    }
+
+    .sub-info {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        width: 60vw;
+
+        * {
+            text-align: left;
+        }
+
+    }
+
 }
