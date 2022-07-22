@@ -1,16 +1,17 @@
 <header>
-    <picture>
-        <!-- <source media="(min-width: 1440px)"
-                srcset="../../../assets/images/homepage/hero-bg-desktop.jpg"> -->
-        <source media="(min-width: 900px)"
-                srcset="../../../assets/images/homepage/hero-bg-desktop.jpg">
-        <source media="(min-width: 600px)"
-                srcset="../../../assets/images/homepage/hero-bg-tablet.jpg">
-        <img src="../../../assets/images/homepage/hero-bg-mobile.jpg" />
-    </picture>
-  
+
+        <picture>
+                <source media="(min-width: 900px)"
+                        srcset="../../../assets/images/homepage/hero-bg-desktop.jpg">
+                <source media="(min-width: 600px)"
+                        srcset="../../../assets/images/homepage/hero-bg-tablet.jpg">
+                <img src="../../../assets/images/homepage/hero-bg-mobile.jpg" />
+        </picture>
 </header>
-<div class="intro">  
-    <h1 class="logo">dine</h1>
-    <app-hero></app-hero>
+<div class="intro"
+     fxLayout="column"
+     fxLayoutAlign="center center"
+ >
+        <h1 class="logo">dine</h1>
+        <app-hero></app-hero>
 </div>

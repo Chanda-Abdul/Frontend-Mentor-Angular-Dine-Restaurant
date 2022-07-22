@@ -1,4 +1,4 @@
-<div class="menu">
+<div class="menu" fxLayout="column" fxLayoutAlign="center center">
 
 
     <section class="highlights">
@@ -11,11 +11,11 @@
         </p>
     </section>
     <section class="preview">
-        <!-- -->
+      
         <div class="menu-item"
              *ngFor="let item of menu">
             <div class="content">
-                <div class="menu-photo">
+                <div class="menu-photo" fxLayout="column" >
                     <picture>
                         <source media="(min-width: 900px)"
                                 srcset="{{item.tabletDesktopImage}}">

@@ -4,7 +4,6 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 50px 25px 0px 25px;
-
     background-color: var(--cod-gray);
     color: white;
     text-align: center;
@@ -26,6 +25,11 @@ li {
     letter-spacing: 2px;
     text-align: center;
 
+}
+
+a,
+a:visited {
+    color: white;
 }
 
 .attribution {
@@ -50,6 +54,32 @@ li {
     .sub-info {
         display: flex;
         flex-direction: column;
+        margin-top: 0;
+        width: 60vw;
+
+        * {
+            text-align: left;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 28px;
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .info {
+        justify-content: space-evenly;
+        height: 240px;
+        align-items: baseline;
+    }
+
+    h1 {
+        font-size: 80px;
+    }
+
+    .sub-info {
+        justify-content: space-around;
+        flex-direction: row;
         margin-top: 0;
         width: 60vw;
 

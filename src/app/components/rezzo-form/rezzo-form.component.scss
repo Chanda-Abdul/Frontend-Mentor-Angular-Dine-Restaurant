@@ -1,148 +1,112 @@
-.content {
-    display: flex;
-    // margin: auto 10px ;
-    padding: 10px;
+section {
     position: relative;
-    height: 525px;
-    align-items: center;
-    justify-content: center;
+    height: 534px;
+    width: 100vw;
+    padding: 10px;
+    margin: auto;
+    background-color: white;
 }
 
 form {
-    padding: 20px 0;
-    position: absolute;
-    top: -150px;
-    background-color: white;
-    color: var(--shuttle-gray);
-    border-radius: 1px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 320px;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 28px;
-    letter-spacing: 0px;
-    text-align: left;
-    height: 585px;
-    // padding: 30px;
-    box-shadow: 0px 75px 100px -50px var(--ebony-clay);
+    width: 328px;
+}
 
+.rezForm {
+    position: absolute;
+    top: -140px;
+
+    height: 585px;
+    z-index: 2;
+    box-shadow: 0px 75px 100px -50px var(--ebony-clay);
+    background-color: white;
+
+    margin: 10px 10vw;
+    padding: 10px;
 
     input,
-    select {
-
-        margin: 5px 10px;
-        padding: 10px;
-        border: 1px solid var(--ebony-clay);
-        border-top: none;
-        border-left: none;
-        border-right: none;
-    }
-
-    .prime-input {
+    .counter {
         height: 43px;
         width: 263px;
-        border-radius: 0px;
+
+
+
     }
 
-    .sub-input,
     select {
-        height: 43px;
-        width: 75px;
+        padding: 0 15px;
+    }
+
+    .guests {
+        width: 263px;
+        padding: 15px;
     }
 
     h4 {
-        margin: 0 15px;
-        padding: 15px 0;
         width: 263px;
-    }
-
-    .time,
-    .date {
-        width: 300px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-
-@media (min-width: 600px) {
-    .content {
-
-        height: 435px;
-
-    }
-
-    form {
-        height: 545px;
-        width: 540px;
-        left: 114px;
-        top: 370px;
-
-
-
-        top: -150px;
-
+        height: 28px;
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0px;
         text-align: left;
 
 
 
-        input,
-        select {
+    }
 
-            margin: 5px 10px;
-            padding: 10px;
-            border: 1px solid var(--ebony-clay);
-            border-top: none;
-            border-left: none;
-            border-right: none;
-        }
-
-        .prime-input {
-            height: 43px;
-            width: 444px;
-
-
-        }
-
-        .sub-input,
-        select {
-            height: 43px;
-            width: 75px;
-            height: 43px;
-            width: 80px;
-
-        }
-
-        h4 {
-
-            font-size: 20px;
-            font-weight: 400;
-            line-height: 28px;
-            letter-spacing: 0px;
-            text-align: left;
-            height: 28px;
-            width: 90px;
-            left: 0px;
-            top: 9px;
-            text-transform: none;
-
-
-
-        }
-
-        .group {
-            display: flex;
-            flex-direction: row;
-            width: 444px;
-            margin: 0;
-            padding: 0;
-        }
-
+    .element {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid var(--ebony-clay);
+        font-size: 20px;
+        height: 43px;
+        line-height: 28px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: var(--shuttle-gray);
 
     }
 
+    .small {
+        width: 75px;
+
+        -moz-appearance: none;
+        /* Firefox */
+        -webkit-appearance: none;
+        /* Safari and Chrome */
+        appearance: none;
+    }
+
+    // :not(.ampm) {
+
+    // }
+
+    .ampm {
+        color: var(--cod-gray);
+        border: none;
+        font-size: 20px;
+        height: 43px;
+        line-height: 28px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: var(--shuttle-gray);
+        // width: 75px;
+    }
+
+    .dates,
+    .times {
+        width: 263px;
+    }
+
+    .counter {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: -0.25px;
+        color: var(--cod-gray);
+        // padding: 10px 2px ;
+    }
 }

@@ -14,27 +14,34 @@
 }
 
 ul {
-    padding-top: 25px;
+
     list-style: none;
 }
 
 li {
+    padding: 5px 0;
+}
+
+li a {
     font-size: 17px;
     font-weight: 600;
     line-height: 28px;
     letter-spacing: 2.5px;
-    padding: 10px;
+    margin: 2px;
     letter-spacing: 2.5px;
     color: var(--shuttle-gray);
     opacity: .75;
+
 }
 
-.selected {
-    color: var(--ebony-clay);
+li>a.selected {
+text-decoration: none;
+    color: var(--cod-gray);
     padding: 5px;
     border-bottom: 2px solid var(--beaver);
     position: relative;
     background: transparent;
+    opacity: 1;
 }
 
 h3 {
@@ -63,7 +70,22 @@ img {
 
 }
 
+.desktop {
+    visibility: hidden;
+    height: 0px;
+}
+
+.mobile {
+    visibility: visible;
+}
+
+.event-highlight {
+    margin: 25px 0 50px 0;
+}
+
+
 @media (min-width: 600px) {
+
     .lines,
     .curve-right {
         position: absolute;
@@ -109,7 +131,86 @@ img {
         font-size: 20px;
         line-height: 30px;
     }
-    .event-list{
+
+    .event-list {
         padding-bottom: 50px;
     }
+}
+
+@media (min-width: 900px) {
+    .event-list {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100vw;
+        text-align: left;
+
+    }
+
+    .events,
+    .event-highlight {
+        width: 40vw;
+        height: 600px;
+        margin: 50px 5vw;
+
+
+        h3,
+        p {
+            margin: 25px auto 25px 0;
+            text-align: left;
+        }
+    }
+
+    .event-highlight {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        // margin-top: 100px;
+        height: 500px;
+        margin: 0 50px;
+    }
+
+    .mobile {
+        visibility: hidden;
+    }
+
+    .lines {
+        left: 2vw;
+        top: 50px;
+        // z-index: 1;
+    }
+
+    .curve-right {
+
+        left: -400px;
+        top: -70px;
+
+    }
+
+    .desktop {
+        visibility: visible;
+    }
+
+    ul {
+
+        flex-direction: column;
+        justify-content: space-around;
+
+        padding: 0;
+        height: 108px;
+        width: 312px;
+        margin-top: 125px;
+
+        li {
+            margin-left: 0;
+            text-align: left;
+            padding: 10px 0;
+            font-size: 17px;
+            letter-spacing: 2.5px;
+
+
+        }
+
+
+    }
+
 }

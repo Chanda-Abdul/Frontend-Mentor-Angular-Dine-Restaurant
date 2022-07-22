@@ -1,6 +1,6 @@
 <div class="content">
     <picture>
-     
+
         <source media="(min-width: 900px)"
                 srcset="../../../assets/images/booking/hero-bg-desktop.jpg">
         <source media="(min-width: 600px)"
@@ -8,14 +8,16 @@
         <img src="../../../assets/images/booking/hero-bg-mobile.jpg" />
     </picture>
     <section>
-        <h1>dine</h1>
+        <a routerLink='/'>
+            <h1>dine</h1>
+        </a>
         <h2>Reservations</h2>
         <p>We can’t wait to host you. If you have any special requirements please feel free to
             call on the phone number below. We’ll be happy to accommodate you.</p>
         <app-button text="Reserve Place"
-        class="btn"
+                    class="btn"
                     buttonClass="dark"
-                    (click)="onReserveClick()"></app-button>
+                    routerLink='/'></app-button>
     </section>
     <app-rezzo-form></app-rezzo-form>
 </div>

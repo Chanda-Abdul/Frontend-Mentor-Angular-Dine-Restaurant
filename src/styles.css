@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400;600;700&display=swap");
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "League Spartan", sans-serif;
 }
 
 img {
-  size: 100%;
+  max-width: 100%;
 }
 
 :root {
@@ -22,7 +21,6 @@ img {
 
 /* Typography */
 h2 {
-  font-family: "League Spartan", sans-serif;
   font-size: 80px;
   line-height: 80px;
   font-weight: 300;
@@ -30,7 +28,6 @@ h2 {
 }
 
 h1 {
-  font-family: "League Spartan", sans-serif;
   font-size: 48px;
   line-height: 48px;
   font-weight: 700;
@@ -38,18 +35,17 @@ h1 {
 }
 
 h3 {
-  font-family: "League Spartan", sans-serif;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 32px;
   font-weight: 700;
-  letter-spacing: -0.25px;
+  line-height: 40px;
+  letter-spacing: -0.4px;
+  text-align: center;
   color: var(--ebony-clay);
 }
 
 h4,
 h5,
 h6 {
-  font-family: "League Spartan", sans-serif;
   font-size: 17px;
   line-height: 28px;
   font-weight: 600;
@@ -58,7 +54,6 @@ h6 {
 }
 
 .primary {
-  font-family: "League Spartan", sans-serif;
   font-size: 20px;
   line-height: 30px;
   font-weight: 400;
@@ -66,7 +61,6 @@ h6 {
 }
 
 p {
-  font-family: "League Spartan", sans-serif;
   font-size: 16px;
   line-height: 26px;
   font-weight: 400;
@@ -75,7 +69,6 @@ p {
 }
 
 li {
-  font-family: "League Spartan", sans-serif;
   font-size: 16px;
   line-height: 26px;
   font-weight: 400;
@@ -83,17 +76,24 @@ li {
   font-weight: 300;
 }
 
-button {
-  font-family: "League Spartan", sans-serif;
+button.btn,
+app-button {
   font-size: 17px;
   line-height: 28px;
   font-weight: 600;
   letter-spacing: 2.5px;
   text-transform: uppercase;
+  text-align: center;
+}
+
+a,
+a:visited,
+a:active {
+  color: white;
+  text-decoration: none;
 }
 
 .attribution {
-  font-family: "League Spartan", sans-serif;
   font-size: 16px;
   line-height: 26px;
   font-weight: 400;

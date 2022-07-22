@@ -1,10 +1,8 @@
 <app-header></app-header>
-<div class="content">
+<div class="content" fxLayout="column">
     <div class="enjoy">
         <section class="">
-            <picture class="hero-image">
-                <!-- <source media="(min-width: 1440px)"
-                        srcset="../../../assets/images/homepage/enjoyable-place-desktop.jpg"> -->
+            <picture class="hero-image side">
                 <source media="(min-width: 900px)"
                         srcset="../../../assets/images/homepage/enjoyable-place-desktop.jpg">
                 <source media="(min-width: 600px)"
@@ -12,22 +10,23 @@
                 <img src="../../../assets/images/homepage/enjoyable-place-mobile.jpg" />
             </picture>
             <picture class="curve-right pattern">
-                <!-- <source srcset="../../../assets/images/patterns/pattern-curve-top-right.svg"> -->
                 <img src="../../../assets/images/patterns/pattern-curve-top-right.svg" />
 
             </picture>
-            <img src="../../../assets/images/patterns/pattern-divide.svg"
-                 class="divide">
-            <h3>Enjoyable place for all the family</h3>
-            <p>
-                Our relaxed surroundings make dining with us a great experience for everyone. We can even
-                arrange
-                a tour of the farm before your meal.
-            </p>
+            <div class="text"> <img src="../../../assets/images/patterns/pattern-divide.svg"
+                     class="divide">
+                <h3>Enjoyable place for all the family</h3>
+                <p>
+                    Our relaxed surroundings make dining with us a great experience for everyone. We can even
+                    arrange
+                    a tour of the farm before your meal.
+                </p>
+            </div>
+
         </section>
     </div>
     <section class="local">
-        <picture>
+        <picture class="side">
 
             <source media="(min-width: 900px)"
                     srcset="../../../assets/images/homepage/locally-sourced-desktop.jpg">
@@ -35,42 +34,38 @@
                     srcset="../../../assets/images/homepage/locally-sourced-tablet.jpg">
             <img src="../../../assets/images/homepage/locally-sourced-mobile.jpg" />
         </picture>
-        <picture class="lines pattern">
-            <!-- <source media="(min-width: 600px)"
-                    srcset="../../../assets/images/patterns/pattern-lines.svg"> -->
-            <img src="../../../assets/images/patterns/pattern-lines.svg" />
+        <div class="text">
+            <picture class="lines pattern">
+                <img src="../../../assets/images/patterns/pattern-lines.svg" />
+            </picture>
+            <img src="../../../assets/images/patterns/pattern-divide.svg"
+                 class="divide">
+            <picture class="curve-left pattern">
+                <img src="../../../assets/images/patterns/pattern-curve-top-left.svg" />
 
-        </picture>
-        <img src="../../../assets/images/patterns/pattern-divide.svg"
-             class="divide">
-        <picture class="curve-left pattern">
-            <!-- <source
-                    srcset="../../../assets/images/patterns/pattern-curve-top-left.svg"> -->
-            <img src="../../../assets/images/patterns/pattern-curve-top-left.svg" />
+            </picture>
+            <h3>The most locally sourced food</h3>
+            <p>
+                All our ingredients come directly from our farm or local fishery. So you can be sure that you’re
+                eating the freshest, most sustainable food.
+            </p>
+        </div>
 
-        </picture>
 
-        <h3>The most locally sourced food</h3>
-        <p>
-            All our ingredients come directly from our farm or local fishery. So you can be sure that you’re
-            eating the freshest, most sustainable food.
-        </p>
     </section>
     <app-menu-preview></app-menu-preview>
 
     <app-event-slider></app-event-slider>
     <section class="cta">
- <picture>
-                <!-- <source media="(min-width: 1440px)"
-                        srcset="../../../assets/images/homepage/ready-bg-desktop.jpg"> -->
-                <source media="(min-width: 900px)"
-                        srcset="../../../assets/images/homepage/ready-bg-desktop.jpg">
-                <source media="(min-width: 600px)"
-                        srcset="../../../assets/images/homepage/ready-bg-tablet.jpg">
-                <img src="../../../assets/images/homepage/ready-bg-mobile.jpg" />
-            </picture>
+        <picture>
+            <source media="(min-width: 900px)"
+                    srcset="../../../assets/images/homepage/ready-bg-desktop.jpg">
+            <source media="(min-width: 600px)"
+                    srcset="../../../assets/images/homepage/ready-bg-tablet.jpg">
+            <img src="../../../assets/images/homepage/ready-bg-mobile.jpg" />
+        </picture>
         <div class="action">
-           
+
             <h3>Ready to make a reservation?</h3>
             <app-button text="Book a table"
                         (click)="onBookTableClick()"

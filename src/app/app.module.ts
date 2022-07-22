@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -18,6 +20,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RezzoFormComponent } from './components/rezzo-form/rezzo-form.component';
 import { MenuPreviewComponent } from './components/menu-preview/menu-preview.component';
+
 
 
 const appRoutes: Routes = [
@@ -39,8 +42,12 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FontAwesomeModule,
     HttpClientModule,
-    
-    FormsModule],
+    FlexLayoutModule,
+    MaterialModule,
+    FormsModule,
+    BrowserAnimationsModule,
+
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

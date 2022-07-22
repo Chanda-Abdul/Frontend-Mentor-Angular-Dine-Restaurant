@@ -1,6 +1,6 @@
-* {
-    display: inline-block;
-}
+// * {
+//     display: inline-block;
+// }
 
 button.btn {
     width: 245px;
@@ -61,4 +61,15 @@ button.btn {
 
 
     //     }
+}
+
+@media (min-width: 600px) {
+    button.btn {
+        width: 245px;
+        height: 64px;
+        margin: 0;
+    }
+
+    // .booking-btn {
+
 }

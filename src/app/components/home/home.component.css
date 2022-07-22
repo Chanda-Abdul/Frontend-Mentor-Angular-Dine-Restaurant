@@ -1,35 +1,6 @@
-.content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: auto;
-  margin: 0;
-  padding: 0;
-}
-
 .enjoy {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   height: 662px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   text-align: center;
 }
 
@@ -44,17 +15,7 @@
 }
 
 .local {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   height: 662px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   text-align: center;
   margin-bottom: 75px;
 }
@@ -69,41 +30,41 @@ h3 {
   width: 250px;
   margin: 15px auto;
   font-size: 32px;
+  font-weight: 700;
   line-height: 40px;
+  letter-spacing: -0.4px;
+  text-align: center;
 }
 
 p {
   width: 327px;
-  margin: 15px auto 75px auto;
-  line-height: 1.5em;
+  margin: 15px auto 25px auto;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0px;
+  color: var(--ebony-clay);
 }
 
 .cta {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
   position: relative;
-  margin: 0;
+  margin: -5px;
   padding: 0;
+  height: auto;
 }
 
-.cta picture,
-.cta img {
+.cta * {
   -webkit-box-shadow: none;
           box-shadow: none;
   margin: 0;
   padding: 0;
+}
+
+.cta img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .action {
@@ -123,65 +84,163 @@ p {
   text-align: center;
   color: white;
   position: absolute;
-  top: 0;
-  height: 342px;
-  margin-bottom: 0;
+  height: 328px;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  margin: 0;
+  z-index: 1;
 }
 
 .action h3 {
-  font-size: 2em;
   color: white;
   width: 250px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
+  .enjoy {
+    height: 800px;
+    -webkit-box-align: left;
+        -ms-flex-align: left;
+            align-items: left;
+    text-align: center;
+    margin-left: 10vw;
+    margin-bottom: 75px;
+  }
+  .enjoy section {
+    position: absolute;
+    top: -100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .enjoy img {
+    margin: 0px;
+  }
+  .enjoy .text {
+    width: 445px;
+    height: 275px;
+    text-align: left;
+    margin: 0 100px;
+    padding: auto 25px;
+  }
   h3 {
+    margin: 30px 0;
     font-size: 48px;
-    font-weight: 700;
     line-height: 48px;
     letter-spacing: -0.5px;
-    width: 350px;
+    width: 445px;
   }
   p {
-    width: 450px;
+    width: 445px;
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
+    text-align: left;
   }
-  .curve-right, .lines, .curve-left {
+  .curve-right,
+  .lines,
+  .curve-left {
     position: absolute;
     visibility: visible;
     z-index: -1;
   }
   .curve-right picture,
-  .curve-right img, .lines picture,
-  .lines img, .curve-left picture,
+  .curve-right img,
+  .lines picture,
+  .lines img,
+  .curve-left picture,
   .curve-left img {
     -webkit-box-shadow: none;
             box-shadow: none;
   }
   .curve-right {
-    height: 320px;
-    width: 895px;
-    right: 50vw;
-    top: 195px;
+    left: -200px;
+    top: 340px;
+    overflow: hidden;
   }
   .lines {
-    height: 76px;
-    width: 160px;
-    right: 25px;
-    top: 1850px;
+    right: -2vw;
     z-index: 1;
+    top: 1840px;
   }
   .curve-left {
-    height: 320px;
-    width: 895px;
-    left: 384px;
-    top: 2100px;
-    left: 50vw;
+    top: 1911px;
+    left: 445px;
+    overflow: none;
+    z-index: -3;
   }
-  .divide {
-    width: 75px;
+  .cta {
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .action {
+    height: 240px;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .action h3 {
+    width: 615px;
+  }
+  .local {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    height: 350px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .local section {
+    position: absolute;
+    top: 1500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 10;
+  }
+  .local img {
+    margin: 0px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .local .text {
+    width: 445px;
+    height: 275px;
+    text-align: left;
+    margin: 0 25px 0 10vw;
+    padding: 10px;
   }
 }
 /*# sourceMappingURL=home.component.css.map */

@@ -1,17 +1,14 @@
 * {
     color: white;
-
     text-align: center;
 }
 
 .menu {
-
-
     position: relative;
-
-    margin: 50px 0;
-    padding: 50px 25px;
+    margin: 50px 0 0 0;
+    padding: 50px 25px 0px 25px;
     background-color: var(--cod-gray);
+    width: 100vw;
 
 }
 
@@ -20,22 +17,15 @@
     text-align: center;
 
     h3 {
-
         font-size: 32px;
         font-weight: 700;
         line-height: 40px;
         letter-spacing: -0.4px;
-
-
     }
-
 }
 
 .divide {
     margin: 25px auto;
-
-    display: flex;
-    flex-direction: column;
 
 
 }
@@ -60,10 +50,15 @@
 
 }
 
-.menu-photo {
-    max-width: 90vw;
-    margin: 5px;
-    padding: 10px;
+.menu-photo { 
+  
+    picture>img{
+        max-width: 90vw;
+    margin: auto ;
+}
+    
+   
+    // padding: 10px;
 }
 
 .menu-text {
@@ -103,11 +98,16 @@
     border-bottom: 1px solid white;
     opacity: 15%;
     width: 327px;
+    
 
 }
 
 .menu-item:last-child>.divider {
     opacity: 0%;
+}
+
+.item-divide{
+    visibility: hidden;
 }
 
 
@@ -116,9 +116,7 @@
 
 
 @media (min-width:600px) {
-    // * {
-    //     width: 100vw;
-    // }
+
 
     .divide {
         width: 75px;
@@ -126,7 +124,7 @@
 
     .highlights {
         width: 100vw;
-        // 
+
         margin: 50px auto;
 
         h3 {
@@ -170,7 +168,7 @@
         // flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: center;
-     
+
         margin: 10px;
 
 
@@ -182,6 +180,7 @@
         top: 20px;
         left: 115px;
         z-index: -1;
+        visibility: visible;
     }
 
     .content {
@@ -229,4 +228,54 @@
 
 
     }
+}
+
+@media (min-width:900px) {
+    .menu {
+        position: relative;
+        z-index: -2;
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        justify-content: space-around;
+        align-items: center;
+        height: 761px;
+        padding-top: 40px;
+    }
+
+    .highlights {
+        width: 40vw;
+        height: 441px;
+
+        margin: 0;
+        padding: 25px 5vw;
+
+        h3 {
+
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 48px;
+            letter-spacing: -0.5px;
+            text-align: left;
+
+        }
+
+        p {
+            text-align: left;
+        }
+
+    }
+
+    .divide {
+        margin: 25px 0 50px 0;
+
+    }
+
+    .preview {
+        width: 40vw;
+        height: 441px;
+        margin: 0;
+        padding: 0 5vw;
+    }
+
 }

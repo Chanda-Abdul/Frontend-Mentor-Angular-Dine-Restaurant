@@ -1,12 +1,11 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-   
+    font-family: "League Spartan", sans-serif;
 }
 
 img {
-    size: 100%;
+    max-width: 100%;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400;600;700&display=swap");
@@ -23,7 +22,6 @@ img {
 
 /* Typography */
 @mixin heading-xl {
-    font-family: "League Spartan", sans-serif;
     font-size: 80px;
     line-height: 80px;
     font-weight: 300;
@@ -31,7 +29,6 @@ img {
 }
 
 @mixin heading-l {
-    font-family: "League Spartan", sans-serif;
     font-size: 48px;
     line-height: 48px;
     font-weight: 700;
@@ -47,7 +44,6 @@ img {
 }
 
 @mixin heading-s {
-    font-family: "League Spartan", sans-serif;
     font-size: 17px;
     line-height: 28px;
     font-weight: 600;
@@ -56,14 +52,12 @@ img {
 }
 
 @mixin body-primary {
-    font-family: "League Spartan", sans-serif;
     font-size: 20px;
     line-height: 30px;
     font-weight: 400;
 }
 
 @mixin body-secondary {
-    font-family: "League Spartan", sans-serif;
     font-size: 16px;
     line-height: 26px;
     font-weight: 400;
@@ -78,7 +72,11 @@ h1 {
 }
 
 h3 {
-    @include heading-m();
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.4px;
+    text-align: center;
     color: var(--ebony-clay)
 }
 
@@ -98,17 +96,26 @@ p {
     @include body-secondary();
     text-align: center;
     color: var(--shuttle-gray);
-    // max-width: 90%;
+
 }
 
-li{
+li {
     @include body-secondary();
     text-transform: uppercase;
     font-weight: 300;
 }
 
-button {
+button.btn,
+app-button {
     @include heading-s();
+    text-align: center;
+}
+
+a,
+a:visited,
+a:active {
+    color: white;
+    text-decoration: none
 }
 
 .attribution {

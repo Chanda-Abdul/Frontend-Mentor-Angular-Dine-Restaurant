@@ -1,18 +1,16 @@
 <div class="event-list">
     <section class="events">
         <picture class="lines pattern">
-            <source
-                    srcset="../../../assets/images/patterns/pattern-lines.svg">
+            <source srcset="../../../assets/images/patterns/pattern-lines.svg">
             <img src="../../../assets/images/patterns/pattern-lines.svg" />
 
         </picture>
 
         <picture class="curve-right pattern">
-            <source 
-                    srcset="../../../assets/images/patterns/pattern-curve-top-right.svg">
-                    <img src="../../../assets/images/patterns/pattern-curve-top-right.svg" />
-      
-                </picture>
+            <source srcset="../../../assets/images/patterns/pattern-curve-top-right.svg">
+            <img src="../../../assets/images/patterns/pattern-curve-top-right.svg" />
+
+        </picture>
         <picture *ngIf="selectedEvent">
             <source media="(min-width: 1440px)"
                     srcset="{{selectedEvent.desktopImage}}">
@@ -22,13 +20,15 @@
                     srcset="{{selectedEvent.tabletImage}}">
             <img src="{{selectedEvent.mobileImage}}" />
         </picture>
-        <ul class="event-select">
+        <ul class="event-select mobile">
             <li class="event-item"
-                *ngFor="let event of events"><a (mouseover)="event === selectedEvent"
+                *ngFor="let event of events">
+                <a (mouseover)="event === selectedEvent"
                    (mouseout)="event !== selectedEvent"
                    type="button"
                    [ngClass]="{'selected' : event === selectedEvent}"
-                   (click)="onSelect(event)">{{event.title}}</a></li>
+                   (click)="onSelect(event)" 
+                   >{{event.title}}</a></li>
 
         </ul>
     </section>
@@ -36,8 +36,18 @@
              *ngIf="selectedEvent">
         <h3>{{selectedEvent.title}}</h3>
         <p class="secondary">{{selectedEvent.description}}</p>
-    </section>
-    <app-button text="Book a table"
-                buttonClass="light"
-                (click)="onBookTableClick()"></app-button>
+        <app-button text="Book a table"
+                    buttonClass="light"
+                    (click)="onBookTableClick()"></app-button>
+    
+                    <ul class="event-select desktop">
+                        <li class="event-item"
+                            *ngFor="let event of events"><a (mouseover)="event === selectedEvent"
+                               (mouseout)="event !== selectedEvent"
+                               type="button"
+                               [ngClass]="{'selected' : event === selectedEvent}"
+                               (click)="onSelect(event)">{{event.title}}</a></li>
+            
+                    </ul>            </section>
+
 </div>

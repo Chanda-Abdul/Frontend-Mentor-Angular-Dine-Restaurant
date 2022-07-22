@@ -1,7 +1,8 @@
 # Frontend Mentor - Dine Website Challenge solution
+
 ![](./src/assets/preview.jpg)
 
-This is a solution to the [Dine Website Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/dine-restaurant-website-yAt7Vvxt7). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Dine Website Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/dine-restaurant-website-yAt7Vvxt7). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -17,8 +18,6 @@ This is a solution to the [Dine Website Challenge challenge on Frontend Mentor](
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -26,9 +25,9 @@ This is a solution to the [Dine Website Challenge challenge on Frontend Mentor](
 Users should be able to:
 
 - [ ] View the optimal layout for each page depending on their device's screen size
-    - [x] Mobile, < 600px
-    - [x] Tablet, 600px+
-    - [ ] Desktop, 800px+
+  - [x] Mobile, < 600px
+  - [x] Tablet, 600px+
+  - [ ] Desktop, 800px+
 - [ ] See hover states for all interactive elements throughout the site
 - [x] See the correct content for the Family Gatherings, Special Events, and Social Events section when the user clicks each tab
 - [ ] Receive an error message when the booking form is submitted if:
@@ -42,7 +41,7 @@ Users should be able to:
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
 
 Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
@@ -57,38 +56,37 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Built with
 
-- <b>[Angular](https://angular.io/)</b> - <b>JavaScripot</b> framework
+- <b>[Angular](https://angular.io/)</b> - <b>JavaScript</b> framework
 - Semantic <b>HTML5</b> markup
+- <b>Figma</b>
 - <b>Sass/CSS</b> custom properties
   - <b>Flexbox</b>
 - <b>Mobile-first</b> workflow
 
-
 ### What I learned
 
 <!-- Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge. -->
-- While building this project I learned more about <b>Figma</b>, apparently most of the <b>CSS</b> variables and styles may be available in your <b>Figma</b> file, which saves SO much time. Who knew?
-- This is also one of my first "real" projects using <b>Angular</b>, overall everything went very smoothly, and <b>Angular</b> is easy to work with.  I think I prefer <b>Angular</b>over <b>React</b>, because it seems much more intuitive and organized to me.
+
+- While building this project I learned more about <b>Figma</b>, apparently most of the <b>CSS</b> variables and styles may be available in your <b>Figma</b> file, which saves SO much time. Who knew? 😋
+- This is also one of my first "real" projects using <b>Angular</b>, overall everything went very smoothly, and I enjoy working with <b>Angular</b>. <b>Angular</b>, it seems much more intuitive and organized than <b>React</b>.
 
 To see how you can add code snippets, see below:
 
 ```html
 <h1>Some HTML code I'm proud of</h1>
 ```
+
 ```css
 .proud-of-this-css {
   color: papayawhip;
 }
 ```
+
 ```js
 const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+  console.log("🎉");
+};
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
@@ -101,16 +99,15 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 - [ ] add menu component
 - [ ] add event booking component
 
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
 ### Useful resources
 
+- [/angular/flex-layout](https://github.com/angular/flex-layout) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Udemy: Angular (Full App) with Angular Material, Angularfire & NgRx Created by Maximilian Schwarzmüller](https://www.udemy.com/share/101WvC3@iwU-zs0EjLuBHrh2IFqrITl0TXzocf5BeqTXM5rBHhVGmHco65hhIW8VnrsMxYA=/) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 - [Managing Image Breakpoints With Angular](https://www.smashingmagazine.com/2019/02/image-breakpoints-angular/) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Reactive forms in Angular](https://angular.io/guide/reactive-forms) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-- [Display a selection list](https://angular.io/tutorial/toh-pt2#display-a-selection-list) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Angular 13 Select Dropdown with Reactive Forms Examples](https://www.positronx.io/angular-select-dropdown-with-reactive-forms-examples/) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
+- [SelectControlValueAccessor](https://angular.io/api/forms/SelectControlValueAccessor) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Using forms for user input](https://angular.io/start/start-forms) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- <s>[Angular 13 Select Dropdown with Reactive Forms Examples](https://www.positronx.io/angular-select-dropdown-with-reactive-forms-examples/) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.</s>
+- <s>[Angular Material Form Control Select mat-select](https://www.djamware.com/post/5e379e4fd598ef0e8bbcc67e/angular-material-form-controls-select-mat-select-example) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.</s>
 
 ## Author
 
@@ -119,7 +116,3 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 - GitHub - [github.com/Chanda-Abdul](https://github.com/Chanda-Abdul)
 
 ## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
