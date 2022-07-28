@@ -9,9 +9,7 @@ footer {
     text-align: center;
 }
 
-h1 {
-    font-size: 40px;
-}
+
 
 ul {
     margin: 20px 5px;
@@ -47,9 +45,9 @@ a:visited {
         width: 100vw;
     }
 
-    h1 {
-        margin: 25px;
-    }
+    // h1 {
+    //     margin: 25px;
+    // }
 
     .sub-info {
         display: flex;
@@ -73,9 +71,6 @@ a:visited {
         align-items: baseline;
     }
 
-    h1 {
-        font-size: 80px;
-    }
 
     .sub-info {
         justify-content: space-around;

@@ -91,9 +91,9 @@ a:visited {
         -ms-flex-align: baseline;
             align-items: baseline;
   }
-  h1 {
+  /* h1 {
     font-size: 80px;
-  }
+  } */
   .sub-info {
     -ms-flex-pack: distribute;
         justify-content: space-around;

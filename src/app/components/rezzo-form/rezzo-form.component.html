@@ -1,155 +1,123 @@
 <section fxlayout
          fxLayoutAlign="center center"
          fxLayout="column">
+        <form class="rezForm"
+              [formGroup]="rezzoForm"
+              (ngSubmit)="onSubmitForm()"
+              fxLayout="column"
+              fxLayoutAlign="space-evenly center"
+              fxLayoutGap="20px">
 
-       <form class="rezForm"
-             [formGroup]="rezzoForm"
-             (ngSubmit)="onSubmitForm()"
-             fxLayout="column"
-             fxLayoutAlign="space-evenly center"
-             fxLayoutGap="20px">
+                <input type="text"
+                       placeholder="Name"
+                       formControlName="name"
+                       class="element">
+                <!-- TODO => add error message  "This field is required"/Please enter your name.-->
 
-              <input id="name"
-                     type="text"
-                     placeholder="Name"
-                     formControlName="name"
-                     class="element">
+                <input type="text"
+                       placeholder="Email"
+                       formControlName="email"
+                       class="element">
+                <!-- TODO => add error message  "This field is required"-->
+                <!-- TODO => add error message when not formatted correctly should show "Please use a valid email address"-->
+                <h3>Pick a Date</h3>
+                <div fxLayout="column"
+                     fxLayoutAlign="center center">
+                        <div class="dates"
+                             fxLayout="row"
+                             fxLayoutAlign="space-between center">
+                                <select formControlName="month"
+                                        type="text"
+                                        (change)="selectMonth($event)"
+                                        class="element small">
+                                        <option disabled>MM</option>
+                                        <option *ngFor="let month of months"
+                                                [ngValue]="month">
+                                                {{ month }}
+                                        </option>
+                                </select>
+                                <select formControlName="day"
+                                        (change)="selectDay($event)"
+                                        class=" element small">
+                                        <option disabled>DD</option>
+                                        <option *ngFor="let day of days"
+                                                [ngValue]="day">
+                                                {{day}}
+                                        </option>
 
-
-              <!-- <mat-error>
-                            Please enter your name.
-                     </mat-error> -->
-
-              <!-- <label for="email">
-                            Email
-                          </label> -->
-              <input id="email"
-                     type="text"
-                     placeholder="Email"
-                     formControlName="email"
-                     class="element">
-              <!-- <mat-hint>Please enter a valid email.</mat-hint> -->
-
-              <!-- <mat-error>
-                            E-mail is invalid.
-                     </mat-error> -->
-
-              <h4>Pick a Date</h4>
-
-              <form #d="ngForm"
-                    fxLayout="column"
-                    fxLayoutAlign="center center">
-                     <div class="dates"
-                          fxLayout="row"
-                          fxLayoutAlign="space-between center">
-                            <select name="month"
-                                    ngModel
-                                    class="element small">
-                                   <option value=""
-                                           disabled>MM</option>
-                                   <option *ngFor="let month of months"
-                                           [ngValue]="month">
-                                          {{ month.name }}
-                                   </option>
-                            </select> <select name="day"
-                                    ngModel
-                                    class=" element small">
-                                   <option value=""
-                                           disabled>DD</option>
-                                   <option *ngFor="let day of Days"
-                                           [ngValue]="day">{{day}}</option>
-
-                            </select>
-                            <!-- <mat-error *ngIf="rezzoForm.get('days').hasError('required')">
+                                </select>
+                                <!-- <mat-error 
+                                        ngModel *ngIf="rezzoForm.get('days').hasError('required')">
                            Please select a Day
-                    </mat-error> --> <select name="year"
-                                    ngModel
-                                    class=" element small">
-                                   <option value=""
-                                           disabled>YYYY</option>
-                                   <option *ngFor="let year of Years"
-                                           [ngValue]="year">{{year}}</option>
-
-                            </select>
-                            <!-- <mat-error *ngIf="rezzoForm.get('years').hasError('required')">
-                           Please select a Year
                     </mat-error> -->
-                     </div>
+                                <select formControlName="year"
+                                        (change)="selectYear($event)"
+                                        class="element small">
+                                        <option disabled>YYYY</option>
+                                        <option *ngFor="let year of years"
+                                                [ngValue]="year">
+                                                {{year}}
+                                        </option>
 
+                                </select>
+                                <!--  *ngIf="rezzoForm.get('years').hasError('required')">
+                           Please select a Year
+                     -->
+                        </div>
+                </div>
+                <h3>Pick a Time</h3>
+                <div fxLayout="column"
+                     fxLayoutAlign="center center">
+                        <div class="times"
+                             fxLayout="row"
+                             fxLayoutAlign="space-between center">
+                                <select formControlName="hour"
+                                        class=" element small"
+                                        (change)="selectHour($event)">
+                                        <option *ngFor="let hour of hours"
+                                                [ngValue]="hour">{{hour}}</option>
+                                </select>
+                                <!-- TODO => add error message "Please select an Hour" "This field is incomplete"-->
 
+                                <select formControlName="minute"
+                                        (change)="selectMinute($event)"
+                                        class="element small">
+                                        <option *ngFor="let minute of minutes"
+                                                [ngValue]="minute">{{minute}}</option>
+                                </select>
+                                <!-- TODO => add error message "Please select a Minute" "This field is incomplete"-->
 
+                                <div class="element">
+                                        <select formControlName="meridian"
+                                                (change)="selectMeridian($event)"
+                                                class="small ampm">
+                                                <option [ngValue]="'PM'">PM</option>
+                                                <option [ngValue]="'AM'">AM</option>
+                                        </select>
+                                        <img src="../../../assets/images/icons/icon-arrow.svg">
+                                </div>
+                                <!-- TODO => add error message "Please select morning or Evening" "This field is incomplete"-->
+                        </div>
+                </div>
+                <div fxLayout="row"
+                     fxLayoutAlign="space-between center"
+                     class="element guests counter">
+                        <img src="../../../assets/images/icons/icon-minus.svg"
+                             (click)="decrementGuestCount()" />
+                        {{guests[selectedGuestCount-1]}}
+                        <img src="../../../assets/images/icons/icon-plus.svg"
+                             (click)="incrementGuestCount()" />
+                </div>
+                <!-- TODO => add error message "Please select guest count of 1 or more people"-->
 
+                <!-- TODO => add error message "Please select guest count of 10 or less people"-->
 
+                <!-- TODO => fix disabled button styling -->
+                <button class="on-light"
+                        [disabled]="!rezzoForm.valid"
+                        type="submit">Make Reservation</button>
 
-              </form>
-              <h4>Pick a Time</h4>
-
-              <form #t="ngForm"
-                    fxLayout="column"
-                    fxLayoutAlign="center center">
-                     <div class="times"
-                          fxLayout="row"
-                          fxLayoutAlign="space-between center">
-                            <select ngModel
-                                    name="hour"
-                                    class=" element small">
-                                   <option value=""
-                                           disabled>07</option>
-                                   <option *ngFor="let hour of Hours"
-                                           [ngValue]="hour">{{hour}}</option>
-
-                            </select>
-                            <!-- <mat-error *ngIf="rezzoForm.get('hours').hasError('required')">
-                                          Please select an Hour
-                                   </mat-error> -->
-
-
-
-
-                            <select ngModel
-                                    name="minute"
-                                    class=" element small">
-                                   <option value=""
-                                           disabled>00</option>
-                                   <option *ngFor="let minute of Minutes"
-                                           [ngValue]="minute">{{minute}}</option>
-
-                            </select>
-                            <!-- <mat-error *ngIf="rezzoForm.get('minutes').hasError('required')">
-                            Please select a Minute
-                     </mat-error> -->
-
-
-                            <div class=" element"><select (change)="changeMeridian"
-                                           name="meridian"
-                                           class="small ampm">
-                                          <option value="PM">PM</option>
-                                          <option value="AM">AM</option>
-                                   </select><img src="../../../assets/images/icons/icon-arrow.svg"></div>
-
-
-                     </div>
-              </form>
-              <div fxLayout="row"
-                   fxLayoutAlign="center center"
-                   ngModel
-                   class="element guests">
-                     <img src="../../../assets/images/icons/icon-minus.svg">
-
-                     <option [ngValue]="guests"
-                             class="counter">{{Guests[3]}}</option>
-
-                     <img src="../../../assets/images/icons/icon-plus.svg">
-              </div>
-
-
-              <app-button text="Make Reservation"
-                          buttonClass="light"
-                          class="booking-btn"
-                          type="submit">
-              </app-button>
-
-       </form>
+        </form>
 
 
 </section>

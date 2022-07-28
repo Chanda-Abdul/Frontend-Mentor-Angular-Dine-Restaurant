@@ -15,8 +15,9 @@
 .highlights {
     width: 327px;
     text-align: center;
+    margin: 25px auto;
 
-    h3 {
+    h2 {
         font-size: 32px;
         font-weight: 700;
         line-height: 40px;
@@ -25,7 +26,7 @@
 }
 
 .divide {
-    margin: 25px auto;
+    margin: 5px 0 50px 0;
 
 
 }
@@ -58,7 +59,7 @@
 }
     
    
-    // padding: 10px;
+
 }
 
 .menu-text {
@@ -69,9 +70,12 @@
     align-items: center;
 
 
-    h3 {
+    
+
+    
+}h2 {
         width: 300px;
-        margin: 10px auto;
+        margin: 0px;
         font-size: 32px;
         line-height: 40px;
     }
@@ -79,10 +83,9 @@
     .menu-title {
         font-size: 20px;
     }
-
-    p {
+p {
         width: 327px;
-        margin: 15px auto 50px auto;
+        margin: 5px auto 25px auto;
         padding: 25px auto;
         font-size: 16px;
         font-weight: 400;
@@ -91,8 +94,6 @@
 
 
     }
-}
-
 
 .divider {
     border-bottom: 1px solid white;
@@ -127,7 +128,7 @@
 
         margin: 50px auto;
 
-        h3 {
+        h2 {
             width: 440px;
             margin: auto;
         }
@@ -144,7 +145,7 @@
         }
     }
 
-    h3 {
+    h2 {
         font-size: 48px;
         line-height: 48px;
         letter-spacing: -0.5px;
@@ -205,7 +206,7 @@
         justify-content: center;
         align-items: left;
 
-        h3 {
+        h2 {
             width: 383px;
             text-align: left;
             margin: 0;
@@ -250,7 +251,7 @@
         margin: 0;
         padding: 25px 5vw;
 
-        h3 {
+        h2 {
 
             font-size: 48px;
             font-weight: 700;

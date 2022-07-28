@@ -1,7 +1,4 @@
-import {
-  Component, OnInit, EventEmitter,
-  Output
-} from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EVENTS } from 'src/app/event-data';
 

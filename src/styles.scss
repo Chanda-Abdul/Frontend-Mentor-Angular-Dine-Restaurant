@@ -4,9 +4,22 @@
     font-family: "League Spartan", sans-serif;
 }
 
+.container{
+    width: 100vw;
+}
+
 img {
     max-width: 100%;
+
 }
+
+// TODO => switch flexbox to fxLayout
+// TODO => hover states for all interactive elements throughout the site
+// TODO => review styles for Mobile, < 600px
+// TODO => review styles for Tablet, 600px+
+// TODO => review styles for Desktop, 800px+
+// TODO => Sass => production
+// TODO => Deploy
 
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400;600;700&display=swap");
 
@@ -14,7 +27,7 @@ img {
     /* Primary Colors */
     --beaver: hsl(27, 22%, 51%);
     --cod-gray: hsl(0, 0%, 7%);
-    /* Primary Colors */
+    /* Secondary Colors */
     --mirage: hsl(234, 30%, 13%);
     --ebony-clay: hsl(218, 21%, 18%);
     --shuttle-gray: hsl(217, 14%, 42%);
@@ -63,15 +76,11 @@ img {
     font-weight: 400;
 }
 
-h2 {
+h1 {
     @include heading-xl();
 }
 
-h1 {
-    @include heading-l();
-}
-
-h3 {
+h2 {
     font-size: 32px;
     font-weight: 700;
     line-height: 40px;
@@ -80,6 +89,7 @@ h3 {
     color: var(--ebony-clay)
 }
 
+h3,
 h4,
 h5,
 h6 {
@@ -105,12 +115,6 @@ li {
     font-weight: 300;
 }
 
-button.btn,
-app-button {
-    @include heading-s();
-    text-align: center;
-}
-
 a,
 a:visited,
 a:active {
@@ -121,4 +125,43 @@ a:active {
 .attribution {
     @include body-secondary();
     text-align: center;
+}
+
+button {
+    width: 263px;
+    height: 64px;
+    // margin:  50px 100px;
+    @include heading-s();
+
+    &.on-dark {
+        border: 1px solid white;
+        background: transparent;
+        color: white;
+
+        &:hover {
+            border: none;
+            background-color: white;
+            color: var(--cod-gray);
+        }
+
+        &.inactive {
+            opacity: 25%;
+        }
+    }
+
+    &.on-light {
+        border: none;
+        background-color: var(--cod-gray);
+        color: white;
+
+        &:hover {
+            border: 1px solid var(--cod-gray);
+            background: transparent;
+            color: var(--cod-gray);
+        }
+
+        &.inactive {
+            opacity: 25%;
+        }
+    }
 }

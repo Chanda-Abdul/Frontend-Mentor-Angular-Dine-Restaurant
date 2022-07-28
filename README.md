@@ -56,11 +56,16 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Built with
 
-- <b>[Angular](https://angular.io/)</b> - <b>JavaScript</b> framework
+- <b>[Angular](https://angular.io/)</b> <b>JavaScript</b> framework
+  - Reactive Forms
+  - 
+  - TypeScript
+  - JavaScript
+  - <s>[Angualar Material](https://material.angular.io/)</s>
 - Semantic <b>HTML5</b> markup
 - <b>Figma</b>
 - <b>Sass/CSS</b> custom properties
-  - <b>Flexbox</b>
+- <b>[fxLayout API](https://github.com/angular/flex-layout/wiki/fxLayout-API)</b> Angular Flexbox API
 - <b>Mobile-first</b> workflow
 
 ### What I learned
@@ -100,14 +105,13 @@ const proudOfThisFunc = () => {
 - [ ] add event booking component
 
 ### Useful resources
-
+- 🙌🏾 [Angular Reactive Forms in 10 Minutes](https://youtu.be/MMP_OcjWNQo) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 - [/angular/flex-layout](https://github.com/angular/flex-layout) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Udemy: Angular (Full App) with Angular Material, Angularfire & NgRx Created by Maximilian Schwarzmüller](https://www.udemy.com/share/101WvC3@iwU-zs0EjLuBHrh2IFqrITl0TXzocf5BeqTXM5rBHhVGmHco65hhIW8VnrsMxYA=/) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 - [Managing Image Breakpoints With Angular](https://www.smashingmagazine.com/2019/02/image-breakpoints-angular/) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [SelectControlValueAccessor](https://angular.io/api/forms/SelectControlValueAccessor) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 - [Using forms for user input](https://angular.io/start/start-forms) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- <s>[Angular 13 Select Dropdown with Reactive Forms Examples](https://www.positronx.io/angular-select-dropdown-with-reactive-forms-examples/) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.</s>
-- <s>[Angular Material Form Control Select mat-select](https://www.djamware.com/post/5e379e4fd598ef0e8bbcc67e/angular-material-form-controls-select-mat-select-example) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.</s>
+- [Angular 13 Select Dropdown with Reactive Forms Examples](https://www.positronx.io/angular-select-dropdown-with-reactive-forms-examples/) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 ## Author
 

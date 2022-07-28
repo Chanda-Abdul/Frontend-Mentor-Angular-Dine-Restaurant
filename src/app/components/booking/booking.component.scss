@@ -1,12 +1,12 @@
 .content {
     position: relative;
     text-align: center;
-    height:1135px;
+    height: 1135px;
     width: 100vw;
 
-    img {
-        width: 100vw;
-    }
+    // img {
+    //     width: 100vw;
+    // }
 
     a {
         text-decoration: none;
@@ -22,15 +22,12 @@ section {
     color: white;
 }
 
-h1 {
-    font-size: 40px;
-    height: 40px;
-    width: 100vw;
-    font-weight: 500;
+img.logo {
+    width: 100px;
 }
 
 
-h2 {
+h1 {
     width: 250px;
     margin: 40px auto 20px auto;
     font-size: 32px;
@@ -43,9 +40,7 @@ h2 {
 
 p {
     height: 104px;
-width: 327px;
-
-
+    width: 327px;
     margin: auto 25px 10px 25px;
     padding: 5px;
     color: white;
@@ -60,14 +55,9 @@ width: 327px;
         height: 1035px;
     }
 
-    h1 {
-        text-align: left;
-        height: 40px;
-        width: 100vw;
-        margin: 0 auto 0 100px;
-    }
+  
 
-    h2 {
+    h1 {
         width: 689px;
         margin-top: 175px;
         font-size: 48px;
@@ -83,6 +73,4 @@ width: 327px;
     .btn {
         display: none;
     }
-
-
 }

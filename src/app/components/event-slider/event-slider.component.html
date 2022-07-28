@@ -1,4 +1,8 @@
-<div class="event-list">
+<div class="event-list"
+     fxLayout.lt-lg="column"
+     fxLayoutAlign.lt-lg="center center"
+     fxLayout.gt-md="row"
+     fxLayoutAlign.lt-lg="space-around center">
     <section class="events">
         <picture class="lines pattern">
             <source srcset="../../../assets/images/patterns/pattern-lines.svg">
@@ -20,34 +24,42 @@
                     srcset="{{selectedEvent.tabletImage}}">
             <img src="{{selectedEvent.mobileImage}}" />
         </picture>
-        <ul class="event-select mobile">
+        <ul class="event-select mobile"
+            fxLayout="column"
+            fxLayoutAlign.lt-lg="space-evenly center"
+            fxLayoutAlign.gt-md="center space-around"
+            >
+            <!-- TODO => add fxLayout show/hide & maybe move to seperate component -->
             <li class="event-item"
                 *ngFor="let event of events">
+                <!-- TODO => add onHover?, set timeout slideshow? -->
                 <a (mouseover)="event === selectedEvent"
                    (mouseout)="event !== selectedEvent"
                    type="button"
                    [ngClass]="{'selected' : event === selectedEvent}"
-                   (click)="onSelect(event)" 
-                   >{{event.title}}</a></li>
+                   (click)="onSelect(event)">{{event.title}}</a>
+            </li>
 
         </ul>
     </section>
-    <section class="event-highlight"
-             *ngIf="selectedEvent">
-        <h3>{{selectedEvent.title}}</h3>
+    <section class="event-highon-light"
+             *ngIf="selectedEvent" fxLayout.gt-md="column" fxLayoutAlign.gt-md="space-between center">
+        <h2>{{selectedEvent.title}}</h2>
         <p class="secondary">{{selectedEvent.description}}</p>
-        <app-button text="Book a table"
-                    buttonClass="light"
-                    (click)="onBookTableClick()"></app-button>
-    
-                    <ul class="event-select desktop">
-                        <li class="event-item"
-                            *ngFor="let event of events"><a (mouseover)="event === selectedEvent"
-                               (mouseout)="event !== selectedEvent"
-                               type="button"
-                               [ngClass]="{'selected' : event === selectedEvent}"
-                               (click)="onSelect(event)">{{event.title}}</a></li>
-            
-                    </ul>            </section>
+        <button text="Book a table"
+                    class="on-light"
+                    (click)="onBookTableClick()">Book A Table</button>
+
+        <ul class="event-select desktop">
+           <!-- TODO => add fxLayout show/hide & maybe move to seperate component -->
+            <li class="event-item"
+                *ngFor="let event of events"><a (mouseover)="event === selectedEvent"
+                   (mouseout)="event !== selectedEvent"
+                   type="button"
+                   [ngClass]="{'selected' : event === selectedEvent}"
+                   (click)="onSelect(event)">{{event.title}}</a></li>
+
+        </ul>
+    </section>
 
 </div>

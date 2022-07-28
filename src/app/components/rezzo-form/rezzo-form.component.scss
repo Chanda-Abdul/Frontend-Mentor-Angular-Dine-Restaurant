@@ -1,6 +1,5 @@
 section {
     position: relative;
-    height: 534px;
     width: 100vw;
     padding: 10px;
     margin: auto;
@@ -14,26 +13,34 @@ form {
 .rezForm {
     position: absolute;
     top: -140px;
-
     height: 585px;
     z-index: 2;
     box-shadow: 0px 75px 100px -50px var(--ebony-clay);
     background-color: white;
-
-    margin: 10px 10vw;
-    padding: 10px;
+    margin: 25px 10px;
+    padding: 30px 10px 10px 10px;
 
     input,
     .counter {
         height: 43px;
         width: 263px;
 
+    }
 
-
+    input, .small {
+        font-size: 20px;
+        letter-spacing: 0px;
+        font-weight: 400;
+        line-height: 28px;
+        text-align: left;
+        color: var(--cod-gray);
+        opacity: 0.75;
+        padding-left: 10px;
     }
 
     select {
         padding: 0 15px;
+        
     }
 
     .guests {
@@ -41,37 +48,43 @@ form {
         padding: 15px;
     }
 
-    h4 {
+    h3 {
         width: 263px;
-        height: 28px;
-        text-transform: capitalize;
+        // height: 28px;
+        text-transform:initial;
         font-size: 20px;
         font-weight: 400;
-        line-height: 28px;
+        // line-height: 28px;
         letter-spacing: 0px;
         text-align: left;
-
-
-
+        margin: 10px 0 0 0;
+        padding: 0;
     }
 
     .element {
         border-top: none;
         border-left: none;
         border-right: none;
-        border-bottom: 1px solid var(--ebony-clay);
+        border-bottom: 1px solid var(--shuttle-gray);
         font-size: 20px;
         height: 43px;
+        // 
         line-height: 28px;
         letter-spacing: 0px;
         text-align: left;
-        color: var(--shuttle-gray);
+        // color: var(--shuttle-gray);
+        select{
+            width: 55px;
+            // opacity: 0.5;
+            color: var(--ebony-clay);
+            
+        }
 
     }
 
     .small {
         width: 75px;
-
+        opacity: 0.5;
         -moz-appearance: none;
         /* Firefox */
         -webkit-appearance: none;
@@ -91,7 +104,7 @@ form {
         line-height: 28px;
         letter-spacing: 0px;
         text-align: left;
-        color: var(--shuttle-gray);
+     opacity: .75;
         // width: 75px;
     }
 
@@ -101,12 +114,13 @@ form {
     }
 
     .counter {
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 20px;
         font-weight: 700;
-        line-height: 24px;
         letter-spacing: -0.25px;
         color: var(--cod-gray);
-        // padding: 10px 2px ;
+  
     }
 }

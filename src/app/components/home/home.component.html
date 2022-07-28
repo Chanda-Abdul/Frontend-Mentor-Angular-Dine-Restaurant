@@ -1,8 +1,8 @@
 <app-header></app-header>
 <div class="content" fxLayout="column">
-    <div class="enjoy">
-        <section class="">
-            <picture class="hero-image side">
+    <div class="enjoy" fxLayout="column" fxLayoutAlign="center center">
+        <section> 
+            <picture class="hero-image side" >
                 <source media="(min-width: 900px)"
                         srcset="../../../assets/images/homepage/enjoyable-place-desktop.jpg">
                 <source media="(min-width: 600px)"
@@ -15,7 +15,7 @@
             </picture>
             <div class="text"> <img src="../../../assets/images/patterns/pattern-divide.svg"
                      class="divide">
-                <h3>Enjoyable place for all the family</h3>
+                <h2>Enjoyable place for all the family</h2>
                 <p>
                     Our relaxed surroundings make dining with us a great experience for everyone. We can even
                     arrange
@@ -44,7 +44,7 @@
                 <img src="../../../assets/images/patterns/pattern-curve-top-left.svg" />
 
             </picture>
-            <h3>The most locally sourced food</h3>
+            <h2>The most locally sourced food</h2>
             <p>
                 All our ingredients come directly from our farm or local fishery. So you can be sure that you’re
                 eating the freshest, most sustainable food.
@@ -66,10 +66,10 @@
         </picture>
         <div class="action">
 
-            <h3>Ready to make a reservation?</h3>
-            <app-button text="Book a table"
+            <h2>Ready to make a reservation?</h2>
+            <button text="Book a table"
                         (click)="onBookTableClick()"
-                        buttonClass="dark"></app-button>
+                        class="on-dark">Book A Table</button>
 
         </div>
     </section>
