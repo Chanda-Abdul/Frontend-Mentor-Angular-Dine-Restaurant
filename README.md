@@ -74,113 +74,112 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - While building this project I learned more about <b>Figma</b>, apparently most of the <b>CSS</b> variables and styles may be available in your <b>Figma</b> file, which saves SO much time. Who knew? 😋
 - This is also one of my first "real" projects using <b>Angular</b>, <s>overall everything went very smoothly, and I enjoy working with <b>Angular</b>. <b>Angular</b>, it seems much more intuitive and organized than <b>React</b>🤡</s>.
 - Please see below, for a code snippet, of the Angular Reactive Form that actually broke my soul. I will not be elaborating 👉🏾 👈🏾
+    #### `rezzo-form.component.html`
 
-#### `rezzo-form.component.html`
+    ```html
+    <form class="rezForm"
+      [formGroup]="rezzoForm"
+      (ngSubmit)="onSubmitForm()"
+      fxLayout="column"
+      fxLayoutAlign="space-evenly center"
+      fxLayoutGap="20px">
 
-```html
-<form class="rezForm"
-  [formGroup]="rezzoForm"
-  (ngSubmit)="onSubmitForm()"
-  fxLayout="column"
-  fxLayoutAlign="space-evenly center"
-  fxLayoutGap="20px">
+        <input type="text"
+          placeholder="Name"
+          formControlName="name"
+          >
+            ...
 
-    <input type="text"
-      placeholder="Name"
-      formControlName="name"
-      >
-        ...
-
-        <h3>Pick a Date</h3>
-          ...
-       
-       <select 
-          formControlName="month"
-          type="text"
-          (change)="selectMonth($event)">
+            <h3>Pick a Date</h3>
+              ...
+          
+          <select 
+              formControlName="month"
+              type="text"
+              (change)="selectMonth($event)">
+                
+                <option disabled>MM</option>
+                <option *ngFor="let month of months"
+                  [ngValue]="month">
+                  {{ month }}
+                  </option>
+              </select>
+              ...
+          
+          <img src="../../../assets/images/icons/icon-minus.svg"
+            (click)="decrementGuestCount()" />
+              {{guests[selectedGuestCount-1]}}
+          <img src="../../../assets/images/icons/icon-plus.svg"
+          (click)="incrementGuestCount()" />
             
-            <option disabled>MM</option>
-            <option *ngFor="let month of months"
-              [ngValue]="month">
-              {{ month }}
-              </option>
-          </select>
-          ...
+            ...
       
-      <img src="../../../assets/images/icons/icon-minus.svg"
-        (click)="decrementGuestCount()" />
-          {{guests[selectedGuestCount-1]}}
-      <img src="../../../assets/images/icons/icon-plus.svg"
-      (click)="incrementGuestCount()" />
-        
+      <button 
+          class="on-light"
+          [disabled]="!rezzoForm.valid"
+          type="submit">
+          Make Reservation
+        </button>
+      </form>
+    ```
+    #### `rezzo-form.component.ts`
+    ```js
+    import { FormBuilder, FormGroup, } from '@angular/forms';
+
+    ...
+
+    export class RezzoFormComponent implements OnInit {
+      rezzoForm: FormGroup;
+      ...
+      months: string[] = [
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+        'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
+        ];
+      ...
+      guests: string[] = [
+        '1 person', '2 people', '3 people', '4 people', '5 people', 
+        '6 people', '7 people', '8 people', '9 people', '10 people'
+        ];
+      selectedGuestCount: number = 4;
+      ...
+
+      constructor(private fb: FormBuilder) { }
+
+      ngOnInit(): void {
+        this.initializeForm();
+      }
+
+      initializeForm(): void {
+        this.rezzoForm = this.fb.group({
+          ...
+          month: 'MM',
+          ...
+          meridian: 'PM',
+          guests: this.guests[this.selectedGuestCount + 1],
+        })
+      };
+
+      decrementGuestCount() {
+        if (this.selectedGuestCount > 1) {
+          this.selectedGuestCount = this.selectedGuestCount - 1
+        }
+      }
+      incrementGuestCount() {
         ...
-   
-   <button 
-      class="on-light"
-      [disabled]="!rezzoForm.valid"
-      type="submit">
-      Make Reservation
-    </button>
-  </form>
-```
-#### `rezzo-form.component.ts`
-```js
-import { FormBuilder, FormGroup, } from '@angular/forms';
+      }
 
-...
+      onSubmitForm() {
+        ...
+      }
 
-export class RezzoFormComponent implements OnInit {
-  rezzoForm: FormGroup;
-  ...
-  months: string[] = [
-    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
-    'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
-    ];
-  ...
-  guests: string[] = [
-    '1 person', '2 people', '3 people', '4 people', '5 people', 
-    '6 people', '7 people', '8 people', '9 people', '10 people'
-    ];
-  selectedGuestCount: number = 4;
-  ...
-
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit(): void {
-    this.initializeForm();
-  }
-
-  initializeForm(): void {
-    this.rezzoForm = this.fb.group({
+      selectMonth(event): void {
+        this.rezzoForm.patchValue({
+          month: event.target.value
+        })
+      }
       ...
-      month: 'MM',
-      ...
-      meridian: 'PM',
-      guests: this.guests[this.selectedGuestCount + 1],
-    })
-  };
-
-  decrementGuestCount() {
-    if (this.selectedGuestCount > 1) {
-      this.selectedGuestCount = this.selectedGuestCount - 1
     }
-  }
-  incrementGuestCount() {
-    ...
-  }
-
-  onSubmitForm() {
-    ...
-  }
-
-  selectMonth(event): void {
-    this.rezzoForm.patchValue({
-      month: event.target.value
-    })
-  }
-  ...
-}
-```
+    ```
 
 
 ### Continued development
@@ -196,12 +195,12 @@ export class RezzoFormComponent implements OnInit {
 
 ### Useful resources
 
-- 🙌🏾 [Angular Reactive Forms in 10 Minutes](https://youtu.be/MMP_OcjWNQo) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-- [/angular/flex-layout](https://github.com/angular/flex-layout) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Udemy: Angular (Full App) with Angular Material, Angularfire & NgRx Created by Maximilian Schwarzmüller](https://www.udemy.com/share/101WvC3@iwU-zs0EjLuBHrh2IFqrITl0TXzocf5BeqTXM5rBHhVGmHco65hhIW8VnrsMxYA=/) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-- [Managing Image Breakpoints With Angular](https://www.smashingmagazine.com/2019/02/image-breakpoints-angular/) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [SelectControlValueAccessor](https://angular.io/api/forms/SelectControlValueAccessor) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-- [Using forms for user input](https://angular.io/start/start-forms) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- 🙌🏾 [Angular Reactive Forms in 10 Minutes](https://youtu.be/MMP_OcjWNQo) - This is an amazing YouTube which helped me finally understand how to build Reactive Forms with Angular. I'd recommend it to anyone still learning this concept.
+- [/angular/flex-layout](https://github.com/angular/flex-layout) - This helped me because it's much easier to incorporate <b>Flexbox</b> into a <b>template</b> than a <b>CSS</b>stylesheet 🤔 . I really liked this pattern and will use it going forward.
+- [Udemy: Angular (Full App) with Angular Material, Angularfire & NgRx Created by Maximilian Schwarzmüller](https://www.udemy.com/share/101WvC3@iwU-zs0EjLuBHrh2IFqrITl0TXzocf5BeqTXM5rBHhVGmHco65hhIW8VnrsMxYA=/) - Great Tutorials. Would Recommend.
+- [Managing Image Breakpoints With Angular](https://www.smashingmagazine.com/2019/02/image-breakpoints-angular/) - Yes.
+- <s>[SelectControlValueAccessor](https://angular.io/api/forms/SelectControlValueAccessor) - This is NOT an amazing article which DID NOT help me finally understand selectors/options/reactive forms. I'd NEVER EVER recommend it to anyone still learning this concept.</s>
+- [Using forms for user input](https://angular.io/start/start-forms) - I guess.
 - [Angular 13 Select Dropdown with Reactive Forms Examples](https://www.positronx.io/angular-select-dropdown-with-reactive-forms-examples/) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 ## Author
