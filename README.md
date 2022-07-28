@@ -73,8 +73,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 - While building this project I learned more about <b>Figma</b>, apparently most of the <b>CSS</b> variables and styles may be available in your <b>Figma</b> file, which saves SO much time. Who knew? 😋
 - This is also one of my first "real" projects using <b>Angular</b>, <s>overall everything went very smoothly, and I enjoy working with <b>Angular</b>. <b>Angular</b>, it seems much more intuitive and organized than <b>React</b>🤡</s>.
-
-Please see below, for a code snippet, of the Angular Reactive Form that actually broke my soul. I will not be elaborating 👉🏾 👈🏾
+- Please see below, for a code snippet, of the Angular Reactive Form that actually broke my soul. I will not be elaborating 👉🏾 👈🏾
 
 #### `rezzo-form.component.html`
 
@@ -133,9 +132,15 @@ import { FormBuilder, FormGroup, } from '@angular/forms';
 export class RezzoFormComponent implements OnInit {
   rezzoForm: FormGroup;
   ...
-  months: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+  months: string[] = [
+    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+    'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
+    ];
   ...
-  guests: string[] = ['1 person', '2 people', '3 people', '4 people', '5 people', '6 people', '7 people', '8 people', '9 people', '10 people'];
+  guests: string[] = [
+    '1 person', '2 people', '3 people', '4 people', '5 people', 
+    '6 people', '7 people', '8 people', '9 people', '10 people'
+    ];
   selectedGuestCount: number = 4;
   ...
 
