@@ -1,17 +1,7 @@
 <header>
-
-        <picture fxLayoutAlign="center center">
-                <source media="(min-width: 900px)"
-                        srcset="../../../assets/images/homepage/hero-bg-desktop.jpg">
-                <source media="(min-width: 600px)"
-                        srcset="../../../assets/images/homepage/hero-bg-tablet.jpg">
-                <img src="../../../assets/images/homepage/hero-bg-mobile.jpg" />
-        </picture>
+  <app-picture-responsive imageTitle="hero-bg"></app-picture-responsive>
 </header>
-<div class="intro"
-     fxLayout="column"
-     fxLayoutAlign="center center">
-        <img src="../../../assets/images/logo.png"
-             class="logo" />
-        <app-hero></app-hero>
+<div class="logo">
+  <img src="/assets/images/logo.png"/>
+  <app-hero></app-hero>
 </div>

@@ -1,43 +1,35 @@
-<div class="menu"
-     fxLayout="column"
-     fxLayoutAlign="center center">
+<div class="menu">
 
 
-    <section class="highlights">
-        <img src="../../../assets/images/patterns/pattern-divide.svg"
-             class="divide">
-        <h2>A few highlights from our menu</h2>
-        <p>
-            We cater for all dietary requirements, but here’s a glimpse at some of our diner’s favourites.
-            Our menu is revamped every season.
-        </p>
-    </section>
-    <section class="preview">
+  <section class="highlights">
+    <img src="../../../assets/images/patterns/pattern-divide.svg"
+         class="divide">
+    <h2>A few highlights from our menu</h2>
+    <p>
+      We cater for all dietary requirements, but here’s a glimpse at some of our diner’s favourites.
+      Our menu is revamped every season.
+    </p>
+  </section>
+  <section class="preview">
 
-        <div class="menu-item"
-             *ngFor="let item of menu">
-            <div class="content">
-                <div class="menu-photo"
-                     fxLayout="column">
-                    <picture>
-                        <source media="(min-width: 900px)"
-                                srcset="{{item.tabletDesktopImage}}">
-                        <source media="(min-width: 600px)"
-                                srcset="{{item.tabletDesktopImage}}">
-                        <img src="{{item.mobileImage}}" />
-                    </picture>
-                    <img src="../../../assets/images/patterns/pattern-divide.svg"
-                         class="item-divide">
-                </div>
+    <div class="menu-item"
+         *ngFor="let item of menu">
+      <div class="content">
+        <div class="menu-photo">
+          <app-picture-responsive imageTitle={{item.imageTitle}}></app-picture-responsive>
 
-                <div class="menu-text">
-                    <h2 class="menu-title">{{ item.title }}</h2>
-                    <p>{{ item.description }}</p>
-                </div>
-            </div>
-            <div class="divider"></div>
+          <img src="/assets/images/patterns/pattern-divide.svg"
+               class="item-divide">
         </div>
-        <!-- -->
 
-    </section>
+        <div class="menu-text">
+          <h2 class="menu-title">{{ item.title }}</h2>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+    </div>
+
+
+  </section>
 </div>

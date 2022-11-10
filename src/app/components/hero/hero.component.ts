@@ -13,7 +13,6 @@ export class HeroComponent implements OnInit {
 
   @Output() bookTableClick = new EventEmitter();
 
-
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {

@@ -13,77 +13,37 @@ form {
 .rezForm {
     position: absolute;
     top: -140px;
-    height: 585px;
+    height: 600px;
     z-index: 2;
     box-shadow: 0px 75px 100px -50px var(--ebony-clay);
     background-color: white;
     margin: 25px 10px;
-    padding: 30px 10px 10px 10px;
+    padding: 30px 10px;
+    font-size: 20px;
+    letter-spacing: 0px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+    color: var(--dreamless-sleep);
 
-    input,
-    .counter {
-        height: 43px;
-        width: 263px;
-
-    }
-
-    input, .small {
-        font-size: 20px;
-        letter-spacing: 0px;
-        font-weight: 400;
-        line-height: 28px;
-        text-align: left;
-        color: var(--cod-gray);
+    .form-control {
         opacity: 0.75;
         padding-left: 10px;
-    }
-
-    select {
-        padding: 0 15px;
-        
-    }
-
-    .guests {
-        width: 263px;
-        padding: 15px;
-    }
-
-    h3 {
-        width: 263px;
-        // height: 28px;
-        text-transform:initial;
-        font-size: 20px;
-        font-weight: 400;
-        // line-height: 28px;
-        letter-spacing: 0px;
-        text-align: left;
-        margin: 10px 0 0 0;
-        padding: 0;
-    }
-
-    .element {
         border-top: none;
         border-left: none;
         border-right: none;
         border-bottom: 1px solid var(--shuttle-gray);
         font-size: 20px;
         height: 43px;
-        // 
-        line-height: 28px;
-        letter-spacing: 0px;
-        text-align: left;
-        // color: var(--shuttle-gray);
-        select{
-            width: 55px;
-            // opacity: 0.5;
-            color: var(--ebony-clay);
-            
-        }
-
     }
 
-    .small {
-        width: 75px;
+
+
+    .form-select {
+        padding: 0 15px;
+        width: 55px;
+        // opacity: 0.5;
+        color: var(--ebony-clay);
         opacity: 0.5;
         -moz-appearance: none;
         /* Firefox */
@@ -92,35 +52,50 @@ form {
         appearance: none;
     }
 
-    // :not(.ampm) {
-
-    // }
-
-    .ampm {
-        color: var(--cod-gray);
-        border: none;
-        font-size: 20px;
-        height: 43px;
-        line-height: 28px;
-        letter-spacing: 0px;
-        text-align: left;
-     opacity: .75;
-        // width: 75px;
-    }
-
+    .full,
     .dates,
-    .times {
+    .times,
+    h3 {
         width: 263px;
     }
 
+    .small {
+        width: 75px;
+    }
+
     .counter {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        border-bottom: 1px solid var(--shuttle-gray);
+        padding: 15px;
         font-size: 20px;
         font-weight: 700;
         letter-spacing: -0.25px;
-        color: var(--cod-gray);
-  
+        color: var(--dreamless-sleep);
     }
+
+    h3 {
+        height: 28px;
+        text-transform: initial;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        text-align: left;
+        margin: 10px 0 0 0;
+        padding: 0;
+    }
+
+    .ampm {
+        color: var(--dreamless-sleep);
+        border-bottom: 1px solid var(--shuttle-gray);
+        text-align: left;
+        opacity: .75;
+
+        .small {
+            border: none;
+            width: 65px;
+        }
+
+    }
+
+
+
 }

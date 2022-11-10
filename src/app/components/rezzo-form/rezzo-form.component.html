@@ -2,6 +2,7 @@
          fxLayoutAlign="center center"
          fxLayout="column">
         <form class="rezForm"
+    
               [formGroup]="rezzoForm"
               (ngSubmit)="onSubmitForm()"
               fxLayout="column"
@@ -11,13 +12,30 @@
                 <input type="text"
                        placeholder="Name"
                        formControlName="name"
-                       class="element">
+                       class="form-control form-input full"
+                       
+                       > 
+                     
                 <!-- TODO => add error message  "This field is required"/Please enter your name.-->
+                <!--<span *ngIf="name.invalid" >Error!</span >
+                        <div *ngIf="name.errors?.['required']">
+                                Name is required.&& (name.dirty || name.touched)"
+                        </div>  <div
+                       *ngIf="name.touched && name.errors"
+                       class="alert alert-danger"
+                     >[ngClass]="{ 'is-invalid': name.touched && name.errors }"
+                       <div *ngIf="name.required">First Name is required</div>
+                       <div *ngIf="name.errors.minlength">Minimum 3 characters</div>
+                     </div>
+                        <div *ngIf="name.errors?.['minlength']">
+                                Name must be at least 4 characters long.
+                        </div>
 
+                </div> -->
                 <input type="text"
                        placeholder="Email"
                        formControlName="email"
-                       class="element">
+                       class="form-control form-input full">
                 <!-- TODO => add error message  "This field is required"-->
                 <!-- TODO => add error message when not formatted correctly should show "Please use a valid email address"-->
                 <h3>Pick a Date</h3>
@@ -29,7 +47,7 @@
                                 <select formControlName="month"
                                         type="text"
                                         (change)="selectMonth($event)"
-                                        class="element small">
+                                        class="form-control form-select small">
                                         <option disabled>MM</option>
                                         <option *ngFor="let month of months"
                                                 [ngValue]="month">
@@ -38,7 +56,7 @@
                                 </select>
                                 <select formControlName="day"
                                         (change)="selectDay($event)"
-                                        class=" element small">
+                                        class="form-control form-select small">
                                         <option disabled>DD</option>
                                         <option *ngFor="let day of days"
                                                 [ngValue]="day">
@@ -52,7 +70,7 @@
                     </mat-error> -->
                                 <select formControlName="year"
                                         (change)="selectYear($event)"
-                                        class="element small">
+                                        class="form-control form-select small">
                                         <option disabled>YYYY</option>
                                         <option *ngFor="let year of years"
                                                 [ngValue]="year">
@@ -72,7 +90,7 @@
                              fxLayout="row"
                              fxLayoutAlign="space-between center">
                                 <select formControlName="hour"
-                                        class=" element small"
+                                        class="form-control form-select small"
                                         (change)="selectHour($event)">
                                         <option *ngFor="let hour of hours"
                                                 [ngValue]="hour">{{hour}}</option>
@@ -81,16 +99,16 @@
 
                                 <select formControlName="minute"
                                         (change)="selectMinute($event)"
-                                        class="element small">
+                                        class="form-control form-select small">
                                         <option *ngFor="let minute of minutes"
                                                 [ngValue]="minute">{{minute}}</option>
                                 </select>
                                 <!-- TODO => add error message "Please select a Minute" "This field is incomplete"-->
 
-                                <div class="element">
+                                <div class="ampm">
                                         <select formControlName="meridian"
                                                 (change)="selectMeridian($event)"
-                                                class="small ampm">
+                                                class="form-control form-select small">
                                                 <option [ngValue]="'PM'">PM</option>
                                                 <option [ngValue]="'AM'">AM</option>
                                         </select>
@@ -101,7 +119,7 @@
                 </div>
                 <div fxLayout="row"
                      fxLayoutAlign="space-between center"
-                     class="element guests counter">
+                     class="full counter">
                         <img src="../../../assets/images/icons/icon-minus.svg"
                              (click)="decrementGuestCount()" />
                         {{guests[selectedGuestCount-1]}}

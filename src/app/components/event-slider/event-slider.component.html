@@ -1,8 +1,5 @@
 <div class="event-list"
-     fxLayout.lt-lg="column"
-     fxLayoutAlign.lt-lg="center center"
-     fxLayout.gt-md="row"
-     fxLayoutAlign.lt-lg="space-around center">
+   >
     <section class="events">
         <picture class="lines pattern">
             <source srcset="../../../assets/images/patterns/pattern-lines.svg">
@@ -25,10 +22,7 @@
             <img src="{{selectedEvent.mobileImage}}" />
         </picture>
         <ul class="event-select mobile"
-            fxLayout="column"
-            fxLayoutAlign.lt-lg="space-evenly center"
-            fxLayoutAlign.gt-md="center space-around"
-            >
+           >
             <!-- TODO => add fxLayout show/hide & maybe move to seperate component -->
             <li class="event-item"
                 *ngFor="let event of events">
@@ -42,18 +36,18 @@
 
         </ul>
     </section>
-    <section class="event-highon-light"
-             *ngIf="selectedEvent" fxLayout.gt-md="column" fxLayoutAlign.gt-md="space-between center">
+    <section class="event-high on-light"
+             *ngIf="selectedEvent" >
         <h2>{{selectedEvent.title}}</h2>
         <p class="secondary">{{selectedEvent.description}}</p>
-        <button text="Book a table"
-                    class="on-light"
+        <button class="btn-dark"
                     (click)="onBookTableClick()">Book A Table</button>
 
         <ul class="event-select desktop">
            <!-- TODO => add fxLayout show/hide & maybe move to seperate component -->
             <li class="event-item"
-                *ngFor="let event of events"><a (mouseover)="event === selectedEvent"
+                *ngFor="let event of events">
+                <a (mouseover)="event === selectedEvent"
                    (mouseout)="event !== selectedEvent"
                    type="button"
                    [ngClass]="{'selected' : event === selectedEvent}"

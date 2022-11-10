@@ -1,19 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "League Spartan", sans-serif;
-}
+/* Global styles */
+@use './variables';
 
-.container{
-    width: 100vw;
-}
 
-img {
-    max-width: 100%;
-
-}
-
-// TODO => switch flexbox to fxLayout
 // TODO => hover states for all interactive elements throughout the site
 // TODO => review styles for Mobile, < 600px
 // TODO => review styles for Tablet, 600px+
@@ -21,147 +9,102 @@ img {
 // TODO => Sass => production
 // TODO => Deploy
 
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400;600;700&display=swap");
 
-:root {
-    /* Primary Colors */
-    --beaver: hsl(27, 22%, 51%);
-    --cod-gray: hsl(0, 0%, 7%);
-    /* Secondary Colors */
-    --mirage: hsl(234, 30%, 13%);
-    --ebony-clay: hsl(218, 21%, 18%);
-    --shuttle-gray: hsl(217, 14%, 42%);
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: variables.$global-font;
+  font-size: 18px;
+  text-align: center;
 }
 
-/* Typography */
-@mixin heading-xl {
-    font-size: 80px;
-    line-height: 80px;
-    font-weight: 300;
-    letter-spacing: -1px;
+* {
+  box-sizing: inherit;
 }
 
-@mixin heading-l {
-    font-size: 48px;
-    line-height: 48px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-@mixin heading-m {
-    font-family: "League Spartan", sans-serif;
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 700;
-    letter-spacing: -0.25px;
-}
-
-@mixin heading-s {
-    font-size: 17px;
-    line-height: 28px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-}
-
-@mixin body-primary {
-    font-size: 20px;
-    line-height: 30px;
-    font-weight: 400;
-}
-
-@mixin body-secondary {
-    font-size: 16px;
-    line-height: 26px;
-    font-weight: 400;
+img {
+  max-width: 100%;
 }
 
 h1 {
-    @include heading-xl();
+  @include variables.heading-type-xl;
 }
 
 h2 {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 40px;
-    letter-spacing: -0.4px;
-    text-align: center;
-    color: var(--ebony-clay)
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.4px;
+  text-align: center;
+  color: variables.$ebony-clay;
 }
 
 h3,
 h4,
 h5,
 h6 {
-    @include heading-s();
-}
-
-
-.primary {
-    @include body-primary();
-    text-align: center;
+  @include variables.heading-type-s;
 }
 
 p {
-    @include body-secondary();
-    text-align: center;
-    color: var(--shuttle-gray);
+  @include variables.body-type-secondary;
+  text-align: center;
+  color: variables.$shuttle-gray;
+}
 
+.primary {
+  @include variables.body-type-primary;
+  text-align: center;
 }
 
 li {
-    @include body-secondary();
-    text-transform: uppercase;
-    font-weight: 300;
+  @include variables.body-type-secondary;
+  text-transform: uppercase;
+  font-weight: 300;
 }
 
 a,
 a:visited,
 a:active {
-    color: white;
-    text-decoration: none
+  color: white;
+  text-decoration: none
 }
 
 .attribution {
-    @include body-secondary();
-    text-align: center;
+  @include variables.body-type-secondary;
+  text-align: center;
 }
 
-button {
-    width: 263px;
-    height: 64px;
-    // margin:  50px 100px;
-    @include heading-s();
+.btn-dark {
+  @include variables.btn;
+  border: 1px solid white;
+  background: variables.$dreamless-sleep;
+  color: white;
 
-    &.on-dark {
-        border: 1px solid white;
-        background: transparent;
-        color: white;
+  &:hover {
+    color: variables.$dreamless-sleep !important;
+    border: none;
+    background-color: white;
+  }
 
-        &:hover {
-            border: none;
-            background-color: white;
-            color: var(--cod-gray);
-        }
+}
 
-        &.inactive {
-            opacity: 25%;
-        }
-    }
+.btn-light {
+  @include variables.btn;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
 
-    &.on-light {
-        border: none;
-        background-color: var(--cod-gray);
-        color: white;
+  &:hover {
+    border: 1px solid variables.$dreamless-sleep;
+    background: white;
+    color: variables.$dreamless-sleep;
+  }
 
-        &:hover {
-            border: 1px solid var(--cod-gray);
-            background: transparent;
-            color: var(--cod-gray);
-        }
+}
 
-        &.inactive {
-            opacity: 25%;
-        }
-    }
+ul {
+
+  list-style: none;
 }

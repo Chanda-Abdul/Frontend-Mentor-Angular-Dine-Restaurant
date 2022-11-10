@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +7,4 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 export class AppComponent {
   title = 'Frontend Mentor | Angular Dine Restaurant Website Challenge';
-  
-
 }

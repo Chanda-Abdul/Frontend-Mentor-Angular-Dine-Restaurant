@@ -18,6 +18,7 @@ import { EventSliderComponent } from './components/event-slider/event-slider.com
 import { HeaderComponent } from './components/header/header.component';
 import { RezzoFormComponent } from './components/rezzo-form/rezzo-form.component';
 import { MenuPreviewComponent } from './components/menu-preview/menu-preview.component';
+import { PictureResponsiveComponent } from './components/picture-responsive/picture-responsive.component';
 
 
 
@@ -29,11 +30,14 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HeroComponent,
-
     BookingComponent,
     EventSliderComponent,
     HomeComponent,
-    FooterComponent, HeaderComponent, RezzoFormComponent, MenuPreviewComponent],
+    FooterComponent,
+    HeaderComponent,
+    RezzoFormComponent,
+    MenuPreviewComponent,
+    PictureResponsiveComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
@@ -42,7 +46,6 @@ const appRoutes: Routes = [
     FlexLayoutModule,
     FormsModule,
     BrowserAnimationsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

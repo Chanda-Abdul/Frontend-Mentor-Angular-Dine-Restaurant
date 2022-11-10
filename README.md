@@ -61,22 +61,22 @@ Then crop/optimize/edit your image however you like, add it to your project, and
   - TypeScript
   - JavaScript
   - <s>[Angular Material](https://material.angular.io/)</s>
+- <b>Figma</b>
 - <b>Sass/CSS</b> custom properties
-  - 😘 <b>[fxLayout API](https://github.com/angular/flex-layout/wiki/fxLayout-API)</b> Angular Flexbox API
+  - <s><b>[fxLayout API](https://github.com/angular/flex-layout/wiki/fxLayout-API)</b> Angular Flexbox API</s>
   - <b>Mobile-first</b> workflow
 - Semantic <b>HTML5</b> markup
-- <b>Figma</b>
+
 
 ### What I learned
 
-<!-- Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge. -->
 
-- While building this project I learned more about <b>Figma</b>, apparently most of the <b>CSS</b> variables and styles may be available in your <b>Figma</b> file, which saves SO much time. Who knew? 😋
+<!-- - While building this project I learned more about <b>Figma</b>, apparently most of the <b>CSS</b> variables and styles may be available in your <b>Figma</b> file, which saves SO much time. Who knew? 😋
 - This is also one of my first "real" projects using <b>Angular</b>, <s>overall everything went very smoothly, and I enjoy working with <b>Angular</b>. <b>Angular</b>, it seems much more intuitive and organized than <b>React</b>🤡</s>.
-- Please see below, for a code snippet, of the Angular Reactive Form that actually broke my soul. I will not be elaborating 👉🏾 👈🏾
-    #### `rezzo-form.component.html`
+- Please see below, for a code snippet, of the Angular Reactive Form that actually broke my soul. I will not be elaborating 👉🏾 👈🏾 -->
 
-    ```html
+#### `rezzo-form.component.html`
+```html
     <form class="rezForm"
       [formGroup]="rezzoForm"
       (ngSubmit)="onSubmitForm()"
@@ -121,9 +121,9 @@ Then crop/optimize/edit your image however you like, add it to your project, and
           Make Reservation
         </button>
       </form>
-    ```
-    #### `rezzo-form.component.ts`
-    ```js
+```
+#### `rezzo-form.component.ts`
+```js
     import { FormBuilder, FormGroup, } from '@angular/forms';
 
     ...
@@ -179,27 +179,41 @@ Then crop/optimize/edit your image however you like, add it to your project, and
       }
       ...
     }
-    ```
+```
 
 
 ### Continued development
 
 - [ ] Add animations
-- [ ] Add an authentication option, where a manager/admin can login with a password and
+
+
+
+#### Features to Add
+##### Authenticate/Authorization with ability to update
+- [ ] Add authentication /Authorization
+- [ ] Login/logout, with a password, for managers/admins so that they can update menu options, reservations, and events
   - [ ] view/edit menu options
   - [ ] view/edit menu event options
   - [ ] view/edit menu reservations
-- [ ] add about chef/restaraunt section/page
-- [ ] add menu component
-- [ ] add event booking component
+- [ ] button? reset to default menu/event data default. for testing purposes
+##### Authenticate/Authorization with ability to view only
+- [ ] add a view only option for admins to view menu, reservations, and events
 
+##### menu page
+- [ ] add menu component to show list of all current offerings.
+<!-- many resturaunt sites have a menu for users to view. -->
+##### About page
+- [ ] add about chef/restaraunt section/page
+
+##### Event Booking Component
+- [ ] add event booking component so that users can book events, similar to the reservation component
 ### Useful resources
 
 - 🙌🏾 [Angular Reactive Forms in 10 Minutes](https://youtu.be/MMP_OcjWNQo) - This is an amazing YouTube which helped me finally understand how to build Reactive Forms with Angular. I'd recommend it to anyone still learning this concept.
-- [/angular/flex-layout](https://github.com/angular/flex-layout) - This helped me because it's much easier to incorporate <b>Flexbox</b> into a <b>template</b> than a <b>CSS</b>stylesheet 🤔 . I really liked this pattern and will use it going forward.
+- [/angular/flex-layout](https://github.com/angular/flex-layout) - <s>This helped me because it's much easier to incorporate <b>Flexbox</b> into a <b>template</b> than a <b>CSS</b> stylesheet 🤔 . I really liked this pattern and will use it going forward.</s> Now, I prefer to create flex styles with <i>Sass</i>
 - [Udemy: Angular (Full App) with Angular Material, Angularfire & NgRx Created by Maximilian Schwarzmüller](https://www.udemy.com/share/101WvC3@iwU-zs0EjLuBHrh2IFqrITl0TXzocf5BeqTXM5rBHhVGmHco65hhIW8VnrsMxYA=/) - Great Tutorials. Would Recommend.
-- [Managing Image Breakpoints With Angular](https://www.smashingmagazine.com/2019/02/image-breakpoints-angular/) - Yes.
-- <s>[SelectControlValueAccessor](https://angular.io/api/forms/SelectControlValueAccessor) - This is NOT an amazing article which DID NOT help me finally understand selectors/options/reactive forms. I'd NEVER EVER recommend it to anyone still learning this concept.</s>
+- [Managing Image Breakpoints With Angular](https://www.smashingmagazine.com/2019/02/image-breakpoints-angular/) - Yes. And then I moved the resonsive images into a seperate component👌🏽
+<!-- - <s>[SelectControlValueAccessor](https://angular.io/api/forms/SelectControlValueAccessor) - This is NOT an amazing article which DID NOT help me finally understand selectors/options/reactive forms. I'd NEVER EVER recommend it to anyone still learning this concept.</s> -->
 - [Using forms for user input](https://angular.io/start/start-forms) - I guess.
 - [Angular 13 Select Dropdown with Reactive Forms Examples](https://www.positronx.io/angular-select-dropdown-with-reactive-forms-examples/) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 

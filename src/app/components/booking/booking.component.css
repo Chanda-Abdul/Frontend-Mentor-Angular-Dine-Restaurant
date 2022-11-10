@@ -5,10 +5,6 @@
   width: 100vw;
 }
 
-.content img {
-  width: 100vw;
-}
-
 .content a {
   text-decoration: none;
 }
@@ -22,7 +18,9 @@ section {
   color: white;
 }
 
-
+img.logo {
+  width: 100px;
+}
 
 h1 {
   width: 250px;
@@ -50,7 +48,6 @@ p {
   .content {
     height: 1035px;
   }
-
   h1 {
     width: 689px;
     margin-top: 175px;

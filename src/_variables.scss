@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400;600;700&display=swap");
+
+$global-font: "League Spartan", sans-serif;
+
+/* Primary Colors */
+$teddy-bear: hsl(27, 22%, 51%);
+$dreamless-sleep: hsl(0, 0%, 7%);
+/* Secondary Colors */
+$mirage: hsl(234, 30%, 13%);
+$ebony-clay: hsl(218, 21%, 18%);
+$shuttle-gray: hsl(217, 14%, 42%);
+
+/* Typography */
+@mixin heading-type-xl {
+  font-size: 80px;
+  line-height: 80px;
+  font-weight: 300;
+  letter-spacing: -1px;
+}
+
+@mixin heading-type-l {
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+@mixin heading-type-m {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+}
+
+@mixin heading-type-s {
+  font-size: 17px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+@mixin body-type-primary {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+@mixin body-type-secondary {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+/* Flex */
+@mixin flexCenter($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin flexSpaceBetween($direction) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*button*/
+@mixin btn {
+  width: 263px;
+  height: 64px;
+  @include heading-type-s;
+
+  // &[inactive] {
+  //   opacity: 25%;
+  // }
+}
