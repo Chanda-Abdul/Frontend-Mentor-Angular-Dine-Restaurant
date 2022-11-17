@@ -19,11 +19,14 @@ header {
 
 @media (min-width: 600px) {
   header {
-    height: 992px;
+    height: 55rem;
   }
 
   .logo {
-    top: 372px;
+    top: 21rem;
+    padding-top: 10rem;
+    margin: 0 1rem;
+
   }
 }
 

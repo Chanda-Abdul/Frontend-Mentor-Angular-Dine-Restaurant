@@ -1,23 +1,16 @@
 <div class="content">
-    <picture>
+  <app-picture-responsive imageTitle="booking-hero-bg"></app-picture-responsive>
 
-        <source media="(min-width: 900px)"
-                srcset="../../../assets/images/booking/hero-bg-desktop.jpg">
-        <source media="(min-width: 600px)"
-                srcset="../../../assets/images/booking/hero-bg-tablet.jpg">
-        <img src="../../../assets/images/booking/hero-bg-mobile.jpg" />
-    </picture>
-    <section>
-        <a routerLink='/'>
-            <img src="../../../assets/images/logo.png"  class="logo"/>
-        </a>
-        <h1>Reservations</h1>
-        <p>We can’t wait to host you. If you have any special requirements please feel free to
-            call on the phone number below. We’ll be happy to accommodate you.</p>
-        <button text="Reserve Place"
-                    
-                    class="on-dark"
-                    routerLink='/'>Book A Table</button>
-    </section>
-    <app-rezzo-form></app-rezzo-form>
+  <section>
+    <a routerLink='/'>
+      <img src="/assets/images/logo.png"
+           class="logo" />
+    </a>
+    <h1>Reservations</h1>
+    <p>We can’t wait to host you. If you have any special requirements please feel free to
+      call on the phone number below. We’ll be happy to accommodate you.</p>
+    <button class="btn btn-light"
+            routerLink='/'>Reserve Place</button>
+  </section>
+  <app-rezzo-form></app-rezzo-form>
 </div>

@@ -26,7 +26,7 @@ Users should be able to:
 
 - [ ] View the optimal layout for each page depending on their device's screen size
   - [x] Mobile, < 600px
-  - [ ] Tablet, 600px+
+  - [x] Tablet, 600px+
   - [ ] Desktop, 800px+
 - [ ] See hover states for all interactive elements throughout the site
 - [x] See the correct content for the Family Gatherings, Special Events, and Social Events section when the user clicks each tab
@@ -80,9 +80,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
     <form class="rezForm"
       [formGroup]="rezzoForm"
       (ngSubmit)="onSubmitForm()"
-      fxLayout="column"
-      fxLayoutAlign="space-evenly center"
-      fxLayoutGap="20px">
+      >
 
         <input type="text"
           placeholder="Name"
@@ -106,10 +104,10 @@ Then crop/optimize/edit your image however you like, add it to your project, and
               </select>
               ...
           
-          <img src="../../../assets/images/icons/icon-minus.svg"
+          <img src="/assets/images/icons/icon-minus.svg"
             (click)="decrementGuestCount()" />
               {{guests[selectedGuestCount-1]}}
-          <img src="../../../assets/images/icons/icon-plus.svg"
+          <img src="/assets/images/icons/icon-plus.svg"
           (click)="incrementGuestCount()" />
             
             ...
@@ -209,6 +207,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - [ ] add event booking component so that users can book events, similar to the reservation component
 ### Useful resources
 
+- [Reactive forms](https://angular.io/guide/reactive-forms) - This helped me... I really liked this pattern and will use it going forward.
 - 🙌🏾 [Angular Reactive Forms in 10 Minutes](https://youtu.be/MMP_OcjWNQo) - This is an amazing YouTube which helped me finally understand how to build Reactive Forms with Angular. I'd recommend it to anyone still learning this concept.
 - [/angular/flex-layout](https://github.com/angular/flex-layout) - <s>This helped me because it's much easier to incorporate <b>Flexbox</b> into a <b>template</b> than a <b>CSS</b> stylesheet 🤔 . I really liked this pattern and will use it going forward.</s> Now, I prefer to create flex styles with <i>Sass</i>
 - [Udemy: Angular (Full App) with Angular Material, Angularfire & NgRx Created by Maximilian Schwarzmüller](https://www.udemy.com/share/101WvC3@iwU-zs0EjLuBHrh2IFqrITl0TXzocf5BeqTXM5rBHhVGmHco65hhIW8VnrsMxYA=/) - Great Tutorials. Would Recommend.

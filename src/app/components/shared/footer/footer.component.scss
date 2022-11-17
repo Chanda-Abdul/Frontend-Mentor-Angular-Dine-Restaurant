@@ -1,0 +1,61 @@
+@use "/src/variables";
+
+footer {
+  @include variables.flexCenter(column);
+  min-height: 25.5rem;
+  background-color: variables.$dreamless-sleep;
+  color: white;
+  text-align: center;
+}
+
+.info {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+ul {
+  margin: 20px 5px;
+  padding: 1rem 2rem;
+}
+
+li {
+  @include variables.body-type-secondary;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+.attribution {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 600px) {
+  .info {
+    @include variables.flexSpaceBetween(row);
+    align-items: flex-start;
+    padding: 3rem 4rem;
+    margin: 0 14rem 0 2rem;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 18rem;
+  }
+
+  .sub-info {
+    * {
+      text-align: left;
+      margin: 0;
+
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .info {
+    height: 240px;
+  }
+
+  .sub-info {
+    margin-top: 0;
+  }
+}

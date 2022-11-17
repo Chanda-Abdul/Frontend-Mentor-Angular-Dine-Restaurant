@@ -17,24 +17,23 @@ body {
   font-family: variables.$global-font;
   font-size: 18px;
   text-align: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 * {
   box-sizing: inherit;
 }
 
-img {
-  max-width: 100%;
-}
 
 h1 {
   @include variables.heading-type-xl;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 1.75rem;
   font-weight: 700;
-  line-height: 40px;
+  line-height: 2.25rem;
   letter-spacing: -0.4px;
   text-align: center;
   color: variables.$ebony-clay;
@@ -76,29 +75,34 @@ a:active {
   text-align: center;
 }
 
+.btn{
+ @include variables.btn;
+}
+
 .btn-dark {
-  @include variables.btn;
+
+
   border: 1px solid white;
   background: variables.$dreamless-sleep;
   color: white;
 
   &:hover {
     color: variables.$dreamless-sleep !important;
-    border: none;
+    border: 1px solid variables.$dreamless-sleep;
     background-color: white;
   }
 
 }
 
 .btn-light {
-  @include variables.btn;
+
   border: 1px solid white;
   background-color: transparent;
   color: white;
 
   &:hover {
     border: 1px solid variables.$dreamless-sleep;
-    background: white;
+    background-color: white;
     color: variables.$dreamless-sleep;
   }
 
@@ -107,4 +111,13 @@ a:active {
 ul {
 
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+app-picture-responsive{
+  filter: drop-shadow(0 0 0 .25rem variables.$shuttle-gray);
+
 }

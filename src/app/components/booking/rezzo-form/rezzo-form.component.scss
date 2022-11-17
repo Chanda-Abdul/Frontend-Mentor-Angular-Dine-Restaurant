@@ -1,0 +1,184 @@
+@use '/src/variables';
+
+section {
+  position: relative;
+  width: 100vw;
+  padding: .75rem;
+  height: 33.3rem;
+  background-color: white;
+  @include variables.flexSpaceBetween(column);
+}
+
+
+.rezForm {
+  @include variables.flexSpaceBetween(column);
+  position: absolute;
+  top: -140px;
+  padding: 1.5rem 2rem;
+  margin: 1.5rem auto;
+  width: 80vw;
+  height: 33.3rem;
+  background-color: white;
+  color: variables.$dreamless-sleep;
+  z-index: 2;
+  box-shadow: 0px 75px 100px -50px variables.$ebony-clay;
+
+  // * {
+  //   // @include variables.body-type-primary;
+
+  //   line-height: 28px;
+
+  // }
+
+  .form-control {
+    font-size: 1rem;
+    opacity: 0.75;
+    padding-left: 1rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1.5px solid variables.$shuttle-gray;
+    height: 43px;
+  }
+
+.group{
+  width: 100%;
+}
+
+  .form-select {
+    width: 55px;
+    color: variables.$ebony-clay;
+    opacity: 0.5;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .full,
+  .dates,
+  .times,
+  h3 {
+    width: 100%;
+
+    @include variables.flexSpaceBetween(row);
+
+    .small {
+      padding: 0 0 .5rem 1rem;
+
+    }
+
+    .date,
+    .hour {
+      width: 3.5rem;
+
+    }
+
+    .year {
+      width: 4.5rem;
+
+      padding: 0 0 1rem .5rem;
+      margin: 5px 0;
+    }
+
+    .meridian {
+      width: 3.5rem;
+      color: variables.$dreamless-sleep
+    }
+
+    .ampm {
+      @include variables.flexCenter(row);
+      text-align: center;
+
+
+    }
+
+  }
+
+  h3 {
+    height: 28px;
+    text-transform: initial;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0px;
+    text-align: left;
+    margin: 1rem 0 0 0;
+    padding: 0;
+  }
+
+  .counter {
+    border-bottom: 1px solid variables.$shuttle-gray;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    letter-spacing: -.25;
+    color: variables.$dreamless-sleep;
+    margin-bottom: 2rem;
+  }
+
+}
+
+
+@media (min-width: 600px) {
+
+
+
+  section {
+
+    height: 27rem;
+
+  }
+
+
+  .rezForm {
+
+    top: -10rem;
+    padding: 2.5rem 3rem;
+    margin: 2.5rem auto auto 0;
+    width: 33rem;
+    height: 35rem;
+
+    .dates,
+    .times {
+      width: 22rem;
+
+      @include variables.flexSpaceBetween(row);
+
+
+      .small {
+        padding: 0 0 .5rem .5rem;
+        width: 4.4rem;
+
+      }
+
+
+      .year {
+        width: 5.4rem;
+
+      }
+
+      .meridian {
+        width: 5rem;
+
+      }
+
+    }
+  }
+
+
+  .group {
+    width: 100%;
+    @include variables.flexSpaceBetween(row);
+
+    h3 {
+      width: 10rem;
+    }
+  }
+
+  .btn {
+    width: 100%;
+
+  }
+
+
+
+
+}

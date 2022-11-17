@@ -1,15 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MENU } from 'src/app/menu-data';
+import { MenuItem } from 'src/app/menu-item.model';
 
 
-export interface MenuItem {
-  id?: number;
-  title: string;
-  description: string;
-  imageTitle?: string;
-  mobileImage: string;
-  tabletDesktopImage: string;
-}
 
 
 @Component({

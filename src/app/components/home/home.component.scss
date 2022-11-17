@@ -2,17 +2,25 @@
 
 .container {
   @include variables.flexCenter(column);
+  width: 100vw;
   position: relative;
+}
+
+.enjoyable-place {
+  top: -4rem;
+  position: absolute;
+
 }
 
 .enjoy {
   height: 45rem;
-  @include variables.flexSpaceBetween(column);
-  .text {
-  margin-top: 25rem;
-
   @include variables.flexCenter(column);
-}
+
+  .text {
+    margin-top: 20rem;
+    @include variables.flexCenter(column);
+  }
+
 }
 
 .pattern {
@@ -22,8 +30,9 @@
 
 .local {
   @include variables.flexCenter(column);
+
   .text {
-    height: 25rem;
+    height: 20rem;
     @include variables.flexCenter(column);
   }
 }
@@ -38,70 +47,125 @@ h2 {
 }
 
 p {
-  width: 18rem;
+  width: 20rem;
   margin: 1rem 1rem;
   @include variables.body-type-secondary;
   color: variables.$ebony-clay;
 }
+
 
 .cta {
   position: relative;
   margin: -.25rem;
   padding: 0;
   background-color: variables.$dreamless-sleep;
+  width: 100vw;
 
   * {
+    @include variables.flexCenter(column);
     box-shadow: none;
-    margin: 0;
-    padding: 0;
   }
 
-  img {
+  .action {
+    position: absolute;
+    height: 18.25rem;
     width: 100%;
-    object-fit: cover;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+
+    h2 {
+      margin-bottom: 1.5rem;
+      color: white;
+    }
   }
 }
 
-.action {
-  @include variables.flexCenter(column);
-  color: white;
-  position: absolute;
-  height: 18rem;
-  width: 100%;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
+
+@media (min-width: 600px) {
+  .enjoyable-place {
+    top: 1rem;
+  }
+
+  .pattern {
+    visibility: visible;
+  }
+
+  .curve-right {
+    left: -32rem;
+  }
+
+  .lines {
+    left: 35rem;
+    top: 65rem;
+  }
+
+  .enjoy {
+    height: 50rem;
+
+    .text {
+      margin-top: 25rem;
+    }
+  }
+
   h2 {
-    color: white;
-    margin-bottom: 2rem;
+    @include variables.heading-type-l;
+    width: 25rem;
+  }
+
+  p {
+    width: 25rem;
+    @include variables.body-type-primary;
+  }
+
+  .local {
+    .text {
+      width: 25rem;
+      margin-top: 3rem;
+    }
+  }
+
+  .curve-left {
+    top: 80rem;
+    right: -32rem;
+  }
+
+
+  .cta {
+    height: 15rem;
+
+    * {
+      box-shadow: none;
+    }
+
+    .action {
+      @include variables.flexCenter(column);
+      height: 100%;
+
+      h2 {
+        margin-bottom: 2.5rem;
+        width: 100%;
+      }
+    }
   }
 }
-
-
 
 
 @media (min-width: 900px) {
-
-
   .enjoy {
-
     height: 800px;
-    // align-items: left;
     text-align: center;
     margin-left: 10vw;
     margin-bottom: 75px;
-
 
     section {
       height: 800px;
       position: absolute;
       top: -100px;
-
     }
 
     img {
       margin: 0px;
-
     }
 
     .text {
@@ -109,7 +173,7 @@ p {
       height: 275px;
       text-align: left;
       margin: 0 100px;
-      padding: auto 25px;
+      padding: auto 1.5rem;
     }
   }
 
@@ -162,10 +226,6 @@ p {
     z-index: -3;
   }
 
-  // .divide {
-  //     margin: 25px 0;
-  // }
-
   .cta {
     width: 100vw;
   }
@@ -173,7 +233,6 @@ p {
   .action {
     height: 240px;
     width: 100vw;
-
 
     h2 {
       width: 615px;
@@ -199,7 +258,7 @@ p {
       width: 445px;
       height: 275px;
       text-align: left;
-      margin: 0 25px 0 10vw;
+      margin: 0 1.5rem 0 10vw;
       padding: 10px;
     }
   }

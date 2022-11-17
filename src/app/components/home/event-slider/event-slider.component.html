@@ -2,29 +2,21 @@
    >
     <section class="events">
         <picture class="lines pattern">
-            <source srcset="../../../assets/images/patterns/pattern-lines.svg">
-            <img src="../../../assets/images/patterns/pattern-lines.svg" />
+            <source srcset="/assets/images/patterns/pattern-lines.svg">
+            <img src="/assets/images/patterns/pattern-lines.svg" />
 
         </picture>
 
         <picture class="curve-right pattern">
-            <source srcset="../../../assets/images/patterns/pattern-curve-top-right.svg">
-            <img src="../../../assets/images/patterns/pattern-curve-top-right.svg" />
+            <source srcset="/assets/images/patterns/pattern-curve-top-right.svg">
+            <img src="/assets/images/patterns/pattern-curve-top-right.svg" />
 
         </picture>
-        <picture *ngIf="selectedEvent">
-            <source media="(min-width: 1440px)"
-                    srcset="{{selectedEvent.desktopImage}}">
-            <source media="(min-width: 900px)"
-                    srcset="{{selectedEvent.desktopImage}}">
-            <source media="(min-width: 600px)"
-                    srcset="{{selectedEvent.tabletImage}}">
-            <img src="{{selectedEvent.mobileImage}}" />
-        </picture>
+        <app-picture-responsive *ngIf="selectedEvent" imageTitle="{{selectedEvent.imageTitle}}" class="standard-shadow"></app-picture-responsive>
+
         <ul class="event-select mobile"
            >
-            <!-- TODO => add fxLayout show/hide & maybe move to seperate component -->
-            <li class="event-item"
+             <li class="event-item"
                 *ngFor="let event of events">
                 <!-- TODO => add onHover?, set timeout slideshow? -->
                 <a (mouseover)="event === selectedEvent"
@@ -36,7 +28,7 @@
 
         </ul>
     </section>
-    <section class="event-high on-light"
+    <section class="event"
              *ngIf="selectedEvent" >
         <h2>{{selectedEvent.title}}</h2>
         <p class="secondary">{{selectedEvent.description}}</p>
@@ -44,7 +36,7 @@
                     (click)="onBookTableClick()">Book A Table</button>
 
         <ul class="event-select desktop">
-           <!-- TODO => add fxLayout show/hide & maybe move to seperate component -->
+           <!-- TODO => add show/hide & maybe move to seperate component -->
             <li class="event-item"
                 *ngFor="let event of events">
                 <a (mouseover)="event === selectedEvent"

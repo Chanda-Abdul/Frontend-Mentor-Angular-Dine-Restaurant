@@ -1,4 +1,4 @@
-import { MenuItem } from "./components/menu-preview/menu-preview.component";
+import { MenuItem } from "./menu-item.model";
 
 
 export const MENU: MenuItem[] = [

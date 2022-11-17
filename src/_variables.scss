@@ -5,6 +5,7 @@ $global-font: "League Spartan", sans-serif;
 /* Primary Colors */
 $teddy-bear: hsl(27, 22%, 51%);
 $dreamless-sleep: hsl(0, 0%, 7%);
+
 /* Secondary Colors */
 $mirage: hsl(234, 30%, 13%);
 $ebony-clay: hsl(218, 21%, 18%);
@@ -29,13 +30,13 @@ $shuttle-gray: hsl(217, 14%, 42%);
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
-  letter-spacing: -0.25px;
+  letter-spacing: -0.1rem;
 }
 
 @mixin heading-type-s {
   font-size: 17px;
   line-height: 28px;
-  font-weight: 600;
+  font-weight: 300;
   letter-spacing: 2.5px;
   text-transform: uppercase;
 }
@@ -49,7 +50,7 @@ $shuttle-gray: hsl(217, 14%, 42%);
 @mixin body-type-secondary {
   font-size: 16px;
   line-height: 26px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 /* Flex */
@@ -72,8 +73,10 @@ $shuttle-gray: hsl(217, 14%, 42%);
   width: 263px;
   height: 64px;
   @include heading-type-s;
+  // TO DO => button inactive states
 
-  // &[inactive] {
+  // inactive {
   //   opacity: 25%;
   // }
 }
+

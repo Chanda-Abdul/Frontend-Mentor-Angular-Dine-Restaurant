@@ -3,22 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BookingComponent } from './components/booking/booking.component';
-import { HeroComponent } from './components/hero/hero.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { EventSliderComponent } from './components/event-slider/event-slider.component';
+import { HeroComponent } from './components/home/hero/hero.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { EventSliderComponent } from './components/home/event-slider/event-slider.component';
 
-import { HeaderComponent } from './components/header/header.component';
-import { RezzoFormComponent } from './components/rezzo-form/rezzo-form.component';
-import { MenuPreviewComponent } from './components/menu-preview/menu-preview.component';
-import { PictureResponsiveComponent } from './components/picture-responsive/picture-responsive.component';
+import { HeaderComponent } from './components/home/header/header.component';
+import { RezzoFormComponent } from './components/booking/rezzo-form/rezzo-form.component';
+import { MenuPreviewComponent } from './components/home/menu-preview/menu-preview.component';
+import { PictureResponsiveComponent } from './components/shared/picture-responsive/picture-responsive.component';
 
 
 
@@ -43,7 +41,6 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
     ReactiveFormsModule,
     HttpClientModule,
-    FlexLayoutModule,
     FormsModule,
     BrowserAnimationsModule,
   ],

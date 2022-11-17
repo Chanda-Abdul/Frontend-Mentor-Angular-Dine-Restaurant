@@ -2,23 +2,32 @@
 
 * {
   color: white;
+  @include variables.flexCenter(column);
+  text-align: center;
 }
 
 .menu {
   position: relative;
   margin: 2.75rem 0 0 0;
-  padding: 2.75rem 1.5rem 0 1.5rem;
+  padding: 5rem 1.5rem 0 1.5rem;
   background-color: variables.$dreamless-sleep;
+
 }
 
 .highlights {
   @include variables.flexCenter(column);
-}
 
-h2 {
-  @include variables.heading-type-l;
-  font-size: 32px;
-  line-height: 40px;
+  h2 {
+    @include variables.heading-type-l;
+    width: 20rem;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    height: 2.5rem;
+  }
+
+  p {
+    width: 20rem;
+  }
 }
 
 .divide {
@@ -31,23 +40,20 @@ h2 {
 }
 
 .menu-item {
-  @include variables.flexCenter(column);
   margin-top: 0px;
   margin-bottom: 2.75rem;
 }
 
-// .menu-photo {
-//   picture>img {
-//     max-width: 90vw;
-//     margin: auto;
-//   }
-// }
+.menu-photo {
+  // TO DO => fix height/width <app-responsive-image>, not working
+  margin-bottom: 1rem;
+}
 
 .menu-title {
   @include variables.heading-type-m;
   font-size: 1rem;
   line-height: 1.25rem;
-  letter-spacing: -0.25px;
+  letter-spacing: -0.1.5rem;
 }
 
 .menu-text p {
@@ -76,9 +82,26 @@ h2 {
 }
 
 @media (min-width:600px) {
-  .divide {
-    width: 75px;
+  .content {
+    @include variables.flexCenter(row);
+    width: 80vw;
+    position: relative;
   }
+
+  .menu-photo {
+    width: 40vw;
+    @include variables.flexCenter(row);
+  }
+
+  .item-divide {
+    width: 32px;
+    position: absolute;
+    top: 8rem;
+    right: -0.65rem;
+    z-index: -1;
+    visibility: visible;
+  }
+
 
   .highlights {
     width: 100vw;
@@ -115,41 +138,40 @@ h2 {
 
 
 
-  .item-divide {
-    width: 64px;
-    position: absolute;
-    top: 20px;
-    left: 115px;
-    z-index: -1;
-    visibility: visible;
+  .menu-item {
+
+    margin-bottom: 0rem;
   }
 
   .menu-photo {
     z-index: 2;
     position: relative;
+    margin-bottom: 0;
   }
 
   .menu-text {
-    align-items: left;
+    @include variables.flexCenter(column);
+    height: 4rem;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    margin: 0 0 0 2rem;
+    width: 21rem;
+
 
     h2 {
-      width: 383px;
-      text-align: left;
-      margin: 0;
-      padding: 0 40px 0 20px;
+      height: 1.25rem;
     }
 
     p {
-      width: 383px;
+      padding-left: 0;
       text-align: left;
-      margin: 0;
-      padding: 0 40px 20px 20px;
+      height: 2.25rem;
     }
 
   }
 
   .divider {
-
     width: 573px;
 
 
@@ -163,7 +185,7 @@ h2 {
     z-index: -2;
     width: 100vw;
     height: 761px;
-    padding-top: 40px;
+    padding-top: 2.25rem;
   }
 
   .highlights {
