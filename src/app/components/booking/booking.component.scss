@@ -10,8 +10,11 @@
 }
 
 picture {
-  width: 100vw;
-  object-fit: fill;
+  *{
+      width: 100vw;
+  // object-fit: cover;
+  }
+
 }
 
 section {

@@ -2,12 +2,12 @@
 @use './variables';
 
 
-// TODO => hover states for all interactive elements throughout the site
-// TODO => review styles for Mobile, < 600px
-// TODO => review styles for Tablet, 600px+
-// TODO => review styles for Desktop, 800px+
-// TODO => Sass => production
-// TODO => Deploy
+// TO DO => hover states for all interactive elements throughout the site
+// TO DO => review styles for Mobile, < 600px
+// TO DO => review styles for Tablet, 600px+
+// TO DO => review styles for Desktop, 800px+
+// TO DO => Sass => production
+// TO DO => Deploy
 
 
 body {
@@ -23,6 +23,7 @@ body {
 
 * {
   box-sizing: inherit;
+  transition: all .25s ease-in-out;
 }
 
 
@@ -75,41 +76,38 @@ a:active {
   text-align: center;
 }
 
-.btn{
- @include variables.btn;
+.btn {
+  @include variables.btn;
+
+  background-color: transparent;
+  // color: variables.$dreamless-sleep;
 }
 
 .btn-dark {
-
-
   border: 1px solid white;
-  background: variables.$dreamless-sleep;
   color: white;
+  background: variables.$dreamless-sleep;
 
   &:hover {
     color: variables.$dreamless-sleep !important;
+    background-color: white !important;
     border: 1px solid variables.$dreamless-sleep;
-    background-color: white;
   }
 
 }
 
 .btn-light {
-
-  border: 1px solid white;
-  background-color: transparent;
-  color: white;
+  border: 1px solid variables.$dreamless-sleep;
+  color: variables.$dreamless-sleep;
 
   &:hover {
-    border: 1px solid variables.$dreamless-sleep;
-    background-color: white;
-    color: variables.$dreamless-sleep;
+    // color: variables.$dreamless-sleep;
+    color: white;
   }
 
 }
 
 ul {
-
   list-style: none;
 }
 
@@ -117,7 +115,7 @@ a {
   text-decoration: none;
 }
 
-app-picture-responsive{
-  filter: drop-shadow(0 0 0 .25rem variables.$shuttle-gray);
+// app-picture-responsive {
+//   filter: drop-shadow(0 0 0 .25rem variables.$shuttle-gray);
 
-}
+// }

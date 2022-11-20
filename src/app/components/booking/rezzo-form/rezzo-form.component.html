@@ -1,137 +1,164 @@
 <section>
-  <form class="rezForm"
-        [formGroup]="rezzoForm"
-        #form="ngForm"
-        (ngSubmit)="onSubmitForm()">
-
-    <!-- <div> -->
+  <form novalidate
+        class="rezForm"
+        (ngSubmit)="saveReservation()"
+        [formGroup]="rezzoForm">
+    <div *ngIf="!isSubmitted">
       <!-- Name Input -->
-      <input type="text"
-             id="name"
+      <input class="form-control form-input full"
+             type="text"
+             id="nameId"
              placeholder="Name"
              formControlName="name"
-             class="form-control form-input full"
-             required>
-      <!--"TODO => add error message  -->
-      <!-- <div class="name alert alert-danger">Name is required. Name must be at least 4 characters long.</div> -->
-      <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)"
-           class="alert alert-danger">
-
-        <div *ngIf="name.errors?.['required']">
-
-        </div>
-        <div *ngIf="name.errors?.['minlength']">
-
-        </div>
-      </div> -->
-
+             [ngClass]="{'alert-danger': (rezzoForm.get('name').touched ||
+             rezzoForm.get('name').dirty) &&
+             !rezzoForm.get('name').valid  }" />
+      <div *ngIf="!rezzoForm.get('name').untouched">
+        <span class="alert-danger">
+          <span *ngIf="rezzoForm.get('name').errors?.required">
+            Please enter your name.
+          </span>
+          <span *ngIf="rezzoForm.get('name').errors?.minlength">
+            Name must be longer than 4 characters.
+          </span>
+        </span>
+      </div>
 
       <!-- Email Input -->
       <input type="text"
              placeholder="Email"
+             id="emailId"
              formControlName="email"
-             class="form-control form-input full">
-      <!-- TODO => add error message when not formatted correctly should show "Please use a valid email address"-->
+             class="form-control form-input full"
+             [ngClass]="{'alert-danger': (rezzoForm.get('email').touched ||
+           rezzoForm.get('email').dirty) &&
+           !rezzoForm.get('email').valid  }">
+      <div *ngIf="!rezzoForm.get('email').untouched">
+        <span class="alert-danger">
+          <span *ngIf="rezzoForm.get('email').errors?.required">
+            Please enter your email address.
+          </span>
+          <span *ngIf="rezzoForm.get('email').errors?.email">
+            Please enter a valid email address.
+          </span>
+        </span>
+      </div>
 
       <div class="group">
-      <!-- Date Input -->
-      <h3>Pick a Date</h3>
-      <div formGroupName="date"
-           class="dates">
-
-        <!-- Month Select -->
-        <select formControlName="month"
-                type="text"
-                (change)="selectMonth($event)"
-                class="form-control form-select small date">
-          <option disabled>MM</option>
-          <option *ngFor="let month of months">
-            {{ month }}
-          </option>
-        </select>
-        <!-- Day Select -->
-        <select formControlName="day"
-                type="text"
-                (change)="selectDay($event)"
-                class="form-control form-select small date">
-          <option disabled>DD</option>
-          <option *ngFor="let day of days">
-            {{day}}
-          </option>
-        </select>
-        <!-- TODO => add error message  "Please select a Day"  -->
-        <!-- Year Select -->
-        <select formControlName="year"
-                type="text"
-                (change)="selectYear($event)"
-                class="form-control form-select small year">
-          <option disabled>YYYY</option>
-          <option *ngFor="let year of years">
-            {{year}}
-          </option>
-        </select>
-        <!-- TODO => add error message  "Please select a Year"  -->
-      </div>
-    </div>
-
-<div class="group">
-      <!-- Time Input -->
-      <h3>Pick a Time</h3>
-      <div formGroupName="time"
-           class="times">
-        <!-- Hour Select -->
-        <!-- TODO => add error message "Please select an Hour" "This field is incomplete"-->
-        <select formControlName="hour"
-                class="form-control form-select small hour"
-                (change)="selectHour($event)">
-          <option *ngFor="let hour of hours">{{hour}}</option>
-        </select>
-        <!-- Minute Select -->
-        <select formControlName="minute"
-                (change)="selectMinute($event)"
-                class="form-control form-select small hour">
-          <option *ngFor="let minute of minutes">{{minute}}</option>
-        </select>
-        <!-- TODO => add error message "Please select a Minute" "This field is incomplete"-->
-
-        <!-- AM/PM Select -->
-        <div class="ampm">
-          <select formControlName="meridian"
-                  (change)="selectMeridian($event)"
-                  class="form-control form-select small meridian">
-            <option>PM</option>
-            <option>AM</option>
+        <!-- Date Input -->
+        <h3>Pick a Date</h3>
+        <div formGroupName="dateGroup"
+             class="dates">
+          <!-- Month Select -->
+          <select formControlName="month"
+                  type="text"
+                  class="form-control form-select small date">
+            <option disabled>MM</option>
+            <option *ngFor="let month of months">
+              {{ month }}
+            </option>
           </select>
-          <img src="/assets/images/icons/icon-arrow.svg">
+          <!-- Day Select -->
+          <select formControlName="day"
+                  type="text"
+                  class="form-control form-select small date">
+            <option disabled>DD</option>
+            <option *ngFor="let day of days">
+              {{day}}
+            </option>
+          </select>
+          <!-- Year Select -->
+          <select formControlName="year"
+                  type="text"
+                  class="form-control form-select small year">
+            <option disabled>YYYY</option>
+            <option *ngFor="let year of years">
+              {{year}}
+            </option>
+          </select>
         </div>
-        <!-- TODO => add error message "Please select morning or Evening" "This field is incomplete"-->
 
+        <!-- TO DO => add date select error message -->
+        <!-- <div *ngIf="rezzoForm.get('dateGroup.month').touched
+      || rezzoForm.get('dateGroup.day').touched ||
+      rezzoForm.get('dateGroup.year').touched">
+        <span class="alert-danger">
+          <span *ngIf="rezzoForm.get('dateGroup.month').errors?.required">
+            Please select a Month
+          </span>
+          <span *ngIf="rezzoForm.get('dateGroup.day').errors?.required">
+            Please select a Day
+          </span>
+          <span *ngIf="rezzoForm.get('dateGroup.year').errors?.required">
+            Please select a Year
+          </span>
+        </span>
+      </div> -->
       </div>
-</div>
-      <!-- Guest Counter -->
-      <!-- TODO => change this to form control -->
 
+      <div class="group">
+        <!-- Time Input -->
+        <h3>Pick a Time</h3>
+        <div formGroupName="timeGroup"
+             class="times">
+          <!-- Hour Select -->
+          <select formControlName="hour"
+                  class="form-control form-select small hour">
+            <option disabled>07</option>
+            <option *ngFor="let hour of hours">{{hour}}</option>
+          </select>
+          <!-- Minute Select -->
+          <select formControlName="minute"
+                  class="form-control form-select small hour">
+            <option *ngFor="let minute of minutes">{{minute}}</option>
+          </select>
+
+          <!-- AM/PM Select -->
+          <div class="ampm">
+            <select formControlName="meridian"
+                    class="form-control form-select small meridian">
+              <option>PM</option>
+              <option>AM</option>
+            </select>
+            <img src="/assets/images/icons/icon-arrow.svg">
+          </div>
+        </div>
+        <!-- TO DO => add timeGroup error message -->
+      </div>
+
+      <!-- Guest Counter -->
+      
+      <!-- TO DO => change this to form control? -->
       <div class="full counter">
         <img src="/assets/images/icons/icon-minus.svg"
-             (click)="decrementGuestCount(selectedGuestCount-1)" />
-        <!-- TODO => add error message "Please select guest count of 1 or more people"-->
+             (click)="decrementGuestCount()" />
+        <!-- TO DO => add error message "Please select guest count of 1 or more people"-->
 
         {{guests[selectedGuestCount-1]}}
         <img src="/assets/images/icons/icon-plus.svg"
-             (click)="incrementGuestCount(selectedGuestCount+1)" />
-        <!-- TODO => add error message "Please select guest count of 10 or less people"-->
+             (click)="incrementGuestCount()" />
+        <!-- TO DO => add error message ""-->
+        <!--  <span class="invalid-feedback">
+        <span *ngIf="rezzoForm.get('guests').errors?.range">
+          Please select guest count of 12 or less people.
+        </span>
+      </span> -->
 
       </div>
-
       <!-- Form submit button -->
-      <!-- TODO => fix disabled button styling -->
       <button class="btn btn-dark"
-              [disabled]="!rezzoForm.valid"
-              type="submit">Make Reservation</button>
-    <!-- </div> -->
+              type="submit"
+              [disabled]="!rezzoForm.valid">
+        Make
+        Reservation</button>
+    </div>
+    <div class="confirm"
+         *ngIf="isSubmitted">
+      <p>Thanks for making your reservation.</p>
+      <p>We look forward to dining with you!</p>
+    </div>
 
-    <!-- TODO => add reservation confirmation after form is sumbmitted -->
-    <!-- <div class="confirm" [hidden]="!form.submitted"> Thanks for making your reservation. We look forward to dining with you</div> -->
   </form>
+
 
 </section>

@@ -18,7 +18,7 @@
            >
              <li class="event-item"
                 *ngFor="let event of events">
-                <!-- TODO => add onHover?, set timeout slideshow? -->
+                <!-- TO DO => add onHover?, set timeout slideshow? -->
                 <a (mouseover)="event === selectedEvent"
                    (mouseout)="event !== selectedEvent"
                    type="button"
@@ -32,11 +32,11 @@
              *ngIf="selectedEvent" >
         <h2>{{selectedEvent.title}}</h2>
         <p class="secondary">{{selectedEvent.description}}</p>
-        <button class="btn-dark"
+        <button class="btn btn-dark"
                     (click)="onBookTableClick()">Book A Table</button>
 
         <ul class="event-select desktop">
-           <!-- TODO => add show/hide & maybe move to seperate component -->
+           <!-- TO DO => add show/hide & maybe move to seperate component -->
             <li class="event-item"
                 *ngFor="let event of events">
                 <a (mouseover)="event === selectedEvent"

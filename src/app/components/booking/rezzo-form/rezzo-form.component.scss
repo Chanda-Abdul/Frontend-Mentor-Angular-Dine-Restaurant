@@ -9,6 +9,12 @@ section {
   @include variables.flexSpaceBetween(column);
 }
 
+.confirm{
+  @include variables.flexCenter(column);
+  @include variables.heading-type-s;
+  width: 100%;
+  height: 100%;
+}
 
 .rezForm {
   @include variables.flexSpaceBetween(column);
@@ -23,12 +29,17 @@ section {
   z-index: 2;
   box-shadow: 0px 75px 100px -50px variables.$ebony-clay;
 
+
   // * {
   //   // @include variables.body-type-primary;
 
   //   line-height: 28px;
 
   // }
+
+  .alert-danger{
+    color: red;
+  }
 
   .form-control {
     font-size: 1rem;

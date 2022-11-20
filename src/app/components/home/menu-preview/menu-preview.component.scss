@@ -45,15 +45,14 @@
 }
 
 .menu-photo {
-  // TO DO => fix height/width <app-responsive-image>, not working
-  margin-bottom: 1rem;
+ margin-bottom: 1rem;
 }
 
 .menu-title {
   @include variables.heading-type-m;
   font-size: 1rem;
   line-height: 1.25rem;
-  letter-spacing: -0.1.5rem;
+  letter-spacing: -.1px;
 }
 
 .menu-text p {
@@ -119,8 +118,6 @@
       font-weight: 400;
       line-height: 30px;
       letter-spacing: 0px;
-
-
     }
   }
 
@@ -128,18 +125,15 @@
     font-size: 48px;
     line-height: 48px;
     letter-spacing: -0.5px;
-
   }
 
   .preview {
     margin: 10px auto;
-
   }
 
 
 
   .menu-item {
-
     margin-bottom: 0rem;
   }
 
@@ -173,9 +167,6 @@
 
   .divider {
     width: 573px;
-
-
-
   }
 }
 
@@ -201,7 +192,6 @@
       line-height: 48px;
       letter-spacing: -0.5px;
       text-align: left;
-
     }
 
     p {
@@ -212,7 +202,6 @@
 
   .divide {
     margin: 1.5rem 0 2.75rem 0;
-
   }
 
   .preview {
@@ -221,5 +210,4 @@
     margin: 0;
     padding: 0 5vw;
   }
-
 }

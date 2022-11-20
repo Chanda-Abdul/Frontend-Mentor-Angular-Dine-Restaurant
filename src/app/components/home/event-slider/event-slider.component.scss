@@ -12,6 +12,9 @@
   visibility: hidden;
 }
 
+ul {
+  padding-left: 0;
+}
 
 li {
   width: 100%;
@@ -19,6 +22,7 @@ li {
 
   & a {
     @include variables.heading-type-s;
+    font-weight: 600;
     margin: 2px;
     color: variables.$shuttle-gray;
     opacity: .5;
@@ -26,33 +30,42 @@ li {
   }
 
   & a.selected {
-    // TO DO => border could be much smaller and thinner
     text-decoration: none;
     color: variables.$dreamless-sleep;
     padding: 5px;
-    border-bottom: 2px solid variables.$teddy-bear;
     position: relative;
     background: transparent;
     opacity: 1;
   }
 
+  & a.selected::after {
+    content: '';
+    padding: 5px;
+    border: 1px solid variables.$teddy-bear;
+    border-width: 0 0 1px 0;
+    position: absolute;
+    left: 35%;
+    top: 1rem;
+    width: 48px;
+    display: inline-block;
+  }
 
 }
 
-
 section.event {
-  h2 {
+  width: 18rem;
+  color: variables.$mirage;
+    h2 {
     margin: 0 auto;
     @include variables.heading-type-l;
     font-size: 1.75rem;
     line-height: 2.25rem;
-    color: variables.$mirage;
+
   }
 
   p {
-    width: 20rem;
-    margin: .5rem auto 1rem auto;
-    padding: 1rem;
+    width: 18rem;
+    margin: 1rem 0 2rem 0;
     color: variables.$ebony-clay;
     @include variables.body-type-secondary;
   }
