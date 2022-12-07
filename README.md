@@ -26,13 +26,13 @@ Users should be able to:
 
 - [ ] View the optimal layout for each page depending on their device's screen size
   - [x] Mobile, < 600px
-  - [ ] Tablet, 600px+
-  - [ ] Desktop, 800px+
+  - [x] Tablet, 600px+
+  - [ ] Desktop, 900px+
 - [x] See hover states for all interactive elements throughout the site
 - [x] See the correct content for the Family Gatherings, Special Events, and Social Events section when the user clicks each tab
 - [ ] Receive an error message when the booking form is submitted if:
-  - [ ] The `Name` or `Email Address` fields are empty should show "This field is required"
-  - [ ] The `Email Address` is not formatted correctly should show "Please use a valid email address"
+  - [x] The `Name` or `Email Address` fields are empty should show "This field is required"
+  - [x] The `Email Address` is not formatted correctly should show "Please use a valid email address"
   - [ ] Any of the `Pick a date` or `Pick a time` fields are empty should show "This field is incomplete"
 
 ### Screenshot
@@ -51,10 +51,11 @@ Users should be able to:
 ### Built with
 
 - <b>[Angular](https://angular.io/)</b> (<b>JavaScript</b> framework)
+  - <s>[Angular Material](https://material.angular.io/)</s>
   - Reactive Forms 😭
   - TypeScript
   - JavaScript
-  - <s>[Angular Material](https://material.angular.io/)</s>
+    - ⏰ [Moment.js ](https://momentjs.com/docs) - To validate reservation dates and times
 - <b>Figma</b>
 - <b>Sass/CSS</b> custom properties
   - <s><b>[fxLayout API](https://github.com/angular/flex-layout/wiki/fxLayout-API)</b> Angular Flexbox API</s>
@@ -68,6 +69,40 @@ Users should be able to:
 <!-- - While building this project I learned more about <b>Figma</b>, apparently most of the <b>CSS</b> variables and styles may be available in your <b>Figma</b> file, which saves SO much time. Who knew? 😋
 - This is also one of my first "real" projects using <b>Angular</b>, <s>overall everything went very smoothly, and I enjoy working with <b>Angular</b>. <b>Angular</b>, it seems much more intuitive and organized than <b>React</b>🤡</s>.
 - Please see below, for a code snippet, of the Angular Reactive Form that actually broke my soul. I will not be elaborating 👉🏾 👈🏾 -->
+#### component to display resposive images
+##### `picture-responsive.html`
+```html
+<picture>
+  <source media="(min-width: 900px)"
+          srcset='/assets/images/homepage/{{imageTitle}}-desktop.jpg'>
+  <source media="(min-width: 600px)"
+          srcset='/assets/images/homepage/{{imageTitle}}-tablet.jpg'>
+  <img src='/assets/images/homepage/{{imageTitle}}-mobile.jpg' />
+</picture>
+```
+##### in the component
+```ts
+<app-picture-responsive *ngIf="selectedEvent"
+  imageTitle="{{selectedEvent.imageTitle}}"
+  class="event-photo"></app-picture-responsive>
+```
+
+##### and the data
+
+```ts
+
+...
+EventItem[] = [
+  {
+    id: 1,
+    ...
+    imageTitle: "family-gathering",
+    mobileImage: "../assets/images/homepage/family-gathering-mobile.jpg",
+    tabletImage: "../assets/images/homepage/family-gathering-tablet.jpg",
+    desktopImage: "../assets/images/homepage/family-gathering-desktop.jpg"
+  },
+  ...
+  ```
 
 #### `rezzo-form.component.html`
 ```html
@@ -114,7 +149,8 @@ Users should be able to:
         </button>
       </form>
 ```
-#### `rezzo-form.component.ts`
+#### 🙅🏽‍♀️ `rezzo-form.component.ts`
+
 ```js
     import { FormBuilder, FormGroup, } from '@angular/forms';
 
@@ -124,9 +160,8 @@ Users should be able to:
       rezzoForm: FormGroup;
       ...
       months: string[] = [
-        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
-        'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
-        ];
+       ...
+      ];
       ...
       guests: string[] = [
         '1 person', '2 people', '3 people', '4 people', '5 people', 
@@ -171,17 +206,17 @@ Users should be able to:
       }
       ...
     }
-```
+  ```
 
 
-### Continued development
-
+#### Continued development
 - [ ] Add animations
 
 
 
 #### Features to Add
 ##### Authenticate/Authorization with ability to update
+
 - [ ] Add authentication /Authorization
 - [ ] Login/logout, with a password, for managers/admins so that they can update menu options, reservations, and events
   - [ ] view/edit menu options
@@ -201,13 +236,14 @@ Users should be able to:
 - [ ] add event booking component so that users can book events, similar to the reservation component
 ### Useful resources
 
+- 🙌🏾 [Angular Reactive Forms By Deborah Kurata(Pluralsight Course)](https://app.pluralsight.com/library/courses/angular-2-reactive-forms/table-of-contents) - This is an amazing YouTube which helped me understand how to build Reactive Forms with Angular. I'd recommend it to anyone still learning this concept.
+- ⏰ [Moment.js ](https://momentjs.com/docs) - To validate reservation dates and times
 - [Reactive forms](https://angular.io/guide/reactive-forms) - This helped me... I really liked this pattern and will use it going forward.
 - 🙌🏾 [Angular Reactive Forms in 10 Minutes](https://youtu.be/MMP_OcjWNQo) - This is an amazing YouTube which helped me finally understand how to build Reactive Forms with Angular. I'd recommend it to anyone still learning this concept.
 - [/angular/flex-layout](https://github.com/angular/flex-layout) - <s>This helped me because it's much easier to incorporate <b>Flexbox</b> into a <b>template</b> than a <b>CSS</b> stylesheet 🤔 . I really liked this pattern and will use it going forward.</s> Now, I prefer to create flex styles with <i>Sass</i>
 - [Udemy: Angular (Full App) with Angular Material, Angularfire & NgRx Created by Maximilian Schwarzmüller](https://www.udemy.com/share/101WvC3@iwU-zs0EjLuBHrh2IFqrITl0TXzocf5BeqTXM5rBHhVGmHco65hhIW8VnrsMxYA=/) - Great Tutorials. Would Recommend.
-- [Managing Image Breakpoints With Angular](https://www.smashingmagazine.com/2019/02/image-breakpoints-angular/) - Yes. And then I moved the resonsive images into a seperate component👌🏽
-<!-- - <s>[SelectControlValueAccessor](https://angular.io/api/forms/SelectControlValueAccessor) - This is NOT an amazing article which DID NOT help me finally understand selectors/options/reactive forms. I'd NEVER EVER recommend it to anyone still learning this concept.</s> -->
-- [Using forms for user input](https://angular.io/start/start-forms) - I guess.
+- [Managing Image Breakpoints With Angular](https://www.smashingmagazine.com/2019/02/image-breakpoints-angular/) - Yes. Then I moved the resonsive images into a seperate component👌🏽
+- [Using forms for user input](https://angular.io/start/start-forms) - 🤷🏽‍♀️
 - [Angular 13 Select Dropdown with Reactive Forms Examples](https://www.positronx.io/angular-select-dropdown-with-reactive-forms-examples/) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 ## Author

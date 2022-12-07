@@ -3,49 +3,36 @@
         class="rezForm"
         (ngSubmit)="saveReservation()"
         [formGroup]="rezzoForm">
-    <div *ngIf="!isSubmitted" class="container">
+    <div *ngIf="!isSubmitted"
+         class="container">
+
       <!-- Name Input -->
       <input class="form-control form-input full"
              type="text"
              id="nameId"
              placeholder="Name"
              formControlName="name"
-             [ngClass]="{'alert-danger': (rezzoForm.get('name').touched ||
-             rezzoForm.get('name').dirty) &&
-             !rezzoForm.get('name').valid  }" />
-      <div *ngIf="!rezzoForm.get('name').untouched">
-        <span class="alert-danger">
-          <span *ngIf="rezzoForm.get('name').errors?.required">
-            Please enter your name.
-          </span>
-          <span *ngIf="rezzoForm.get('name').errors?.minlength">
-            Name must be longer than 4 characters.
-          </span>
-        </span>
-      </div>
+             [ngClass]="{'alert-danger': nameValidationErrorMessage }" />
+      <span class="alert-danger">
+        {{nameValidationErrorMessage}}
+      </span>
 
       <!-- Email Input -->
-      <input type="text"
-             placeholder="Email"
+      <input class="form-control form-input full"
+             type="text"
              id="emailId"
+             placeholder="Email"
              formControlName="email"
-             class="form-control form-input full"
-             [ngClass]="{'alert-danger': (rezzoForm.get('email').touched ||
-           rezzoForm.get('email').dirty) &&
-           !rezzoForm.get('email').valid  }">
-      <div *ngIf="!rezzoForm.get('email').untouched">
-        <span class="alert-danger">
-          <span *ngIf="rezzoForm.get('email').errors?.required">
-            Please enter your email address.
-          </span>
-          <span *ngIf="rezzoForm.get('email').errors?.email">
-            Please enter a valid email address.
-          </span>
-        </span>
-      </div>
+             [ngClass]="{'alert-danger': emailValidationErrorMessage }">
+      <span class="alert-danger">
+        {{emailValidationErrorMessage}}
+      </span>
+
 
       <div class="group">
         <!-- Date Input -->
+        <!-- TO DO =>  Receive an error message when the booking form is submitted if
+              Any of the `Pick a date` or `Pick a time` fields are empty should show "This field is incomplete" -->
         <h3>Pick a Date</h3>
         <div formGroupName="dateGroup"
              class="dates">
@@ -78,11 +65,11 @@
           </select>
         </div>
 
-        <!-- TO DO => add date select error message -->
+        <!-- TO DO(Bonus) => add date select error message with cross validation -->
         <!-- <div *ngIf="rezzoForm.get('dateGroup.month').touched
       || rezzoForm.get('dateGroup.day').touched ||
       rezzoForm.get('dateGroup.year').touched">
-        <span class="alert-danger">
+
           <span *ngIf="rezzoForm.get('dateGroup.month').errors?.required">
             Please select a Month
           </span>
@@ -94,8 +81,9 @@
           </span>
         </span>
       </div> -->
-      </div>
 
+    </div>
+<span class="alert-danger">{{dateValidationErrorMessage}}</span>
       <div class="group">
         <!-- Time Input -->
         <h3>Pick a Time</h3>
@@ -123,20 +111,20 @@
             <img src="/assets/images/icons/icon-arrow.svg">
           </div>
         </div>
-        <!-- TO DO => add timeGroup error message -->
+        <!-- TO DO(Bonus) => add timeGroup validation/error message -->
       </div>
 
       <!-- Guest Counter -->
-      <!-- TO DO => change this to form control? -->
+      <!-- TO DO(Bonus) => change this to form control? -->
       <div class="full counter">
         <img src="/assets/images/icons/icon-minus.svg"
              (click)="decrementGuestCount()" />
-        <!-- TO DO => add error message "Please select guest count of 1 or more people"-->
+        <!-- TO DO(Bonus) => add validation/error message "Please select guest count of 1 or more people"-->
 
         {{guests[selectedGuestCount-1]}}
         <img src="/assets/images/icons/icon-plus.svg"
              (click)="incrementGuestCount()" />
-        <!-- TO DO => add error message ""-->
+        <!-- TO DO(Bonus) => add validation/error message ""-->
         <!--  <span class="invalid-feedback">
         <span *ngIf="rezzoForm.get('guests').errors?.range">
           Please select guest count of 12 or less people.
