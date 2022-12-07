@@ -9,24 +9,21 @@
 .menu {
   position: relative;
   margin: 2.75rem 0 0 0;
-  padding: 5rem 1.5rem 0 1.5rem;
+  padding: 5rem 1.5rem 2rem 1.5rem;
   background-color: variables.$dreamless-sleep;
-
+  width: 100vw;
 }
 
 .highlights {
   @include variables.flexCenter(column);
+  width: 20rem;
+  margin-bottom: 2rem;
 
   h2 {
     @include variables.heading-type-l;
-    width: 20rem;
     font-size: 1.75rem;
     line-height: 2.25rem;
     height: 2.5rem;
-  }
-
-  p {
-    width: 20rem;
   }
 }
 
@@ -40,28 +37,32 @@
 }
 
 .menu-item {
-  margin-top: 0px;
-  margin-bottom: 2.75rem;
+  margin: 0 auto 1.5rem auto;
 }
 
 .menu-photo {
- margin-bottom: 1rem;
+  margin: 0 auto 1rem auto;
 }
 
 .menu-title {
   @include variables.heading-type-m;
   font-size: 1rem;
   line-height: 1.25rem;
-  letter-spacing: -.1px;
+  letter-spacing: -0.25px;
 }
 
-.menu-text p {
+.menu-text {
   @include variables.body-type-secondary;
-  margin: 5px auto 1.5rem auto;
-  padding: 1rem 1.5rem;
-  font-weight: 400;
+  margin: 0 auto 3rem auto;
+  padding: 0 1.5rem;
+  font-weight: 300;
   line-height: 26px;
   letter-spacing: 0px;
+
+  p {
+    width: 18rem;
+  }
+
 }
 
 .divider {
@@ -81,6 +82,23 @@
 }
 
 @media (min-width:600px) {
+  .highlights {
+    margin: 2.75rem auto 1.5rem auto;
+    width: 28rem;
+
+    h2 {
+      @include variables.heading-type-l;
+      margin: 2rem auto;
+      width: 25rem;
+    }
+
+    p {
+      margin: 1.5rem auto;
+      @include variables.body-type-primary;
+      letter-spacing: 0px;
+    }
+  }
+
   .content {
     @include variables.flexCenter(row);
     width: 80vw;
@@ -88,59 +106,25 @@
   }
 
   .menu-photo {
-    width: 40vw;
     @include variables.flexCenter(row);
   }
 
   .item-divide {
-    width: 32px;
+    width: 2rem;
     position: absolute;
-    top: 8rem;
-    right: -0.65rem;
+    top: 1rem;
+    right: -1.5rem;
     z-index: -1;
     visibility: visible;
   }
 
-
-  .highlights {
-    width: 100vw;
-    margin: 2.75rem auto;
-
-    h2 {
-      width: 440px;
-      margin: auto;
-    }
-
-    p {
-      width: 440px;
-      margin: 1.5rem auto;
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 30px;
-      letter-spacing: 0px;
-    }
-  }
-
-  h2 {
-    font-size: 48px;
-    line-height: 48px;
-    letter-spacing: -0.5px;
-  }
-
-  .preview {
-    margin: 10px auto;
-  }
-
-
-
-  .menu-item {
-    margin-bottom: 0rem;
+  .content {
+    margin: 1rem;
   }
 
   .menu-photo {
     z-index: 2;
     position: relative;
-    margin-bottom: 0;
   }
 
   .menu-text {
@@ -148,13 +132,15 @@
     height: 4rem;
     align-items: flex-start;
     justify-content: flex-end;
-
-    margin: 0 0 0 2rem;
+    margin: 0 0 0 1rem;
     width: 21rem;
 
 
     h2 {
       height: 1.25rem;
+      padding-top: 2rem;
+      @include variables.heading-type-m;
+      letter-spacing: -0.25px;
     }
 
     p {

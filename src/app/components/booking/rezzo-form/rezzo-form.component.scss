@@ -9,7 +9,7 @@ section {
   @include variables.flexSpaceBetween(column);
 }
 
-.confirm{
+.confirm {
   @include variables.flexCenter(column);
   @include variables.heading-type-s;
   width: 100%;
@@ -30,15 +30,14 @@ section {
   box-shadow: 0px 75px 100px -50px variables.$ebony-clay;
 
 
-  // * {
-  //   // @include variables.body-type-primary;
-
-  //   line-height: 28px;
-
-  // }
-
-  .alert-danger{
+  .alert-danger {
     color: red;
+  }
+
+  .container {
+    height: 100%;
+    margin: auto 1rem;
+    @include variables.flexSpaceBetween(column);
   }
 
   .form-control {
@@ -52,9 +51,9 @@ section {
     height: 43px;
   }
 
-.group{
-  width: 100%;
-}
+  .group {
+    width: 100%;
+  }
 
   .form-select {
     width: 55px;
@@ -100,12 +99,13 @@ section {
       @include variables.flexCenter(row);
       text-align: center;
 
-
     }
 
   }
 
+
   h3 {
+    @include variables.body-type-primary;
     height: 28px;
     text-transform: initial;
     font-size: 1rem;
@@ -129,23 +129,32 @@ section {
 
 
 @media (min-width: 600px) {
-
-
-
   section {
-
     height: 27rem;
-
   }
 
-
+  // .container{
+  //   margin: auto 5rem;
+  // }
   .rezForm {
-
-    top: -10rem;
+    top: -13rem;
     padding: 2.5rem 3rem;
     margin: 2.5rem auto auto 0;
     width: 33rem;
     height: 35rem;
+
+    .full {
+      width: 28rem;
+    }
+
+    .group {
+      width: 28rem;
+      @include variables.flexSpaceBetween(row);
+
+      h3 {
+        width: 10rem;
+      }
+    }
 
     .dates,
     .times {
@@ -175,14 +184,7 @@ section {
   }
 
 
-  .group {
-    width: 100%;
-    @include variables.flexSpaceBetween(row);
 
-    h3 {
-      width: 10rem;
-    }
-  }
 
   .btn {
     width: 100%;

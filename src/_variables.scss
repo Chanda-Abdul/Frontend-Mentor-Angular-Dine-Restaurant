@@ -72,11 +72,8 @@ $shuttle-gray: hsl(217, 14%, 42%);
 @mixin btn {
   width: 263px;
   height: 64px;
-  @include heading-type-s;
-  // TO DO => button inactive states
-
-  // inactive {
-  //   opacity: 25%;
-  // }
+ @include heading-type-s;
 }
+
+
 

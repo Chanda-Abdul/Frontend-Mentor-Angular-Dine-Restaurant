@@ -55,7 +55,8 @@ li {
 section.event {
   width: 18rem;
   color: variables.$mirage;
-    h2 {
+
+  h2 {
     margin: 0 auto;
     @include variables.heading-type-l;
     font-size: 1.75rem;
@@ -99,11 +100,6 @@ section.event {
     position: absolute;
     visibility: visible;
     z-index: -1;
-
-    picture,
-    img {
-      box-shadow: none;
-    }
   }
 
   .lines {
@@ -117,25 +113,12 @@ section.event {
   .curve-right {
     height: 17rem;
     width: 50rem;
-    right: 21rem;
+    right: 30rem;
     top: -7rem;
     opacity: 0.8;
-    overflow: hidden;
   }
 
-  app-picture-responsive {
 
-    >img {
-      height: 20rem;
-      width: 32rem;
-    }
-
-
-    * {
-      box-shadow: 0px 75px 100px -50px variables.$ebony-clay;
-    }
-
-  }
 
   .mobile {
     @include variables.flexSpaceBetween(row);
@@ -147,18 +130,16 @@ section.event {
     @include variables.flexSpaceBetween(column);
     padding: 0;
     color: variables.$mirage;
+    width: 100%;
 
     h2 {
       @include variables.heading-type-l;
-
     }
 
     p {
       @include variables.body-type-primary;
-      width: 26rem;
-
-      margin: 1rem 0 2rem 0;
-
+      width: 30rem;
+      margin: 2rem 0 3rem 0;
     }
   }
 }

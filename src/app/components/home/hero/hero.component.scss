@@ -2,8 +2,10 @@
 
 .hero {
   @include variables.flexCenter(column);
-   * {
+
+  * {
     color: white;
+    width: 18rem;
   }
 }
 
@@ -11,23 +13,19 @@ h1 {
   @include variables.heading-type-xl;
   font-size: 2rem;
   line-height: 2.2rem;
-  padding: 0 5.2rem;
+  padding: 0 1rem;
   letter-spacing: -0.02rem;
 }
 
 p {
   @include variables.body-type-secondary;
-  margin: 0 1rem 2rem 1rem ;
-  padding: 1rem;
+  margin: 1rem auto 3rem auto;
+
 }
 
 @media (min-width: 600px) {
-  .hero {
-    @include variables.flexSpaceBetween(column);
-
-  }
   h1 {
-    width: 38rem;
+    width: 25rem !important;
     font-size: 48px;
     font-weight: 300;
     line-height: 64px;
@@ -41,8 +39,7 @@ p {
     @include variables.body-type-primary;
     margin-bottom: 75px;
     height: 60px;
-    width: 573px;
-
+    width: 37rem !important;
   }
 }
 
@@ -50,18 +47,16 @@ p {
   .hero {
     text-align: left;
     margin-left: 0;
+    align-items: flex-start;
+
   }
 
   h1 {
     text-align: left;
-    height: 160px;
-    width: 508px;
-    font-size: 80px;
-    line-height: 80px;
-    letter-spacing: -1px;
+    width: 37rem !important;
+    @include variables.heading-type-xl;
     font-weight: 200;
     margin: 75px 0 1.5rem 0;
-    padding: 10px 0;
   }
 
   p {
@@ -69,9 +64,7 @@ p {
     margin: 1.5rem 0 50px 0;
     padding: 10px 0;
     height: 90px;
-    width: 445px;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 30px;
+    max-width: 28rem;
+    @include variables.body-type-primary;
   }
 }

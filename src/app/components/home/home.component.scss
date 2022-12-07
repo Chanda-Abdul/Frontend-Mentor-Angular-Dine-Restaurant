@@ -4,6 +4,7 @@
   @include variables.flexCenter(column);
   width: 100vw;
   position: relative;
+  overflow: hidden;
 }
 
 .enjoyable-place {
@@ -60,6 +61,8 @@ p {
   padding: 0;
   background-color: variables.$dreamless-sleep;
   width: 100vw;
+  max-height: 18rem;
+  overflow: hidden;
 
   * {
     @include variables.flexCenter(column);
@@ -135,18 +138,13 @@ p {
 
 
   .cta {
-    height: 15rem;
-
-    * {
-      box-shadow: none;
-    }
-
+    height: 20rem;
     .action {
       @include variables.flexCenter(column);
       height: 100%;
 
       h2 {
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.5rem;
         width: 100%;
       }
     }
@@ -155,11 +153,17 @@ p {
 
 
 @media (min-width: 900px) {
+  .enjoyable-place {
+    top: -5rem;
+z-index: 10 !important;
+  }
   .enjoy {
-    height: 800px;
-    text-align: center;
-    margin-left: 10vw;
+    // height: fit-content;
+    width: 100%;
+    margin-left: 20vw;
     margin-bottom: 75px;
+    align-items: flex-start;
+    justify-content: space-evenly;
 
     section {
       height: 800px;

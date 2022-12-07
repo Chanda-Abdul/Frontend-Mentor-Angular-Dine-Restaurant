@@ -3,7 +3,7 @@
         class="rezForm"
         (ngSubmit)="saveReservation()"
         [formGroup]="rezzoForm">
-    <div *ngIf="!isSubmitted">
+    <div *ngIf="!isSubmitted" class="container">
       <!-- Name Input -->
       <input class="form-control form-input full"
              type="text"
@@ -127,7 +127,6 @@
       </div>
 
       <!-- Guest Counter -->
-      
       <!-- TO DO => change this to form control? -->
       <div class="full counter">
         <img src="/assets/images/icons/icon-minus.svg"
@@ -146,7 +145,7 @@
 
       </div>
       <!-- Form submit button -->
-      <button class="btn btn-dark"
+      <button class="btn btn-light"
               type="submit"
               [disabled]="!rezzoForm.valid">
         Make

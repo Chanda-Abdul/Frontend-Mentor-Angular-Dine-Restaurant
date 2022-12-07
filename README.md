@@ -26,9 +26,9 @@ Users should be able to:
 
 - [ ] View the optimal layout for each page depending on their device's screen size
   - [x] Mobile, < 600px
-  - [x] Tablet, 600px+
+  - [ ] Tablet, 600px+
   - [ ] Desktop, 800px+
-- [ ] See hover states for all interactive elements throughout the site
+- [x] See hover states for all interactive elements throughout the site
 - [x] See the correct content for the Family Gatherings, Special Events, and Social Events section when the user clicks each tab
 - [ ] Receive an error message when the booking form is submitted if:
   - [ ] The `Name` or `Email Address` fields are empty should show "This field is required"
@@ -38,9 +38,6 @@ Users should be able to:
 ### Screenshot
 
 ![](./src/assets/preview.jpg)
-
-<!-- Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
--->
 
 
 

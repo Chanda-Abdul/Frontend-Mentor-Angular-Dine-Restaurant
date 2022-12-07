@@ -2,7 +2,6 @@
 @use './variables';
 
 
-// TO DO => hover states for all interactive elements throughout the site
 // TO DO => review styles for Mobile, < 600px
 // TO DO => review styles for Tablet, 600px+
 // TO DO => review styles for Desktop, 800px+
@@ -78,15 +77,13 @@ a:active {
 
 .btn {
   @include variables.btn;
-
   background-color: transparent;
-  // color: variables.$dreamless-sleep;
+
 }
 
 .btn-dark {
   border: 1px solid white;
   color: white;
-  background: variables.$dreamless-sleep;
 
   &:hover {
     color: variables.$dreamless-sleep !important;
@@ -97,14 +94,21 @@ a:active {
 }
 
 .btn-light {
-  border: 1px solid variables.$dreamless-sleep;
-  color: variables.$dreamless-sleep;
+  background-color: variables.$dreamless-sleep;
+  color: white;
 
   &:hover {
-    // color: variables.$dreamless-sleep;
-    color: white;
+    color: variables.$dreamless-sleep;
+    background-color: white;
+    border: 1px solid variables.$dreamless-sleep;
   }
 
+}
+
+button:disabled {
+  opacity: .25;
+  color: variables.$dreamless-sleep;
+  background-color: transparent;
 }
 
 ul {

@@ -2,33 +2,34 @@
 
 .content {
   position: relative;
-  height: 63rem;
+  min-height: 63rem;
   width: 100%;
   background-color: variables.$dreamless-sleep;
   margin-bottom: 8rem;
 
-}
-
-picture {
-  *{
-      width: 100vw;
-  // object-fit: cover;
+  * {
+    color: white;
   }
 
 }
 
+.container {
+  height: 37.5rem;
+  overflow: hidden;
+}
+
 section {
-  color: white;
   @include variables.flexCenter(column);
   position: absolute;
   top: 75px;
   left: 0;
+  width: 100%;
 }
 
 h1 {
   @include variables.heading-type-l;
   width: 250px;
-  margin: 30px auto 20px auto;
+  margin: 2rem auto 1.25rem auto;
   font-size: 1.75rem;
   font-weight: 200;
   line-height: 2.25rem;
@@ -38,22 +39,14 @@ h1 {
 p {
   @include variables.body-type-secondary;
   height: 104px;
-  margin: auto 1.5rem 2rem 1.5rem;
-  padding: 5px;
-  color: white;
+  margin-bottom: 2rem;
+  width: 20rem;
 }
 
 
-
-
-
-
-
-
-
 @media (min-width: 600px) {
-  .content {
-    height: 1035px;
+  .container{
+    max-height: 1035px;
   }
 
   section {
@@ -63,14 +56,15 @@ p {
     top: 0;
     height: 600px;
   }
-  .logo{
-   position: absolute;
-   top: 2rem;
-   left: 2rem;
+
+  .logo {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
   }
 
-  .btn-light {
-   display: none;
+  .btn {
+    visibility: hidden;
   }
 
   h1 {
@@ -81,10 +75,11 @@ p {
     line-height: 3.5rem;
 
   }
+
   p {
     @include variables.body-type-primary;
     width: 32rem;
     font-weight: 300;
-    margin:0 auto ;
+    margin: 0 auto;
   }
 }

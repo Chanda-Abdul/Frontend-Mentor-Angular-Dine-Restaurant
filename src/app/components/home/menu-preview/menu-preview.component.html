@@ -1,6 +1,4 @@
 <div class="menu">
-
-
   <section class="highlights">
     <img src="/assets/images/patterns/pattern-divide.svg"
          class="divide">
@@ -16,7 +14,7 @@
          *ngFor="let item of menu">
       <div class="content">
         <div class="menu-photo">
-          <app-picture-responsive imageTitle={{item.imageTitle}}></app-picture-responsive>
+          <app-picture-responsive imageTitle={{item.imageTitle}} class="thumbnail"></app-picture-responsive>
 
           <img src="/assets/images/patterns/pattern-divide.svg"
                class="item-divide">

@@ -11,17 +11,33 @@ import { EventItem } from 'src/app/event.model';
 })
 export class EventSliderComponent implements OnInit {
   events: EventItem[] = EVENTS;
-  selectedEvent?: EventItem = this.events[0];
+  eventIndex = 0;
+  selectedEvent?: EventItem = this.events[this.eventIndex];
   imageTitle: string;
   @Output() bookTableClick = new EventEmitter();
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.eventCarousel();
+    console.log(this.selectedEvent)
+
   }
 
+  eventCarousel(){
+//TO DO => add observable to rotate through events every so often
+  if(this.eventIndex < this.events.length-1){
+    setTimeout (() => {
+      this.eventIndex++;
+      console.log(this.eventIndex,this.selectedEvent,"Hello from setTimeout");
+   }, 1000);
+  }
+  }
+
+  
   onSelect(events: EventItem): void {
     this.selectedEvent = events;
+
   }
 
   onBookTableClick() {
