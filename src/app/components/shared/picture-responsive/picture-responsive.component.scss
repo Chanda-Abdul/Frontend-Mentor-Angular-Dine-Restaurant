@@ -1,5 +1,7 @@
 @use '/src/variables';
 
+
+
 :host.full img {
   width: 100vw;
   height: auto;
@@ -7,6 +9,22 @@
 
 :host.event-photo img {
   box-shadow: 0px 75px 100px -50px variables.$ebony-clay;
+}
+
+:host.hero-bg img{
+  // position: relative !important;
+  // overflow:visible;
+  //
+  // z-index: 10;
+//  {
+  // top: -4rem;
+    //
+    // z-index: 8 !important;
+    // // max-width: 60vw;
+    // height: auto;
+    //
+    // z-index: 10;
+  // }
 }
 
 @media (min-width: 600px) {
@@ -25,7 +43,7 @@
   :host.hero-bg img {
     // max-width: 60vw;
     height: auto;
-    overflow: hidden;
+  //   overflow: hidden;
   }
 
 }

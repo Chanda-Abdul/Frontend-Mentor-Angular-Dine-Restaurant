@@ -4,10 +4,16 @@
   @include variables.flexCenter(column);
   width: 100vw;
   position: relative;
-  overflow: hidden;
+
+}
+
+img.enjoyable-place,
+img.locally-sourced {
+  box-shadow: 0px 75px 100px -50px variables.$ebony-clay;
 }
 
 .enjoyable-place {
+
   top: -4rem;
   position: absolute;
 
@@ -27,6 +33,7 @@
 .pattern {
   position: absolute;
   visibility: hidden;
+  overflow: hidden;
 }
 
 .local {
@@ -82,7 +89,8 @@ p {
       color: white;
     }
   }
-  .btn{
+
+  .btn {
     background-color: transparent;
   }
 }
@@ -91,6 +99,15 @@ p {
 @media (min-width: 600px) {
   .enjoyable-place {
     top: 1rem;
+  }
+
+  .curve-right,
+  .lines,
+  .curve-left {
+    position: absolute;
+    overflow: hidden;
+    visibility: visible;
+
   }
 
   .pattern {
@@ -139,6 +156,7 @@ p {
 
   .cta {
     height: 20rem;
+
     .action {
       @include variables.flexCenter(column);
       height: 100%;
@@ -153,120 +171,135 @@ p {
 
 
 @media (min-width: 900px) {
-  .enjoyable-place {
-    top: -5rem;
-z-index: 10 !important;
-  }
   .enjoy {
-    // height: fit-content;
-    width: 100%;
-    margin-left: 20vw;
-    margin-bottom: 75px;
-    align-items: flex-start;
-    justify-content: space-evenly;
-
-    section {
-      height: 800px;
-      position: absolute;
-      top: -100px;
-    }
-
-    img {
-      margin: 0px;
-    }
+    width: 100vw;
+    @include variables.flexSpaceBetween(row);
+    height: 40rem;
 
     .text {
-      width: 445px;
-      height: 275px;
-      text-align: left;
-      margin: 0 100px;
-      padding: auto 1.5rem;
+      width: 100%;
+      justify-content: flex-start;
+      margin: 5.5rem 0 0 50vw;
+      padding: 2.5rem auto;
+
+      * {
+        text-align: left;
+      }
     }
   }
 
-  h2 {
-    margin: 30px 0;
-    font-size: 48px;
-    line-height: 48px;
-    letter-spacing: -0.5px;
-    width: 445px;
+  .enjoyable-place {
+    margin-left: 10vw;
+    top: -5rem;
+    left: 0;
   }
 
-  p {
-    width: 445px;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
-    text-align: left;
-  }
-
-  .curve-right,
-  .lines,
-  .curve-left {
-    position: absolute;
-    visibility: visible;
-    z-index: -1;
-
-    picture,
-    img {
-      box-shadow: none;
-    }
+  .divide {
+    align-self: flex-start;
+    margin-left: 10vw;
+    margin-bottom: 3rem;
   }
 
   .curve-right {
-    left: -200px;
-    top: 340px;
-
-    overflow: hidden;
-  }
-
-  .lines {
-    right: -2vw;
-    z-index: 1;
-    top: 1840px;
-  }
-
-  .curve-left {
-    top: 1911px;
-    left: 445px;
-    overflow: none;
-    z-index: -3;
-  }
-
-  .cta {
-    width: 100vw;
-  }
-
-  .action {
-    height: 240px;
-    width: 100vw;
-
-    h2 {
-      width: 615px;
-    }
+    left: 0;
+    top: 15rem;
   }
 
   .local {
-    height: 350px;
-    margin-bottom: 75px;
+    position: relative;
+    @include variables.flexSpaceBetween(row-reverse);
+    width: 100vw;
+    height: 40rem;
 
-    section {
-      position: absolute;
-      top: 1500px;
-      z-index: 10;
-    }
-
-    img {
-      margin: 0px;
-      box-shadow: none;
-    }
 
     .text {
-      width: 445px;
-      height: 275px;
-      text-align: left;
-      margin: 0 1.5rem 0 10vw;
-      padding: 10px;
+      width: 100%;
+      justify-content: flex-start;
+      margin: 5.5rem 50vw 0 0;
+      padding: 2.5rem auto;
+
+      * {
+        text-align: left;
+      }
     }
   }
+
+  .locally-sourced {
+    position: absolute;
+    margin-right: 10vw;
+    top: 5rem;
+  }
+
+  .curve-left {
+    right: 0;
+    top: 23rem;
+  }
+
+  .lines {
+
+    left: 73rem;
+    top: 22rem;
+  }
+
+
+  //
+  //
+  //   }
+  //   //   //
+  //   //
+  //   //   margin-left: 20vw;
+  //   //   margin-bottom: 75px;
+  //   //
+  //   //   justify-content: space-evenly;
+
+  //     section {
+  //       // height: 800px;
+  //       position: absolute;
+  //       // top: -100px;
+  //     }
+
+  //   //   img {
+  //   //     margin: 0px;
+  //   //   }
+
+
+  //   // }
+
+  //   // h2 {
+  //   //   margin: 30px 0;
+  //   //   font-size: 48px;
+  //   //   line-height: 48px;
+  //   //   letter-spacing: -0.5px;
+  //   //   width: 445px;
+  //   // }
+
+  //   // p {
+  //   //   width: 445px;
+  //   //   font-size: 20px;
+  //   //   font-weight: 400;
+  //   //   line-height: 30px;
+  //   //   text-align: left;
+  //   // }
+
+
+
+
+
+
+
+
+  //   // .cta {
+  //   //   width: 100vw;
+  //   // }
+
+  //   // .action {
+  //   //   height: 240px;
+  //   //   width: 100vw;
+
+  //   //   h2 {
+  //   //     width: 615px;
+  //   //   }
+  //   // }
+
+
 }

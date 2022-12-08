@@ -5,6 +5,7 @@ header {
   height: 748px;
   width: 100vw;
   background-color: variables.$dreamless-sleep;
+  z-index: 0;
 }
 
 .logo {
@@ -47,7 +48,7 @@ header {
     text-align: left;
     max-width: 60vw;
   }
-  .hero-bg picture{
-    z-index: -2;
-  }
+  // .hero-bg picture{
+  //   z-index: -2;
+  // }
 }

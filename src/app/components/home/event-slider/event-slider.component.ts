@@ -19,20 +19,18 @@ export class EventSliderComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.eventCarousel();
-    console.log(this.selectedEvent)
-
+    // this.eventCarousel();
   }
 
-  eventCarousel() {
-    //TO DO(Bonus) => add observable to rotate through events every so often
-    if (this.eventIndex < this.events.length - 1) {
-      setTimeout(() => {
-        this.eventIndex++;
-        console.log(this.eventIndex, this.selectedEvent, "Hello from setTimeout");
-      }, 1000);
-    }
-  }
+  // eventCarousel() {
+  //   //TO DO(Bonus) => add observable to rotate through events every so often
+  //   if (this.eventIndex < this.events.length - 1) {
+  //     setTimeout(() => {
+  //       this.eventIndex++;
+  //       console.log(this.eventIndex, this.selectedEvent, "Hello from setTimeout");
+  //     }, 1000);
+  //   }
+  // }
 
 
   onSelect(events: EventItem): void {

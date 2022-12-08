@@ -15,9 +15,9 @@ export class RezzoFormComponent implements OnInit {
 
   months: string[] = [...moment.monthsShort()];
   days: string[] = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'];
-  years: number[] = [moment().year(), moment().year()+1, moment().year()+2];
+  years: number[] = [moment().year(), moment().year() + 1, moment().year() + 2];
   hours: string[] = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12',];
-  minutes: any[] = ['00', '05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55'];
+  minutes: any[] = ['00', '15', '30', '45'];
   guests: any[] = ['1 person', '2 people', '3 people', '4 people', '5 people', '6 people', '7 people', '8 people', '9 people', '10 people', '11 people', '12 people'];
 
 
@@ -25,6 +25,8 @@ export class RezzoFormComponent implements OnInit {
   nameValidationErrorMessage!: string;
   emailValidationErrorMessage!: string;
   dateValidationErrorMessage!: string;
+  timeValidationErrorMessage!: string;
+
 
   private nameValidationMessages: any = {
     required: 'Please enter your name.',
@@ -35,6 +37,7 @@ export class RezzoFormComponent implements OnInit {
     required: 'Please enter your email address.',
     email: 'Please enter a valid email address.'
   }
+  guestValidationMessages!: string;
 
   reservation = new Reservation();
 
@@ -53,37 +56,49 @@ export class RezzoFormComponent implements OnInit {
         year: ['YYYY' || this.years, Validators.required],
       }),
       timeGroup: this.fb.group({
-        hour: ['07' || this.hours, Validators.required],
-        minute: ['30' || this.minutes, Validators.required],
+        hour: [this.hours, Validators.required],
+        minute: [this.minutes, Validators.required],
         meridian: ['PM' || ['AM', 'PM'], Validators.required],
       }),
       guests: [4, [Validators.min(1), Validators.max(12)]]
     });
 
-    console.log(moment.monthsShort())
-    //re-evalute for validation messages everytime controls are changes
     const nameControl = this.rezzoForm.get('name');
     nameControl.valueChanges.pipe(
       debounceTime(1000)
     ).subscribe(
-      (value: any) => this.setNameValidationErrorMessage(nameControl));
+      (value: any) =>
+        this.setNameValidationErrorMessage(nameControl));
 
     const emailControl = this.rezzoForm.get('email');
     emailControl.valueChanges.pipe(
       debounceTime(1000)
     ).subscribe(
-      (value: any) => this.setEmailValidationErrorMessage(emailControl));
+      (value: any) =>
+        this.setEmailValidationErrorMessage(emailControl));
 
     const dateControl = this.rezzoForm.get('dateGroup');
     dateControl.valueChanges.pipe(
       debounceTime(3000)
     ).subscribe(
       (value: any) => {
-        this.setDateErrorMessage(
+        this.setDateValidationErrorMessage(
           this.rezzoForm.get('dateGroup.month'),
           this.rezzoForm.get('dateGroup.day'),
           this.rezzoForm.get('dateGroup.year')
-          )
+        )
+      });
+
+    const timeControl = this.rezzoForm.get('timeGroup');
+    timeControl.valueChanges.pipe(
+      debounceTime(3000)
+    ).subscribe(
+      (value: any) => {
+        this.setTimeValidationErrorMessage(
+          this.rezzoForm.get('timeGroup.hour'),
+          this.rezzoForm.get('timeGroup.minute'),
+          this.rezzoForm.get('timeGroup.meridian')
+        )
       });
   }
 
@@ -96,23 +111,41 @@ export class RezzoFormComponent implements OnInit {
   }
 
   setEmailValidationErrorMessage(e: AbstractControl): void {
-    this.nameValidationErrorMessage = '';
+    this.emailValidationErrorMessage = '';
     if ((e.touched || e.dirty) && e.errors) {
       this.emailValidationErrorMessage = Object.keys(e.errors).map(
         key => this.emailValidationMessages[key]).join(' ')
     }
   }
 
-  setDateErrorMessage(m, d, y): void {
+  setDateValidationErrorMessage(month, day, year): void {
     this.dateValidationErrorMessage = '';
-
     let now = moment();
-    let reservation = moment([y.value, moment(m.value, 'MMM').month(), d.value]);
+    let reservation = moment([year.value, moment(month.value, 'MMM').month(), day.value]);
     let later = moment().add(6, 'months');
 
     if (!reservation.isValid() || now > reservation || reservation > later) {
-      this.dateValidationErrorMessage = 'Please slect a valid date within the next 6 months'
+      this.dateValidationErrorMessage = 'Please select a valid date within the next 6 months'
     }
+  }
+
+  setTimeValidationErrorMessage(hour, min, meridian): void {
+    this.timeValidationErrorMessage = '';
+    /*
+    Business Hours are
+    MON - FRI: 09:00 AM - 10:00 PM
+    SAT - SUN: 09:00 AM - 11:30 PM
+    for simplicity we will use 09:00 AM - 11:30 PM
+    to validate reservation hours
+    */
+    const open = moment('8:59am', 'h:mma')
+    const close = moment('11:31pm', 'h:mma')
+    let currentTime = moment([`${hour.value}:${min.value}:${meridian.value}`], "LT")
+
+    if (!currentTime.isBetween(open, close)) {
+      this.timeValidationErrorMessage = 'Please select a time during our current business hours.';
+    }
+
   }
 
   decrementGuestCount() {
@@ -121,23 +154,34 @@ export class RezzoFormComponent implements OnInit {
       this.rezzoForm.patchValue({
         guests: this.selectedGuestCount
       })
+    } else {
+      this.guestValidationMessages = 'At least one person must be present to make reservation';
+      setTimeout(() => {
+        this.guestValidationMessages = '';
+      }, 3000)
     }
-    //TO DO(Bonus) => handle < 1 guest error here
+
   }
 
   incrementGuestCount() {
     if (this.selectedGuestCount < 12) {
       this.selectedGuestCount = this.selectedGuestCount + 1
+      this.rezzoForm.patchValue({
+        guests: this.selectedGuestCount
+      })
     }
-    this.rezzoForm.patchValue({
-      guests: this.selectedGuestCount
-    })
-    //TO DO(Bonus) => handle > 12 guests error here
+    else {
+      this.guestValidationMessages = 'Please call to make reservations for parties of 12 or more.';
+      setTimeout(() => {
+        this.guestValidationMessages = '';
+      }, 3000)
+    }
+
   }
 
   saveReservation() {
     this.makeReservation();
-    console.log(this.rezzoForm.value);
+    // console.log(this.rezzoForm.value, this.reservation);
     this.isSubmitted = true;
 
     setTimeout(() => {
@@ -148,8 +192,14 @@ export class RezzoFormComponent implements OnInit {
 
   makeReservation() {
     //TO DO (Bonus) => Format Time & Date
-    this.reservation = { ...this.rezzoForm.value }
-    console.log(this.reservation);
+    this.reservation = {
+      name: this.rezzoForm.value.name,
+      email: this.rezzoForm.value.email,
+      date: this.rezzoForm.value.dateGroup,
+      time: this.rezzoForm.value.timeGroup,
+      guests: this.rezzoForm.value.guests
+    }
+    // console.log(this.reservation);
   }
 
 

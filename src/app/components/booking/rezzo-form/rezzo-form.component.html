@@ -9,7 +9,6 @@
       <!-- Name Input -->
       <input class="form-control form-input full"
              type="text"
-             id="nameId"
              placeholder="Name"
              formControlName="name"
              [ngClass]="{'alert-danger': nameValidationErrorMessage }" />
@@ -19,8 +18,7 @@
 
       <!-- Email Input -->
       <input class="form-control form-input full"
-             type="text"
-             id="emailId"
+             type="email"
              placeholder="Email"
              formControlName="email"
              [ngClass]="{'alert-danger': emailValidationErrorMessage }">
@@ -31,8 +29,6 @@
 
       <div class="group">
         <!-- Date Input -->
-        <!-- TO DO =>  Receive an error message when the booking form is submitted if
-              Any of the `Pick a date` or `Pick a time` fields are empty should show "This field is incomplete" -->
         <h3>Pick a Date</h3>
         <div formGroupName="dateGroup"
              class="dates">
@@ -64,26 +60,10 @@
             </option>
           </select>
         </div>
+      </div>
+      <span class="alert-danger">{{dateValidationErrorMessage}}</span>
 
-        <!-- TO DO(Bonus) => add date select error message with cross validation -->
-        <!-- <div *ngIf="rezzoForm.get('dateGroup.month').touched
-      || rezzoForm.get('dateGroup.day').touched ||
-      rezzoForm.get('dateGroup.year').touched">
 
-          <span *ngIf="rezzoForm.get('dateGroup.month').errors?.required">
-            Please select a Month
-          </span>
-          <span *ngIf="rezzoForm.get('dateGroup.day').errors?.required">
-            Please select a Day
-          </span>
-          <span *ngIf="rezzoForm.get('dateGroup.year').errors?.required">
-            Please select a Year
-          </span>
-        </span>
-      </div> -->
-
-    </div>
-<span class="alert-danger">{{dateValidationErrorMessage}}</span>
       <div class="group">
         <!-- Time Input -->
         <h3>Pick a Time</h3>
@@ -91,12 +71,14 @@
              class="times">
           <!-- Hour Select -->
           <select formControlName="hour"
+                  type="text"
                   class="form-control form-select small hour">
-            <option disabled>07</option>
+            <option>07</option>
             <option *ngFor="let hour of hours">{{hour}}</option>
           </select>
           <!-- Minute Select -->
           <select formControlName="minute"
+                  type="text"
                   class="form-control form-select small hour">
             <option *ngFor="let minute of minutes">{{minute}}</option>
           </select>
@@ -104,6 +86,7 @@
           <!-- AM/PM Select -->
           <div class="ampm">
             <select formControlName="meridian"
+                    type="text"
                     class="form-control form-select small meridian">
               <option>PM</option>
               <option>AM</option>
@@ -111,41 +94,47 @@
             <img src="/assets/images/icons/icon-arrow.svg">
           </div>
         </div>
-        <!-- TO DO(Bonus) => add timeGroup validation/error message -->
       </div>
+      <span class="alert-danger">{{timeValidationErrorMessage}}</span>
+
 
       <!-- Guest Counter -->
       <!-- TO DO(Bonus) => change this to form control? -->
       <div class="full counter">
         <img src="/assets/images/icons/icon-minus.svg"
              (click)="decrementGuestCount()" />
-        <!-- TO DO(Bonus) => add validation/error message "Please select guest count of 1 or more people"-->
-
+        
         {{guests[selectedGuestCount-1]}}
         <img src="/assets/images/icons/icon-plus.svg"
              (click)="incrementGuestCount()" />
-        <!-- TO DO(Bonus) => add validation/error message ""-->
-        <!--  <span class="invalid-feedback">
-        <span *ngIf="rezzoForm.get('guests').errors?.range">
-          Please select guest count of 12 or less people.
-        </span>
-      </span> -->
 
-      </div>
-      <!-- Form submit button -->
+      </div> <span class="invalid-feedback">
+        {{guestValidationMessages}}
+          </span>
+
       <button class="btn btn-light"
               type="submit"
-              [disabled]="!rezzoForm.valid">
-        Make
+              [disabled]="!rezzoForm.valid"> Make
         Reservation</button>
     </div>
     <div class="confirm"
          *ngIf="isSubmitted">
-      <p>Thanks for making your reservation.</p>
-      <p>We look forward to dining with you!</p>
+      <p>Thanks for making your reservation
+        <span class="details">{{ this.reservation.name }}</span>.
+      </p>
+      <p>Your reservation for
+        <span class="details">{{ guests[this.selectedGuestCount-1]}}</span> has been recieved.
+      </p>
+      <p> We look forward to dining with you!</p>
+        <!--  TO DO(Bonus) => Show reservation time on confimation screen
+          on <span class="details">{{this.reservation.date}} {{rezzoForm.dateGroup.day}},
+          {{this.reservation.date.year}}</span> at <span class="details">{{this.reservation.time.hour}}:{{this.reservation.time.minute}}
+          {{this.reservation.time.meridian}}</span>  <p>A confirmation has been emailed to
+        <span class="details">{{ this.reservation.email }}</span>
+      </p>
+    -->
+
+
     </div>
-
   </form>
-
-
 </section>

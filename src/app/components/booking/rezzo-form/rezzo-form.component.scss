@@ -14,6 +14,9 @@ section {
   @include variables.heading-type-s;
   width: 100%;
   height: 100%;
+  .details{
+    font-weight: 700;
+  }
 }
 
 .rezForm {

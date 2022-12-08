@@ -31,20 +31,20 @@ Users should be able to:
 - [x] See hover states for all interactive elements throughout the site
 - [x] See the correct content for the Family Gatherings, Special Events, and Social Events section when the user clicks each tab
 - [ ] Receive an error message when the booking form is submitted if:
-  - [x] The `Name` or `Email Address` fields are empty should show "This field is required"
-  - [x] The `Email Address` is not formatted correctly should show "Please use a valid email address"
-  - [ ] Any of the `Pick a date` or `Pick a time` fields are empty should show "This field is incomplete"
+  - [x] The `Name` or `Email Address` fields are empty should show <b>"This field is required"</b>
+  - [x] The `Email Address` is not formatted correctly should show <b>"Please use a valid email address"</b>
+  - [ ] Any of the `Pick a date` or `Pick a time` fields are empty should show <b>"This field is incomplete"</b>
 
 ### Screenshot
 
-![](./src/assets/preview.jpg)
+<!-- ![](./src/assets/preview.jpg) -->
 
 
 
 ### Links
 
 - Solution URL: [Github Solution](https://github.com/Chanda-Abdul/Frontend-Mentor-Angular-Dine-Restaurant-Website-Challenge)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](#)
 
 ## My process
 
@@ -63,14 +63,14 @@ Users should be able to:
 - Semantic <b>HTML5</b> markup
 
 
-### What I learned
+## What I learned
 
 
 <!-- - While building this project I learned more about <b>Figma</b>, apparently most of the <b>CSS</b> variables and styles may be available in your <b>Figma</b> file, which saves SO much time. Who knew? 😋
 - This is also one of my first "real" projects using <b>Angular</b>, <s>overall everything went very smoothly, and I enjoy working with <b>Angular</b>. <b>Angular</b>, it seems much more intuitive and organized than <b>React</b>🤡</s>.
 - Please see below, for a code snippet, of the Angular Reactive Form that actually broke my soul. I will not be elaborating 👉🏾 👈🏾 -->
-#### component to display resposive images
-##### `picture-responsive.html`
+### 1️⃣ component to display resposive images
+#### `picture-responsive.html`
 ```html
 <picture>
   <source media="(min-width: 900px)"
@@ -80,14 +80,14 @@ Users should be able to:
   <img src='/assets/images/homepage/{{imageTitle}}-mobile.jpg' />
 </picture>
 ```
-##### in the component
+#### in the component
 ```ts
 <app-picture-responsive *ngIf="selectedEvent"
   imageTitle="{{selectedEvent.imageTitle}}"
   class="event-photo"></app-picture-responsive>
 ```
 
-##### and the data
+#### and the data
 
 ```ts
 
@@ -103,7 +103,7 @@ EventItem[] = [
   },
   ...
   ```
-
+### 2️⃣ Moment.js library
 #### `rezzo-form.component.html`
 ```html
     <form class="rezForm"
@@ -149,6 +149,7 @@ EventItem[] = [
         </button>
       </form>
 ```
+### Reactive Forms
 #### 🙅🏽‍♀️ `rezzo-form.component.ts`
 
 ```js
@@ -208,32 +209,30 @@ EventItem[] = [
     }
   ```
 
-
-#### Continued development
+## Continued development
 - [ ] Add animations
 
+### Features to Add
+#### Authenticate/Authorization with ability to update
 
+  - [ ] Add authentication /Authorization
+  - [ ] Login/logout, with a password, for managers/admins so that they can update menu options, reservations, and events
+    - [ ] view/edit menu options
+    - [ ] view/edit menu event options
+    - [ ] view/edit menu reservations
+  - [ ] button? reset to default menu/event data default. for testing purposes
+#### Authenticate/Authorization with ability to view only
+  - [ ] add a view only option for admins to view menu, reservations, and events
 
-#### Features to Add
-##### Authenticate/Authorization with ability to update
-
-- [ ] Add authentication /Authorization
-- [ ] Login/logout, with a password, for managers/admins so that they can update menu options, reservations, and events
-  - [ ] view/edit menu options
-  - [ ] view/edit menu event options
-  - [ ] view/edit menu reservations
-- [ ] button? reset to default menu/event data default. for testing purposes
-##### Authenticate/Authorization with ability to view only
-- [ ] add a view only option for admins to view menu, reservations, and events
-
-##### menu page
-- [ ] add menu component to show list of all current offerings.
+#### Menu Page
+  - [ ] add menu component to show list of all current offerings.
 <!-- many resturaunt sites have a menu for users to view. -->
-##### About page
-- [ ] add about chef/restaraunt section/page
+#### About page
+  - [ ] add about chef/restaraunt section/page
 
-##### Event Booking Component
-- [ ] add event booking component so that users can book events, similar to the reservation component
+#### Event Booking Component
+  - [ ] add event booking component so that users can book events, similar to the reservation component
+#
 ### Useful resources
 
 - 🙌🏾 [Angular Reactive Forms By Deborah Kurata(Pluralsight Course)](https://app.pluralsight.com/library/courses/angular-2-reactive-forms/table-of-contents) - This is an amazing YouTube which helped me understand how to build Reactive Forms with Angular. I'd recommend it to anyone still learning this concept.
