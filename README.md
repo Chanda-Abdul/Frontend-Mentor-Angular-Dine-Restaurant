@@ -191,7 +191,7 @@ I created the reservation form in the `booking` component using [Angular Reactiv
         Reservation</button>
     </div>
 ```
-#### Custom validation in the component class `rezzo-form.component.ts`
+### Custom validation in the component class `rezzo-form.component.ts`
 ```ts
 
 private nameValidationMessages: any = {
@@ -244,7 +244,7 @@ This project contained many images that would change at each breakpoint.  I crea
   class="event-photo"></app-picture-responsive>
 ```
 
-#### The data
+### The data
 
 ```ts
 
@@ -265,7 +265,7 @@ I used the [Moment.js](https://momentjs.com/docs) library to validate the `date`
 <img src="/src/assets/screens/date_error_msg.png" />
 
 
-### 🙅🏽‍♀️ `rezzo-form.component.ts`
+### `rezzo-form.component.ts`
 
 ```ts
 ...
