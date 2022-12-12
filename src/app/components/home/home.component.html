@@ -1,53 +1,12 @@
-<app-header></app-header>
-<div class="container">
-  <section class="enjoy">
-    <app-picture-responsive class="enjoyable-place"
-                            imageTitle="enjoyable-place">
-    </app-picture-responsive>
-
-    <picture class="curve-right pattern">
-      <img src="/assets/images/patterns/pattern-curve-top-right.svg" />
-    </picture>
-
-    <div class="text">
-      <img src="/assets/images/patterns/pattern-divide.svg"
-           class="divide">
-      <h2>Enjoyable place for all the family</h2>
-      <p>
-        Our relaxed surroundings make dining with us a great experience for everyone. We can even
-        arrange
-        a tour of the farm before your meal.
-      </p>
-    </div>
-
-  </section>
-
-  <section class="local">
-    <app-picture-responsive class="locally-sourced" imageTitle="locally-sourced"></app-picture-responsive>
-
-    <div class="text">
-      <picture class="lines pattern">
-        <img src="/assets/images/patterns/pattern-lines.svg" />
-      </picture>
-      <img src="/assets/images/patterns/pattern-divide.svg"
-           class="divide">
-      <picture class="curve-left pattern">
-        <img src="/assets/images/patterns/pattern-curve-top-left.svg" />
-      </picture>
-
-      <h2>The most locally sourced food</h2>
-      <p>
-        All our ingredients come directly from our farm or local fishery. So you can be sure that you’re
-        eating the freshest, most sustainable food.
-      </p>
-    </div>
-  </section>
+<div class="container"><app-header></app-header>
+  <app-about></app-about>
 
   <app-menu-preview></app-menu-preview>
-  <app-event-slider></app-event-slider>
+  <app-events></app-events>
 
   <section class="cta">
-    <app-picture-responsive class="full" style="opacity: 80%;"
+    <app-picture-responsive class="full"
+                            style="opacity: 80%;"
                             imageTitle="ready-bg"></app-picture-responsive>
 
     <div class="action">

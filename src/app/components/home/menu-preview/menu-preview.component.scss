@@ -1,199 +1,181 @@
 @use '/src/variables';
-
 * {
-  color: white;
-  @include variables.flexCenter(column);
-  text-align: center;
+	color: white;
+	@include variables.flexCenter(column);
+	text-align: center;
 }
-
 .menu {
-  position: relative;
-  margin: 2.75rem 0 0 0;
-  padding: 5rem 1.5rem 2rem 1.5rem;
-  background-color: variables.$dreamless-sleep;
-  width: 100vw;
+	position: relative;
+	margin: 2.75rem 0 0 0;
+	padding: 0.3rem 1.5rem 2rem 1.5rem;
+	background-color: variables.$dreamless-sleep;
+	width: 100vw;
 }
-
 .highlights {
-  @include variables.flexCenter(column);
-  width: 20rem;
-  margin-bottom: 2rem;
-
-  h2 {
-    @include variables.heading-type-l;
-    font-size: 1.75rem;
-    line-height: 2.25rem;
-    height: 2.5rem;
-  }
+	@include variables.flexCenter(column);
+	width: 20rem;
+	margin-bottom: 2rem;
+	h2 {
+		@include variables.heading-type-l;
+		font-size: 1.75rem;
+		line-height: 2.25rem;
+		height: 2.5rem;
+	}
 }
-
 .divide {
-  margin: 5px 0 2.75rem 0;
+	margin: 5px 0 2.75rem 0;
 }
-
 .preview {
-  @include variables.flexCenter(column);
-  margin-top: 1.5rem;
+	@include variables.flexCenter(column);
+	margin-top: 1.5rem;
 }
-
 .menu-item {
-  margin: 0 auto 1.5rem auto;
+	margin: 0 auto 1.5rem auto;
 }
-
 .menu-photo {
-  margin: 0 auto 1rem auto;
+	margin: 0 auto 1rem auto;
 }
-
 .menu-title {
-  @include variables.heading-type-m;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  letter-spacing: -0.25px;
+	@include variables.heading-type-m;
+	font-size: 1rem;
+	line-height: 1.25rem;
+	letter-spacing: -0.25px;
 }
-
 .menu-text {
-  @include variables.body-type-secondary;
-  margin: 0 auto 3rem auto;
-  padding: 0 1.5rem;
-  font-weight: 300;
-  line-height: 26px;
-  letter-spacing: 0px;
-
-  p {
-    width: 18rem;
-  }
-
+	@include variables.body-type-secondary;
+	margin: 0 auto 3rem auto;
+	padding: 0 1.5rem;
+	font-weight: 300;
+	line-height: 1.4rem;
+	letter-spacing: 0;
+	p {
+		width: 18rem;
+	}
 }
-
 .divider {
-  border-bottom: 1px solid white;
-  opacity: 15%;
-  width: 18rem;
-  margin: auto;
-
+	border-bottom: 1px solid white;
+	opacity: 15%;
+	width: 18rem;
+	margin: auto;
 }
-
 .menu-item:last-child>.divider {
-  opacity: 0%;
+	opacity: 0%;
 }
-
 .item-divide {
-  visibility: hidden;
+	visibility: hidden;
 }
-
 @media (min-width:600px) {
-  .highlights {
-    margin: 2.75rem auto 1.5rem auto;
-    width: 28rem;
-
-    h2 {
-      @include variables.heading-type-l;
-      margin: 2rem auto;
-      width: 25rem;
-    }
-
-    p {
-      margin: 1.5rem auto;
-      @include variables.body-type-primary;
-      letter-spacing: 0px;
-    }
-  }
-
-  .content {
-    @include variables.flexCenter(row);
-    width: 80vw;
-    position: relative;
-  }
-
-  .menu-photo {
-    @include variables.flexCenter(row);
-  }
-
-  .item-divide {
-    width: 2rem;
-    position: absolute;
-    top: 1rem;
-    right: -1.5rem;
-    z-index: -1;
-    visibility: visible;
-  }
-
-  .content {
-    margin: 1rem;
-  }
-
-  .menu-photo {
-    z-index: 2;
-    position: relative;
-  }
-
-  .menu-text {
-    @include variables.flexCenter(column);
-    height: 4rem;
-    align-items: flex-start;
-    justify-content: flex-end;
-    margin: 0 0 0 1rem;
-    width: 21rem;
-
-
-    h2 {
-      height: 1.25rem;
-      padding-top: 2rem;
-      @include variables.heading-type-m;
-      letter-spacing: -0.25px;
-    }
-
-    p {
-      padding-left: 0;
-      text-align: left;
-      height: 2.25rem;
-    }
-
-  }
-
-  .divider {
-    width: 573px;
-  }
+	.menu {
+		margin-top: 0;
+	}
+	.highlights {
+		margin: 2.75rem auto 1.5rem auto;
+		width: 28rem;
+		h2 {
+			@include variables.heading-type-l;
+			margin: 2rem auto;
+			width: 25rem;
+		}
+		p {
+			margin: 1.5rem auto;
+			@include variables.body-type-primary;
+			letter-spacing: 0;
+		}
+	}
+	.content {
+		@include variables.flexCenter(row);
+		width: 80vw;
+		position: relative;
+	}
+	.menu-photo {
+		@include variables.flexCenter(row);
+	}
+	.item-divide {
+		width: 2rem;
+		position: absolute;
+		top: 1rem;
+		right: -1.5rem;
+		z-index: -1;
+		visibility: visible;
+	}
+	.content {
+		margin: 1rem;
+	}
+	.menu-photo {
+		z-index: 2;
+		position: relative;
+	}
+	.menu-text {
+		@include variables.flexCenter(column);
+		height: 4rem;
+		align-items: flex-start;
+		justify-content: flex-end;
+		margin: 0 0 0 1rem;
+		width: 21rem;
+		h2 {
+			height: 1.25rem;
+			padding-top: 2rem;
+			@include variables.heading-type-m;
+			letter-spacing: -0.25px;
+		}
+		p {
+			padding-left: 0;
+			text-align: left;
+			height: 2.25rem;
+		}
+	}
+	.divider {
+		width: 573px;
+	}
 }
-
 @media (min-width:900px) {
-  .menu {
-    position: relative;
-    z-index: -2;
-    width: 100vw;
-    height: 761px;
-    padding-top: 2.25rem;
-  }
-
-  .highlights {
-    width: 40vw;
-    height: 441px;
-    margin: 0;
-    padding: 1.5rem 5vw;
-
-    h2 {
-
-      font-size: 48px;
-      font-weight: 700;
-      line-height: 48px;
-      letter-spacing: -0.5px;
-      text-align: left;
-    }
-
-    p {
-      text-align: left;
-    }
-
-  }
-
-  .divide {
-    margin: 1.5rem 0 2.75rem 0;
-  }
-
-  .preview {
-    width: 40vw;
-    height: 441px;
-    margin: 0;
-    padding: 0 5vw;
-  }
+	.menu {
+		@include variables.flexCenter(row);
+		position: relative;
+		z-index: -1;
+		width: 100vw;
+		height: 55rem;
+		padding-top: 10rem;
+		text-align: left;
+	}
+	.highlights {
+		align-items: flex-start;
+		justify-content: flex-start;
+		width: 50vw;
+		height: 100%;
+		padding: 0 0 1.5rem 10vw;
+		* {
+			text-align: left;
+		}
+		h2 {
+			margin-left: 0;
+			font-size: 2.6rem;
+			font-weight: 700;
+			line-height: 2.6rem;
+			letter-spacing: -0.5px;
+		}
+		p {
+      margin-left: 0;
+			padding-right: 0.3rem;
+      width: 80%;
+		}
+	}
+	.divide {
+		align-self: flex-start;
+		margin: 1.5rem 0 2.75rem 0;
+	}
+	.preview {
+		width: 50vw;
+		height: 22rem;
+		margin-top: 0.3rem;
+	}
+	.menu-item, .content {
+		margin-left: 0;
+	}
+	.menu-photo {
+		margin: 0 2rem 1rem auto;
+	}
+	.content {
+		width: 100%;
+	}
 }

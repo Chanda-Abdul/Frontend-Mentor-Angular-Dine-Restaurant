@@ -1,0 +1,156 @@
+@use '/src/variables';
+.container {
+	width: 100%;
+	@include variables.flexCenter(column);
+	position: relative;
+}
+.enjoyable-place {
+	top: -4rem;
+	position: absolute;
+}
+.enjoy {
+	width: 100vw;
+	@include variables.flexCenter(column);
+	.text {
+		margin-top: 400px;
+	}
+}
+.text {
+	@include variables.flexCenter(column);
+}
+h2 {
+	@include variables.heading-type-l;
+	margin: 2rem 3rem 1rem 3rem;
+}
+p {
+	width: 19rem;
+	@include variables.body-type-secondary;
+}
+.background-elements * {
+    height: 0;
+	visibility: hidden;
+}
+.local {
+	@include variables.flexCenter(column-reverse);
+	width: 100%;
+	margin-top: 0.3rem;
+}
+.locally-sourced {
+	margin-bottom: 0.3rem;
+}
+@media (min-width: 600px) {
+	.enjoyable-place {
+		top: -5rem;
+	}
+	.enjoy {
+		margin-top: 0;
+	}
+	.text {
+		width: 457px;
+		margin: 2rem auto;
+		h2 {
+			@include variables.heading-type-l;
+		}
+		p {
+			@include variables.body-type-primary;
+		}
+	}
+	.local {
+		@include variables.flexCenter(column-reverse);
+	}
+	.background-elements {
+		* {
+        height: auto;
+			position: absolute;
+			visibility: visible;
+		}
+		.curve-right {
+			z-index: -1;
+			top: 16vh;
+			left: -32rem;
+		}
+		.curve-left {
+			max-width: 50rem;
+			height: auto;
+			z-index: -1;
+			top: 75rem;
+			right: 25rem;
+		}
+		.lines {
+			right: 27vw;
+			top: 55rem;
+			z-index: 2;
+		}
+	}
+}
+@media (min-width: 900px) {
+	.enjoyable-place {
+		top: -5rem;
+		left: 10vw;
+	}
+	.background-elements {
+		.curve-right {
+			left: 0;
+			top: 15rem;
+		}
+		.curve-left {
+			left: 0;
+			top: 70rem;
+		}
+		.lines {
+			right: 15vw;
+			top: 67rem;
+		}
+	}
+	.text {
+		width: 100%;
+		text-align: left;
+		align-items: baseline;
+		h2 {
+			margin-top: 1rem;
+			padding-top: 2rem;
+			width: 25rem;
+		}
+	}
+	.enjoy {
+		.text {
+			@include variables.flexCenter(column);
+			align-items: flex-start;
+			margin: 10rem 0.3rem 10vw 0.3rem;
+			padding: 1rem 2rem 1rem 60vw;
+		}
+		* {
+			margin-left: 0;
+		}
+		p {
+			width: 100%;
+			padding-right: 10vw;
+		}
+	}
+	.locally-sourced {
+		position: absolute;
+		right: 10vw;
+		top: 5rem;
+	}
+	.local {
+		position: relative;
+		@include variables.flexSpaceBetween(row-reverse);
+		width: 100%;
+		height: 45rem;
+		.text {
+			width: 100%;
+			justify-content: flex-end;
+			margin: 10vw 0.3rem 10rem 0;
+			padding: 0.3rem auto 0.3rem 10vw;
+			* {
+				text-align: left;
+			}
+			h2 {
+				margin-left: 10vw;
+			}
+			p {
+				width: 25rem;
+			}
+		}
+	}
+}

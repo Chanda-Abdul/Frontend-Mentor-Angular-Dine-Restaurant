@@ -29,13 +29,17 @@
 
       <div class="group">
         <!-- Date Input -->
-        <h3>Pick a Date</h3>
+        <div class="error">
+          <h3 [ngClass]="{'alert-danger': dateValidationErrorMessage }">Pick a Date</h3> <span
+                class="alert-danger desktop">{{dateValidationErrorMessage}}</span>
+        </div>
         <div formGroupName="dateGroup"
              class="dates">
           <!-- Month Select -->
           <select formControlName="month"
                   type="text"
-                  class="form-control form-select small date">
+                  class="form-control form-select small date"
+                  [ngClass]="{'alert-danger': dateValidationErrorMessage }">
             <option disabled>MM</option>
             <option *ngFor="let month of months">
               {{ month }}
@@ -44,7 +48,8 @@
           <!-- Day Select -->
           <select formControlName="day"
                   type="text"
-                  class="form-control form-select small date">
+                  class="form-control form-select small date"
+                  [ngClass]="{'alert-danger': dateValidationErrorMessage }">
             <option disabled>DD</option>
             <option *ngFor="let day of days">
               {{day}}
@@ -53,7 +58,8 @@
           <!-- Year Select -->
           <select formControlName="year"
                   type="text"
-                  class="form-control form-select small year">
+                  class="form-control form-select small year"
+                  [ngClass]="{'alert-danger': dateValidationErrorMessage }">
             <option disabled>YYYY</option>
             <option *ngFor="let year of years">
               {{year}}
@@ -61,25 +67,30 @@
           </select>
         </div>
       </div>
-      <span class="alert-danger">{{dateValidationErrorMessage}}</span>
+      <span class="alert-danger mobile">{{dateValidationErrorMessage}}</span>
 
 
       <div class="group">
         <!-- Time Input -->
-        <h3>Pick a Time</h3>
+        <div class="error">
+          <h3 [ngClass]="{'alert-danger': timeValidationErrorMessage }">Pick a Time</h3>
+          <span class="alert-danger desktop">{{timeValidationErrorMessage}}</span>
+        </div>
         <div formGroupName="timeGroup"
              class="times">
           <!-- Hour Select -->
           <select formControlName="hour"
                   type="text"
-                  class="form-control form-select small hour">
+                  class="form-control form-select small hour"
+                  [ngClass]="{'alert-danger': timeValidationErrorMessage }">
             <option>07</option>
             <option *ngFor="let hour of hours">{{hour}}</option>
           </select>
           <!-- Minute Select -->
           <select formControlName="minute"
                   type="text"
-                  class="form-control form-select small hour">
+                  class="form-control form-select small hour"
+                  [ngClass]="{'alert-danger': timeValidationErrorMessage }">
             <option *ngFor="let minute of minutes">{{minute}}</option>
           </select>
 
@@ -87,15 +98,21 @@
           <div class="ampm">
             <select formControlName="meridian"
                     type="text"
-                    class="form-control form-select small meridian">
-              <option>PM</option>
-              <option>AM</option>
+                    class="form-control form-select small meridian"
+                    [ngClass]="{'alert-danger': timeValidationErrorMessage }">
+              <option>
+                <!-- TO DO(Bonus) =>  add checkmark <img src="/assets/images/icons/icon-arrow.svg">--> PM
+              </option>
+              <option>
+                <!-- TO DO(Bonus) =>  add checkmark <img src="/assets/images/icons/icon-arrow.svg">--> AM
+              </option>
             </select>
-            <img src="/assets/images/icons/icon-arrow.svg">
+            <!-- TO DO(Bonus) =>  make this look nicer -->
+            <!-- <img src="/assets/images/icons/icon-arrow.svg"> -->
           </div>
         </div>
       </div>
-      <span class="alert-danger">{{timeValidationErrorMessage}}</span>
+      <span class="alert-danger mobile">{{timeValidationErrorMessage}}</span>
 
 
       <!-- Guest Counter -->
@@ -103,14 +120,14 @@
       <div class="full counter">
         <img src="/assets/images/icons/icon-minus.svg"
              (click)="decrementGuestCount()" />
-        
+
         {{guests[selectedGuestCount-1]}}
         <img src="/assets/images/icons/icon-plus.svg"
              (click)="incrementGuestCount()" />
 
       </div> <span class="invalid-feedback">
         {{guestValidationMessages}}
-          </span>
+      </span>
 
       <button class="btn btn-light"
               type="submit"
@@ -126,7 +143,7 @@
         <span class="details">{{ guests[this.selectedGuestCount-1]}}</span> has been recieved.
       </p>
       <p> We look forward to dining with you!</p>
-        <!--  TO DO(Bonus) => Show reservation time on confimation screen
+      <!--  TO DO(Bonus) => Show reservation time on confimation screen
           on <span class="details">{{this.reservation.date}} {{rezzoForm.dateGroup.day}},
           {{this.reservation.date.year}}</span> at <span class="details">{{this.reservation.time.hour}}:{{this.reservation.time.minute}}
           {{this.reservation.time.meridian}}</span>  <p>A confirmation has been emailed to

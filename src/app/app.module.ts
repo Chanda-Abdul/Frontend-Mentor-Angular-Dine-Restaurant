@@ -17,6 +17,9 @@ import { HeaderComponent } from './components/home/header/header.component';
 import { RezzoFormComponent } from './components/booking/rezzo-form/rezzo-form.component';
 import { MenuPreviewComponent } from './components/home/menu-preview/menu-preview.component';
 import { PictureResponsiveComponent } from './components/shared/picture-responsive/picture-responsive.component';
+import { EventsComponent } from './components/home/events/events.component';
+import { AboutComponent } from './components/home/about/about.component';
+
 
 
 
@@ -35,7 +38,9 @@ const appRoutes: Routes = [
     HeaderComponent,
     RezzoFormComponent,
     MenuPreviewComponent,
-    PictureResponsiveComponent],
+    PictureResponsiveComponent,
+    EventsComponent,
+    AboutComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),

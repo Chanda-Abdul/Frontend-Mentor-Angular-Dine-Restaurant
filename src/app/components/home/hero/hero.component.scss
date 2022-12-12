@@ -24,11 +24,18 @@ p {
 }
 
 @media (min-width: 600px) {
+
+  .hero {
+
+   width: 100%;
+
+  }
   h1 {
-    width: 25rem !important;
-    font-size: 48px;
+    min-width: 50vw ;
+    max-width: 32rem;
+    font-size: 2.6rem;
     font-weight: 300;
-    line-height: 64px;
+    line-height: 3.5rem;
     letter-spacing: -0.6px;
     text-align: center;
     margin-top: 25px;
@@ -37,34 +44,36 @@ p {
 
   p {
     @include variables.body-type-primary;
-    margin-bottom: 75px;
+    margin-bottom: 4.1rem;
     height: 60px;
-    width: 37rem !important;
+    min-width:32rem ;
+    max-width: 80vw;
   }
 }
 
 @media (min-width: 900px) {
   .hero {
+    margin-top: 0.3rem;
     text-align: left;
     margin-left: 0;
     align-items: flex-start;
-
+    width: 37rem ;
   }
 
   h1 {
     text-align: left;
-    width: 37rem !important;
+    width: 20rem ;
     @include variables.heading-type-xl;
     font-weight: 200;
-    margin: 75px 0 1.5rem 0;
+    margin: 1rem 20 1.5rem 0;
   }
 
   p {
     text-align: left;
-    margin: 1.5rem 0 50px 0;
+    margin: 1.5rem 0 2.75rem 0;
     padding: 10px 0;
     height: 90px;
-    max-width: 28rem;
+    width: 37rem ;
     @include variables.body-type-primary;
   }
 }

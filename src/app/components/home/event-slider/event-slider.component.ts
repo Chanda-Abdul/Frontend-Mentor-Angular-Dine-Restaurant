@@ -23,7 +23,7 @@ export class EventSliderComponent implements OnInit {
   }
 
   // eventCarousel() {
-  //   //TO DO(Bonus) => add observable to rotate through events every so often
+  //   TO DO(Bonus) => add observable to rotate through events every so often
   //   if (this.eventIndex < this.events.length - 1) {
   //     setTimeout(() => {
   //       this.eventIndex++;

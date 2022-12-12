@@ -1,29 +1,16 @@
-<div class="event-list">
-  <section class="events">
-    <picture class="lines pattern">
-      <source srcset="/assets/images/patterns/pattern-lines.svg">
-      <img src="/assets/images/patterns/pattern-lines.svg" />
+<div class="container">
+  <app-picture-responsive *ngIf="selectedEvent"
+                          imageTitle="{{selectedEvent.imageTitle}}"
+                          class="event-photo"></app-picture-responsive>
 
-    </picture>
+  <ul class="event-select mobile">
+    <li class="event-item"
+        *ngFor="let event of events">
+      <a (click)="onSelect(event)"
+         [ngClass]="{'selected' : event === selectedEvent}">{{event.title}}</a>
+    </li>
+  </ul>
 
-    <picture class="curve-right pattern">
-      <source srcset="/assets/images/patterns/pattern-curve-top-right.svg">
-      <img src="/assets/images/patterns/pattern-curve-top-right.svg" />
-
-    </picture>
-    <app-picture-responsive *ngIf="selectedEvent"
-                            imageTitle="{{selectedEvent.imageTitle}}"
-                            class="event-photo"></app-picture-responsive>
-
-    <ul class="event-select mobile">
-      <li class="event-item"
-          *ngFor="let event of events">
-        <a (click)="onSelect(event)"
-           [ngClass]="{'selected' : event === selectedEvent}">{{event.title}}</a>
-      </li>
-
-    </ul>
-  </section>
   <section class="event"
            *ngIf="selectedEvent">
     <h2>{{selectedEvent.title}}</h2>
@@ -32,14 +19,13 @@
             (click)="onBookTableClick()">Book A Table</button>
 
     <ul class="event-select desktop">
-      <!-- TO DO(Bonus) => add show/hide & maybe move to seperate component? -->
+
       <li class="event-item"
           *ngFor="let event of events">
         <a (click)="onSelect(event)"
-           [ngClass]="{'selected' : event === selectedEvent}">{{event.title}}</a>
+           [ngClass]="{'selected' : event === selectedEvent}"><img src="/assets/images/patterns/pattern-divide.svg"
+           class="divide">{{event.title}}</a>
       </li>
-
     </ul>
   </section>
-
 </div>

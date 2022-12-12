@@ -5,35 +5,37 @@
   min-height: 63rem;
   width: 100%;
   background-color: variables.$dreamless-sleep;
-  // margin-bottom: 8rem;
 
   * {
     color: white;
   }
+}
 
+.pattern {
+  display: none;
 }
 
 .container {
+  width: 100%;
   height: 37.5rem;
-  overflow: hidden;
 }
 
 section {
   @include variables.flexCenter(column);
   position: absolute;
-  top: 75px;
+  top: 4.1rem;
   left: 0;
-  width: 100%;
+  width: 100vw;
 }
 
 h1 {
   @include variables.heading-type-l;
-  width: 250px;
-  margin: 2rem auto 1.25rem auto;
+  width: 22.75rem;
+  margin-top: 2rem;
   font-size: 1.75rem;
-  font-weight: 200;
+  font-weight: 300;
   line-height: 2.25rem;
-  letter-spacing: -0.4;
+  letter-spacing: -0.4px;
 }
 
 p {
@@ -43,15 +45,14 @@ p {
   width: 20rem;
 }
 
-
 @media (min-width: 600px) {
-  .container{
-    max-height: 1035px;
+  .container {
+    height: 31rem;
   }
 
   section {
     align-items: flex-start;
-    width: 100%;
+    width: 100vw;
     padding: 2rem;
     top: 0;
     height: 600px;
@@ -69,11 +70,10 @@ p {
 
   h1 {
     @include variables.heading-type-xl;
-    margin: 3rem auto;
+    margin: 3rem auto 1rem auto;
     font-weight: 200;
     font-size: 2.6rem;
     line-height: 3.5rem;
-
   }
 
   p {
@@ -81,5 +81,52 @@ p {
     width: 32rem;
     font-weight: 300;
     margin: 0 auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .content {
+    min-height: auto;
+  }
+
+  .logo {
+    margin-left: 10vw;
+    left: 0;
+  }
+
+  section {
+    align-items: flex-start;
+    padding-left: 10vw;
+    width: 100%;
+  }
+
+  .lines {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 45vw;
+    top: 41rem;
+  }
+
+  .curve-right {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 29rem;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  h1,
+  p {
+    max-width: 25rem;
+    margin-left: 0;
+    text-align: left;
+  }
+
+  h1 {
+    @include variables.heading-type-xl;
+    margin-bottom: 2rem;
   }
 }

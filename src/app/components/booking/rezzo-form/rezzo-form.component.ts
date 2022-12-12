@@ -1,4 +1,3 @@
-import { getLocaleDateFormat } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import * as moment from 'moment';
@@ -181,7 +180,6 @@ export class RezzoFormComponent implements OnInit {
 
   saveReservation() {
     this.makeReservation();
-    // console.log(this.rezzoForm.value, this.reservation);
     this.isSubmitted = true;
 
     setTimeout(() => {
@@ -199,7 +197,6 @@ export class RezzoFormComponent implements OnInit {
       time: this.rezzoForm.value.timeGroup,
       guests: this.rezzoForm.value.guests
     }
-    // console.log(this.reservation);
   }
 
 

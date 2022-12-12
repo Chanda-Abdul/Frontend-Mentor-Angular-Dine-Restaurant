@@ -10,46 +10,47 @@ $dreamless-sleep: hsl(0, 0%, 7%);
 $mirage: hsl(234, 30%, 13%);
 $ebony-clay: hsl(218, 21%, 18%);
 $shuttle-gray: hsl(217, 14%, 42%);
+$lady-in-red: 	hsl(0, 43%, 50%);
 
 /* Typography */
 @mixin heading-type-xl {
-  font-size: 80px;
-  line-height: 80px;
+  font-size: 4.44rem;
+  line-height: 4.44rem;
   font-weight: 300;
   letter-spacing: -1px;
 }
 
 @mixin heading-type-l {
-  font-size: 48px;
-  line-height: 48px;
+  font-size: 2.6rem;
+  line-height: 2.6rem;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
 
 @mixin heading-type-m {
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
   font-weight: 700;
   letter-spacing: -0.1rem;
 }
 
 @mixin heading-type-s {
-  font-size: 17px;
-  line-height: 28px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 300;
   letter-spacing: 2.5px;
   text-transform: uppercase;
 }
 
 @mixin body-type-primary {
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
   font-weight: 400;
 }
 
 @mixin body-type-secondary {
-  font-size: 16px;
-  line-height: 26px;
+  font-size: .9rem;
+  line-height: 1.4rem;
   font-weight: 300;
 }
 
@@ -70,10 +71,12 @@ $shuttle-gray: hsl(217, 14%, 42%);
 
 /*button*/
 @mixin btn {
-  width: 263px;
-  height: 64px;
+  width: 14.6rem;
+  height: 3.5rem;
  @include heading-type-s;
 }
+
+
 
 
 

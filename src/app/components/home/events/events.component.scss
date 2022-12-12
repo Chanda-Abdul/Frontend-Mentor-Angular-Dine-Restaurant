@@ -1,0 +1,133 @@
+@use '/src/variables';
+.event-list {
+	@include variables.flexSpaceBetween(column);
+	margin: 0.3rem auto 4rem auto;
+	text-align: center;
+	position: relative;
+}
+.events {
+  height: fit-content;
+	padding-bottom: 5rem;
+}
+.pattern {
+	position: absolute;
+	visibility: hidden;
+}
+ul {
+	padding-left: 0;
+}
+li {
+	width: 100%;
+	padding: .5rem 0;
+	& a {
+		@include variables.heading-type-s;
+		font-weight: 600;
+		margin: 2px;
+		color: variables.$shuttle-gray;
+		opacity: .5;
+	}
+	& a.selected {
+		text-decoration: none;
+		color: variables.$dreamless-sleep;
+		padding: 5px;
+		position: relative;
+		background: transparent;
+		opacity: 1;
+	}
+	& a.selected::after {
+		content: '';
+		padding: 5px;
+		border: 1px solid variables.$teddy-bear;
+		border-width: 0 0 1px 0;
+		position: absolute;
+		left: 35%;
+		top: 1rem;
+		width: 2.6rem;
+		display: inline-block;
+	}
+}
+section.event {
+	width: 18rem;
+	color: variables.$mirage;
+	h2 {
+		margin: 0 auto;
+		@include variables.heading-type-l;
+		font-size: 1.75rem;
+		line-height: 2.25rem;
+	}
+	p {
+		width: 18rem;
+		margin: 1rem 0 2rem 0;
+		color: variables.$ebony-clay;
+		@include variables.body-type-secondary;
+	}
+}
+.desktop {
+	visibility: hidden;
+	height: 0;
+}
+.mobile {
+	@include variables.flexSpaceBetween(column);
+	visibility: visible;
+	margin-top: 2rem;
+}
+.event-highlight {
+	margin: 1.5rem 0 2.75rem 0;
+}
+@media (min-width: 600px) {
+	.event-list {
+		margin: 7rem auto 0.3rem auto;
+		width: 100%;
+	}
+	.lines, .curve-right {
+		position: absolute;
+		visibility: visible;
+		z-index: -1;
+	}
+	.lines {
+		height: 4.25rem;
+		width: 9rem;
+		left: 1rem;
+		top: -1.75rem;
+		z-index: 3;
+	}
+	.curve-right {
+		height: 17rem;
+		width: 50rem;
+		right: 30rem;
+		top: -7rem;
+		opacity: 0.8;
+	}
+	.mobile {
+		@include variables.flexSpaceBetween(row);
+		width: 45rem;
+		margin: 3rem auto;
+	}
+	section.event {
+		@include variables.flexSpaceBetween(column);
+		padding: 0;
+		color: variables.$mirage;
+		width: 100%;
+		h2 {
+			@include variables.heading-type-l;
+		}
+		p {
+			@include variables.body-type-primary;
+			width: 30rem;
+			margin: 2rem 0 3rem 0;
+		}
+	}
+}
+@media (min-width: 900px) {
+	.lines {
+		left: 7vw;
+		top: -2rem;
+		z-index: 3;
+	}
+	.curve-right {
+		left: -55rem;
+		top: -7rem;
+		height: auto;
+		width: auto;
+	}
+}

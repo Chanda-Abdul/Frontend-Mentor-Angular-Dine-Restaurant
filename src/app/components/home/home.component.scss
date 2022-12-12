@@ -1,305 +1,64 @@
 @use '/src/variables';
-
 .container {
-  @include variables.flexCenter(column);
-  width: 100vw;
-  position: relative;
-
+	@include variables.flexCenter(column);
+	width: 100%;
+	position: relative;
 }
-
-img.enjoyable-place,
-img.locally-sourced {
-  box-shadow: 0px 75px 100px -50px variables.$ebony-clay;
-}
-
-.enjoyable-place {
-
-  top: -4rem;
-  position: absolute;
-
-}
-
-.enjoy {
-  height: 45rem;
-  @include variables.flexCenter(column);
-
-  .text {
-    margin-top: 20rem;
-    @include variables.flexCenter(column);
-  }
-
-}
-
-.pattern {
-  position: absolute;
-  visibility: hidden;
-  overflow: hidden;
-}
-
-.local {
-  @include variables.flexCenter(column);
-
-  .text {
-    height: 20rem;
-    @include variables.flexCenter(column);
-  }
-}
-
-
-h2 {
-  @include variables.heading-type-l;
-  width: 14rem;
-  margin: 2rem 1rem 1rem 1rem;
-  font-size: 1.75rem;
-  line-height: 2.25rem;
-}
-
-p {
-  width: 20rem;
-  margin: 1rem 1rem;
-  @include variables.body-type-secondary;
-  color: variables.$ebony-clay;
-}
-
-
 .cta {
-  position: relative;
-  margin: -.25rem;
-  padding: 0;
-  background-color: variables.$dreamless-sleep;
-  width: 100vw;
-  max-height: 18rem;
-  overflow: hidden;
-
-  * {
-    @include variables.flexCenter(column);
-    box-shadow: none;
-  }
-
-  .action {
-    position: absolute;
-    height: 18.25rem;
-    width: 100%;
-    left: 0px;
-    top: 0px;
-    z-index: 1;
-
-    h2 {
-      margin-bottom: 1.5rem;
-      color: white;
-    }
-  }
-
-  .btn {
-    background-color: transparent;
-  }
+	position: relative;
+	background-color: variables.$dreamless-sleep;
+	width: 100%;
+	max-height: 19rem;
+	overflow: hidden;
+	* {
+		box-shadow: none;
+	}
+	.action {
+		padding: 2rem 10vw;
+		@include variables.flexCenter(column);
+		position: absolute;
+		height: 100%;
+		max-width: 100%;
+		left: 0;
+		top: 0;
+		z-index: 1;
+		h2 {
+			margin-bottom: 1.5rem;
+			color: white;
+		}
+	}
+	.btn {
+		background-color: transparent;
+	}
 }
-
-
 @media (min-width: 600px) {
-  .enjoyable-place {
-    top: 1rem;
-  }
-
-  .curve-right,
-  .lines,
-  .curve-left {
-    position: absolute;
-    overflow: hidden;
-    visibility: visible;
-
-  }
-
-  .pattern {
-    visibility: visible;
-  }
-
-  .curve-right {
-    left: -32rem;
-  }
-
-  .lines {
-    left: 35rem;
-    top: 65rem;
-  }
-
-  .enjoy {
-    height: 50rem;
-
-    .text {
-      margin-top: 25rem;
-    }
-  }
-
-  h2 {
-    @include variables.heading-type-l;
-    width: 25rem;
-  }
-
-  p {
-    width: 25rem;
-    @include variables.body-type-primary;
-  }
-
-  .local {
-    .text {
-      width: 25rem;
-      margin-top: 3rem;
-    }
-  }
-
-  .curve-left {
-    top: 80rem;
-    right: -32rem;
-  }
-
-
-  .cta {
-    height: 20rem;
-
-    .action {
-      @include variables.flexCenter(column);
-      height: 100%;
-
-      h2 {
-        margin-bottom: 1.5rem;
-        width: 100%;
-      }
-    }
-  }
+	.cta {
+		height: 15rem;
+		.action {
+			@include variables.flexCenter(column);
+      width: 100%;
+			height: 15rem;
+			h2 {
+				margin-bottom: 1.5rem;
+				width: 100%;
+			}
+		}
+	}
 }
-
-
 @media (min-width: 900px) {
-  .enjoy {
-    width: 100vw;
-    @include variables.flexSpaceBetween(row);
-    height: 40rem;
-
-    .text {
-      width: 100%;
-      justify-content: flex-start;
-      margin: 5.5rem 0 0 50vw;
-      padding: 2.5rem auto;
-
-      * {
-        text-align: left;
-      }
-    }
-  }
-
-  .enjoyable-place {
-    margin-left: 10vw;
-    top: -5rem;
-    left: 0;
-  }
-
-  .divide {
-    align-self: flex-start;
-    margin-left: 10vw;
-    margin-bottom: 3rem;
-  }
-
-  .curve-right {
-    left: 0;
-    top: 15rem;
-  }
-
-  .local {
-    position: relative;
-    @include variables.flexSpaceBetween(row-reverse);
-    width: 100vw;
-    height: 40rem;
-
-
-    .text {
-      width: 100%;
-      justify-content: flex-start;
-      margin: 5.5rem 50vw 0 0;
-      padding: 2.5rem auto;
-
-      * {
-        text-align: left;
-      }
-    }
-  }
-
-  .locally-sourced {
-    position: absolute;
-    margin-right: 10vw;
-    top: 5rem;
-  }
-
-  .curve-left {
-    right: 0;
-    top: 23rem;
-  }
-
-  .lines {
-
-    left: 73rem;
-    top: 22rem;
-  }
-
-
-  //
-  //
-  //   }
-  //   //   //
-  //   //
-  //   //   margin-left: 20vw;
-  //   //   margin-bottom: 75px;
-  //   //
-  //   //   justify-content: space-evenly;
-
-  //     section {
-  //       // height: 800px;
-  //       position: absolute;
-  //       // top: -100px;
-  //     }
-
-  //   //   img {
-  //   //     margin: 0px;
-  //   //   }
-
-
-  //   // }
-
-  //   // h2 {
-  //   //   margin: 30px 0;
-  //   //   font-size: 48px;
-  //   //   line-height: 48px;
-  //   //   letter-spacing: -0.5px;
-  //   //   width: 445px;
-  //   // }
-
-  //   // p {
-  //   //   width: 445px;
-  //   //   font-size: 20px;
-  //   //   font-weight: 400;
-  //   //   line-height: 30px;
-  //   //   text-align: left;
-  //   // }
-
-
-
-
-
-
-
-
-  //   // .cta {
-  //   //   width: 100vw;
-  //   // }
-
-  //   // .action {
-  //   //   height: 240px;
-  //   //   width: 100vw;
-
-  //   //   h2 {
-  //   //     width: 615px;
-  //   //   }
-  //   // }
-
-
+	.cta {
+		width: 100%;
+		height: 13.3rem;
+		.action {
+			@include variables.flexSpaceBetween(row);
+			align-items: center;
+			height: 13.3rem;
+			width: 100%;
+			margin: auto;
+			h2 {
+				width: auto;
+				margin: auto;
+			}
+		}
+	}
 }
