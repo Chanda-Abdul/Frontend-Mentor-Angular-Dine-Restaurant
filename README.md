@@ -43,77 +43,77 @@ This is a solution to the [Dine Website Challenge challenge on Frontend Mentor](
 <details>
 <summary><b> Mobile Screenshots @ 375px</b></summary>
 
-#### Home
-<img src="src/assets/screens/mobile_home_initial.png"/>
+### Home
+<img src="src/assets/screens/mobile_home_initial.png" width="375px"/>
 
-##### Event Slides
-<img src="src/assets/screens/mobile_home_slide_1.png"/>
-<img src="src/assets/screens/mobile_home_slide_2.png"/>
+### Event Slides
+<img src="src/assets/screens/mobile_home_slide_1.png" width="375px"/>
+<img src="src/assets/screens/mobile_home_slide_2.png"  width="375px"/>
 
-<img src="src/assets/screens/mobile_home_slide_3.png"/>
+<img src="src/assets/screens/mobile_home_slide_3.png" width="375px"/>
 
-#### Booking
-<img src="src/assets/screens/mobile_booking_initial.png"/>
+### Booking
+<img src="src/assets/screens/mobile_booking_initial.png" width="375px"/>
 
-##### Error States
-<img src="src/assets/screens/mobile_booking_error.png"/>
+### Error States
+<img src="src/assets/screens/mobile_booking_error.png" width="375px"/>
 
-##### Valid Form
-<img src="src/assets/screens/mobile_booking_valid.png"/>
+### Valid Form
+<img src="src/assets/screens/mobile_booking_valid.png" width="375px"/>
 
-##### Confirmation after form submission
-<img src="src/assets/screens/mobile_booking_confirm.png"/>
+### Confirmation after form submission
+<img src="src/assets/screens/mobile_booking_confirm.png"  width="375px"/>
 
 </details>
 <details>
 <summary><b>Tablet Screenshots @ 768px</b></summary>
 
 
-#### Home
+### Home
 
-<img src="src/assets/screens/mobile_home_initial.png"/>
+<img src="src/assets/screens/mobile_home_initial.png"  width="768px"/>
 
-##### Event Slides
-<img src="src/assets/screens/tablet_home_slide_1.png"/>
-<img src="src/assets/screens/tablet_home_slide_2.png"/>
+### Event Slides
+<img src="src/assets/screens/tablet_home_slide_1.png" width="768px"/>
+<img src="src/assets/screens/tablet_home_slide_2.png"  width="768px"/>
 
-<img src="src/assets/screens/tablet_home_slide_3.png"/>
+<img src="src/assets/screens/tablet_home_slide_3.png"  width="768px"/>
 
-#### Booking
-<img src="src/assets/screens/tablet_booking_initial.png"/>
+### Booking
+<img src="src/assets/screens/tablet_booking_initial.png"  width="768px"/>
 
-##### Error States
-<img src="src/assets/screens/tablet_booking_error.png"/>
+### Error States
+<img src="src/assets/screens/tablet_booking_error.png"  width="768px"/>
 
-##### Valid Form
-<img src="src/assets/screens/tablet_booking_valid.png"/>
+### Valid Form
+<img src="src/assets/screens/tablet_booking_valid.png"  width="768px"/>
 
-##### Confirmation after form submission
-<img src="src/assets/screens/tablet_booking_confirm.png"/>
+### Confirmation after form submission
+<img src="src/assets/screens/tablet_booking_confirm.png"  width="768px"/>
 </details>
 <details>
 <summary><b>Desktop Screenshots @ 1440px</b></summary>
 
-####  Home
+###  Home
 <img src="src/assets/screens/desktop_home_initial.png" width="" height="100%"/>
 
-##### Event Slides
+### Event Slides
 <img src="src/assets/screens/desktop_home_slide_1.png" />
 
 <img src="src/assets/screens/desktop_home_slide_2.png" />
 
 <img src="src/assets/screens/desktop_home_slide_3.png" width="600px"/>
 
-#### Booking
+### Booking
 <img src="src/assets/screens/desktop_booking_initial.png" width="600px"/>
 
-##### Error States
+### Error States
 <img src="src/assets/screens/desktop_booking_error.png" width="600px"/>
 
-##### Valid Form
+### Valid Form
 <img src="src/assets/screens/desktop_booking_valid.png" width="600px"/>
 
-##### Confirmation after form submission
+### Confirmation after form submission
 <img src="src/assets/screens/desktop_booking_confirm.png"/>
 
 </details>
@@ -132,7 +132,7 @@ This is a solution to the [Dine Website Challenge challenge on Frontend Mentor](
   - JavaScript
     - ⏰ [Moment.js ](https://momentjs.com/docs) - To validate reservation dates and times
 - <b>Figma</b>
-- <b>Sass/CSS</b> custom properties
+- <b>Sass/CSS</b> custom properties(❗️this project required <i>ALOT</i> of CSS)
   - <s><b>[fxLayout API](https://github.com/angular/flex-layout/wiki/fxLayout-API)</b> Angular Flexbox API</s>
   - <b>Mobile-first</b> workflow
 - Semantic <b>HTML5</b> markup
@@ -140,9 +140,9 @@ This is a solution to the [Dine Website Challenge challenge on Frontend Mentor](
 
 ## What I learned
 
-### How to build Angular Reactive Forms with custom validation
+## How to build Angular Reactive Forms with custom validation
 I created the reservation form in the `booking` component using [Angular Reactive forms](https://angular.io/guide/reactive-forms).  I also added custom validation for `input` and `select`
-#### `rezzo-form.component.html`
+### `rezzo-form.component.html`
 ```html
 <form novalidate
         class="rezForm"
@@ -224,9 +224,9 @@ setNameValidationErrorMessage(n: AbstractControl): void {
   }
 ...
 ```
-### Creating a custom component to display responsive images
+## Creating a custom component to display responsive images
 This project contained many images that would change at each breakpoint.  I created a seperate component to render images responsively, using [Attribute Binding](https://angular.io/guide/attribute-binding)
-#### The template
+### The template
 `picture-responsive.html`
 ```html
 <picture>
@@ -237,7 +237,7 @@ This project contained many images that would change at each breakpoint.  I crea
   <img src='/assets/images/homepage/{{imageTitle}}-mobile.jpg' />
 </picture>
 ```
-#### The component class
+### The component class
 ```ts
 <app-picture-responsive *ngIf="selectedEvent"
   imageTitle="{{selectedEvent.imageTitle}}"
@@ -260,110 +260,27 @@ EventItem[] = [
   },
   ...
   ```
-### ⏰ [Moment.js](https://momentjs.com/docs)  library for custom form validation
-#### `rezzo-form.component.html`
-```html
-    <form class="rezForm"
-      [formGroup]="rezzoForm"
-      (ngSubmit)="onSubmitForm()"
-      >
+## ⏰ [Moment.js](https://momentjs.com/docs) library for custom form validation
+I used the [Moment.js](https://momentjs.com/docs) library to validate the `date` and `time` selects before displaying error messages
+<img src="/src/assets/screens/date_error_msg.png" />
 
-        <input type="text"
-          placeholder="Name"
-          formControlName="name"
-          >
-            ...
 
-            <h3>Pick a Date</h3>
-              ...
-          
-          <select 
-              formControlName="month"
-              type="text"
-              (change)="selectMonth($event)">
-                
-                <option disabled>MM</option>
-                <option *ngFor="let month of months"
-                  [ngValue]="month">
-                  {{ month }}
-                  </option>
-              </select>
-              ...
-          
-          <img src="/assets/images/icons/icon-minus.svg"
-            (click)="decrementGuestCount()" />
-              {{guests[selectedGuestCount-1]}}
-          <img src="/assets/images/icons/icon-plus.svg"
-          (click)="incrementGuestCount()" />
-            
-            ...
-      
-      <button 
-          class="on-light"
-          [disabled]="!rezzoForm.valid"
-          type="submit">
-          Make Reservation
-        </button>
-      </form>
-```
-### Reactive Forms
-#### 🙅🏽‍♀️ `rezzo-form.component.ts`
+### 🙅🏽‍♀️ `rezzo-form.component.ts`
 
-```js
-    import { FormBuilder, FormGroup, } from '@angular/forms';
+```ts
+...
 
-    ...
+setDateValidationErrorMessage(month, day, year): void {
+  this.dateValidationErrorMessage = '';
+  let now = moment();
+  let reservation = moment([year.value, moment(month.value, 'MMM').month(), day.value]);
+  let later = moment().add(6, 'months');
 
-    export class RezzoFormComponent implements OnInit {
-      rezzoForm: FormGroup;
-      ...
-      months: string[] = [
-       ...
-      ];
-      ...
-      guests: string[] = [
-        '1 person', '2 people', '3 people', '4 people', '5 people', 
-        '6 people', '7 people', '8 people', '9 people', '10 people'
-        ];
-      selectedGuestCount: number = 4;
-      ...
-
-      constructor(private fb: FormBuilder) { }
-
-      ngOnInit(): void {
-        this.initializeForm();
-      }
-
-      initializeForm(): void {
-        this.rezzoForm = this.fb.group({
-          ...
-          month: 'MM',
-          ...
-          meridian: 'PM',
-          guests: this.guests[this.selectedGuestCount + 1],
-        })
-      };
-
-      decrementGuestCount() {
-        if (this.selectedGuestCount > 1) {
-          this.selectedGuestCount = this.selectedGuestCount - 1
-        }
-      }
-      incrementGuestCount() {
-        ...
-      }
-
-      onSubmitForm() {
-        ...
-      }
-
-      selectMonth(event): void {
-        this.rezzoForm.patchValue({
-          month: event.target.value
-        })
-      }
-      ...
-    }
+  if (!reservation.isValid() || now > reservation || reservation > later) {
+    this.dateValidationErrorMessage = 'Please select a valid date within the next 6 months'
+  }
+}
+...
   ```
 
 ## Continued development
@@ -371,6 +288,7 @@ This <b>Dine</b> project would be a good opportunity to add several useful/inter
 ### Features to Add
 
 ➕ <b> Cool animations</b>, this could be a good project to practice [parallex](https://webflow.com/blog/parallax-scrolling), and play with Angular or CSS animations
+
 ➕ <b> Authenticate/Authorization with ability to update</b>
 
   - [ ] Add authentication /Authorization
