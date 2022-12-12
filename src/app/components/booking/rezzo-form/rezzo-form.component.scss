@@ -14,7 +14,7 @@ section {
   @include variables.heading-type-s;
   width: 90%;
   height: 100%;
-  padding: 0.3rem;
+  padding: 1rem;
   margin: auto;
 
   .details {
@@ -104,7 +104,7 @@ section {
     }
   }
 
-  h3 {
+  label {
     @include variables.body-type-primary;
     width: 100%;
     @include variables.flexSpaceBetween(row);
@@ -119,9 +119,10 @@ section {
     padding: 0;
   }
 
-  .group {
-    width: 100%;
-  }
+  // .group {
+  //   width: 15rem;
+  //   margin: auto 0;
+  // }
 
   .form-select {
     width: 55px;
@@ -131,7 +132,7 @@ section {
   .full,
   .dates,
   .times {
-    width: 100%;
+    width: 15rem;
     @include variables.flexSpaceBetween(row);
 
     .date,
@@ -181,7 +182,7 @@ section {
     width: 6.5rem;
     height: 3.25rem;
 
-    h3.alert-danger {
+    label.alert-danger {
       color: variables.$lady-in-red;
     }
   }
@@ -220,14 +221,15 @@ section {
       width: 90%;
       @include variables.flexSpaceBetween(row);
 
-      h3 {
+      label {
         width: 10rem;
       }
     }
 
     .dates,
     .times {
-      width: 22rem;
+      width: 100%;
+      max-width: 18rem;
       @include variables.flexSpaceBetween(row);
 
       .small {
@@ -240,7 +242,7 @@ section {
       }
 
       .meridian {
-        width: 0.3rem;
+        width: 5.4rem;
       }
     }
   }

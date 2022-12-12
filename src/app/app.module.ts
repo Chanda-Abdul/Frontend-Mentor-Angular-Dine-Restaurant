@@ -19,13 +19,7 @@ import { MenuPreviewComponent } from './components/home/menu-preview/menu-previe
 import { PictureResponsiveComponent } from './components/shared/picture-responsive/picture-responsive.component';
 import { EventsComponent } from './components/home/events/events.component';
 import { AboutComponent } from './components/home/about/about.component';
-
-
-
-
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'booking', component: BookingComponent }];
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -43,7 +37,7 @@ const appRoutes: Routes = [
     AboutComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,

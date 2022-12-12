@@ -30,7 +30,7 @@
       <div class="group">
         <!-- Date Input -->
         <div class="error">
-          <h3 [ngClass]="{'alert-danger': dateValidationErrorMessage }">Pick a Date</h3> <span
+          <label [ngClass]="{'alert-danger': dateValidationErrorMessage }">Pick a Date</label> <span
                 class="alert-danger desktop">{{dateValidationErrorMessage}}</span>
         </div>
         <div formGroupName="dateGroup"
@@ -73,7 +73,7 @@
       <div class="group">
         <!-- Time Input -->
         <div class="error">
-          <h3 [ngClass]="{'alert-danger': timeValidationErrorMessage }">Pick a Time</h3>
+          <label [ngClass]="{'alert-danger': timeValidationErrorMessage }">Pick a Time</label>
           <span class="alert-danger desktop">{{timeValidationErrorMessage}}</span>
         </div>
         <div formGroupName="timeGroup"
